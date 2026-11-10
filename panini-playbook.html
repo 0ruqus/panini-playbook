@@ -159,7 +159,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
     <div class="fact"><b id="factCount">67</b><span>Recipes</span></div>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
-    <div class="fact"><b>10</b><span>House spreads &amp; components</span></div>
+    <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
   </div>
 </header>
 
@@ -365,6 +365,14 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
         <p class="full">Marinate thin-sliced beef, then sear it hot before building the sandwich.</p>
       </div>
     </details>
+    <details id="sp-pbr">
+      <summary><h3>PBR Beer-Caramelized Onions</h3><span class="eyebrow">Recipe · about 1 hr</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">3</span> large yellow onions, thinly sliced</li><li><span class="qty">2 Tbsp</span> butter</li><li><span class="qty">1 Tbsp</span> olive oil</li><li><span class="qty">½ tsp</span> salt</li><li><span class="qty">1 tsp</span> brown sugar</li><li><span class="qty">1 can</span> Pabst Blue Ribbon <span class="qty">(12 oz)</span></li></ul>
+        <ol><li>Melt the butter with the oil over medium-low heat. Add the onions and salt.</li><li>Cook slowly, stirring now and then, until soft and golden, about 30 minutes.</li><li>Stir in the brown sugar. Add PBR a splash at a time, letting each splash cook off and scraping up the brown bits.</li><li>Keep going for another 20–30 minutes, until the onions are deep brown and jammy.</li></ol>
+        <p class="full">Use it on the Fig &amp; Caramelized Onion panini, or anywhere a card calls for caramelized onions: French Onion, Club Modified, Buffalo Apple Chicken. It keeps about a week in the fridge.</p>
+      </div>
+    </details>
     <details id="sp-chimi">
       <summary><h3>Chimichurri</h3><span class="eyebrow">Recipe</span></summary>
       <div class="sp">
@@ -495,7 +503,7 @@ const R=[
 ["Jalapeño Pear","Vegetarian","","Brie or Havarti","Pear, jalapeño","","","",""],
 ["Cheesy Roasted Mushroom Melt","Vegetarian","Crusty Italian bread","Fresh mozzarella, ricotta, cream cheese","Balsamic-roasted portobellos and sweet onion","","","Olive oil",""],
 ["Hummus Grilled Cheese","Vegetarian","Sandwich bread","Aged cheddar","","Roasted garlic hummus","Arugula, tomato","Butter",""],
-["Fig & Caramelized Onion","Vegetarian","Rustic sourdough","Brie, cream cheese spread","Slow-caramelized onions","Fig jam","Arugula (optional)","","Caramelize the onions low and slow, 45–60 minutes, with a pinch of brown sugar."],
+["Fig & Caramelized Onion","Vegetarian","Rustic sourdough","Brie, cream cheese spread","PBR beer-caramelized onions","Fig jam","Arugula (optional)","","Make the onions ahead. They keep about a week in the fridge."],
 ["Apple & Prosciutto","Fruit","Rustic sourdough","Brie (4 clumps ≈ 2 oz), provolone","Apple, prosciutto","Apple spice jam","","",""],
 ["Honey Apple Cheddar & Bacon","Fruit","Sourdough","Aged white cheddar, Havarti","Bacon, thyme, Honeycrisp apple","Apple butter, honey","Tomato, avocado","",""],
 ["Blueberry Lemon","Dessert","Rustic sourdough","Spreadable brie","Blueberries","Lemon curd","Prosciutto (optional)","Butter","Cook last, because it leaks."],
@@ -510,7 +518,7 @@ const R=[
 ["Breakfast","Big builds","","American","Scrambled eggs, sausage","","","",""]
 ];
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
-const LINK={"Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
+const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
 let fam="All",q="";
 const grid=document.getElementById("grid"),chips=document.getElementById("chips"),count=document.getElementById("count");
 document.getElementById("factCount").textContent=R.length;

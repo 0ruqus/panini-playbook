@@ -297,8 +297,8 @@ Crusty Italian bread · Fresh mozzarella + ricotta + cream cheese · Balsamic-ro
 Sandwich bread · Aged cheddar · Roasted garlic hummus · *Add:* arugula, tomato · **Fry spread:** butter
 
 **Fig & Caramelized Onion**
-Rustic sourdough · Brie + cream cheese spread · Slow-caramelized onions · Fig jam · *Add:* arugula (optional)
-*Note: caramelize the onions low and slow, 45–60 minutes, with a pinch of brown sugar.*
+Rustic sourdough · Brie + cream cheese spread · [PBR beer-caramelized onions](#pbr-beer-caramelized-onions) · Fig jam · *Add:* arugula (optional)
+*Note: make the onions ahead. They keep about a week in the fridge.*
 
 ### Sweet & savory fruit
 
@@ -484,6 +484,21 @@ Whisk the dressing and toss it with everything else. Add the avocado last.
 - ½ yellow onion, slivered
 
 Marinate thin-sliced beef, then sear it hot before building the sandwich.
+
+### PBR Beer-Caramelized Onions
+- 3 large yellow onions, thinly sliced
+- 2 Tbsp butter
+- 1 Tbsp olive oil
+- ½ tsp salt
+- 1 tsp brown sugar
+- 1 can (12 oz) Pabst Blue Ribbon
+
+1. Melt the butter with the oil over medium-low heat. Add the onions and salt.
+2. Cook slowly, stirring now and then, until soft and golden, about 30 minutes.
+3. Stir in the brown sugar. Add PBR a splash at a time, letting each splash cook off and scraping up the brown bits.
+4. Keep going for another 20–30 minutes, until the onions are deep brown and jammy.
+
+Use it on the Fig & Caramelized Onion panini, or anywhere a card calls for caramelized onions: French Onion, Club Modified, Buffalo Apple Chicken. It keeps about a week in the fridge.
 
 ### Chimichurri
 *A standard version, not from the notes.*
