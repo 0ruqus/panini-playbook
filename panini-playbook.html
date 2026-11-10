@@ -89,7 +89,7 @@ header + section{border-top:0}
 .tcard ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.93rem}
 
 /* recipes */
-.controls{display:grid;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line)}
+.controls{display:grid;gap:12px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 53px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .search{width:100%;font:inherit;padding:10px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -160,6 +160,15 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
   .sp{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--basil)}}
+.tabs{display:flex;gap:4px;position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);border-bottom:1px solid var(--line);padding-top:12px}
+.tab{font:800 1rem/1 var(--display);font-stretch:85%;letter-spacing:.01em;padding:12px 18px 13px;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;background:none;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--basil)}
+.tab .n{font:500 .72rem/1 var(--mono);padding:3px 6px;border-radius:999px;background:var(--sunk);color:var(--muted)}
+.panel > section:first-child,section.first{border-top:0}
+.fact-link{color:inherit;text-decoration:none}
+.fact-link:hover{background:var(--sunk)}
+.fact-link span{color:var(--basil);font-weight:600}
 </style>
 
 <div class="wrap">
@@ -169,12 +178,19 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
   <p class="sub"><strong id="tagline">Cheezus Saves</strong>. In the name of the Gouda, the Swiss, and the Provolone.</p>
   <p class="insta">Follow along on Instagram: <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></p>
   <div class="facts">
-    <div class="fact"><b id="factCount">67</b><span>Recipes</span></div>
+    <a class="fact fact-link" href="#recipes" data-goto="recipes"><b id="factCount">67</b><span>Recipes →</span></a>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
   </div>
 </header>
+
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <button class="tab" role="tab" id="t-guide" aria-controls="tab-guide" aria-selected="true" data-tab="guide">The Playbook</button>
+  <button class="tab" role="tab" id="t-recipes" aria-controls="tab-recipes" aria-selected="false" data-tab="recipes">Recipes <span class="n" id="tabCount"></span></button>
+</nav>
+
+<div class="panel" id="tab-guide" role="tabpanel" aria-labelledby="t-guide">
 
 <section aria-labelledby="formula">
   <p class="eyebrow">How every sandwich is built</p>
@@ -231,19 +247,6 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
       </ul>
     </div>
   </div>
-</section>
-
-<section aria-labelledby="recipes">
-  <p class="eyebrow">The collection</p>
-  <h2 id="recipes">Recipes</h2>
-  <p class="lede">Each card lists the layers. The fry spread is mayonnaise unless the card says otherwise. Add the wet items in the Add line, and any tomato, lettuce or avocado in the Fill line, after pressing.</p>
-  <div class="controls">
-    <label class="eyebrow" for="q">Search ingredients or names</label>
-    <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
-    <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
-    <p class="count" id="count" aria-live="polite"></p>
-  </div>
-  <div class="grid" id="grid"></div>
 </section>
 
 <section aria-labelledby="families">
@@ -415,6 +418,23 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
   </div>
 </section>
 
+</div>
+
+<div class="panel" id="tab-recipes" role="tabpanel" aria-labelledby="t-recipes" hidden>
+<section aria-labelledby="recipes" class="first">
+  <p class="eyebrow">The collection</p>
+  <h2 id="recipes">Recipes</h2>
+  <p class="lede">Each card lists the layers. The fry spread is mayonnaise unless the card says otherwise. Add the wet items in the Add line, and any tomato, lettuce or avocado in the Fill line, after pressing.</p>
+  <div class="controls">
+    <label class="eyebrow" for="q">Search ingredients or names</label>
+    <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
+    <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+</div>
+
 <footer>Compiled 10 Nov 2026 from the house PANINI recipe collection · Instagram <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></footer>
 </div>
 
@@ -516,9 +536,22 @@ function draw(){
 }
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
-grid.addEventListener("click",e=>{const a=e.target.closest("a[data-open]");if(a){const d=document.getElementById(a.dataset.open);if(d)d.open=true}});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
 drawChips();draw();
+
+// Tabs: The Playbook (default) and Recipes. #recipes in the URL opens Recipes.
+const tabBtns=[...document.querySelectorAll(".tab")];
+document.getElementById("tabCount").textContent=R.length;
+function showTab(t,scroll){
+  tabBtns.forEach(b=>{const on=b.dataset.tab===t;b.setAttribute("aria-selected",String(on));document.getElementById("tab-"+b.dataset.tab).hidden=!on});
+  if(scroll){const nav=document.querySelector(".tabs");const y=nav.getBoundingClientRect().top+scrollY-1;if(scrollY>y)scrollTo(0,y)}
+}
+document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",b.dataset.tab==="recipes"?"#recipes":location.pathname+location.search)}catch(_){}});
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);document.querySelector(".tabs").scrollIntoView({behavior:"smooth"});return}
+  const a=e.target.closest("a[data-open]");if(a){e.preventDefault();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}}
+});
+if(location.hash==="#recipes")showTab("recipes",false);
 
 // Names: tap one to use it as the tagline
 const names=document.getElementById("names"),tag=document.getElementById("tagline");
