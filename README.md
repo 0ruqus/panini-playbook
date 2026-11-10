@@ -10,3 +10,7 @@ A shareable panini cookbook built from the Recipes › PANINI folder in Apple No
 **How to update:** add or edit recipes in Notes, then ask Claude to rebuild the playbook from the PANINI folder.
 
 **Shareable page:** https://claude.ai/artifact/X3spMFpYs81hwMXmq1LGKq (built from `panini-playbook.html` in this folder; the recipe data is the `R` array in its script). It's private until shared from the page's Share menu.
+
+**Public site (GitHub Pages):** https://0ruqus.github.io/panini-playbook/ · **Repo:** https://github.com/0ruqus/panini-playbook
+
+**To update the public site:** edit `panini-playbook.html`, run `./build-index.sh` to rebuild `index.html`, then commit and push. Pages redeploys in about a minute. The Claude page is updated separately by republishing the same file.
