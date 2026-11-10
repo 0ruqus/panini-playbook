@@ -267,9 +267,9 @@ Sourdough at 400°F · American · Peppered salami, tomatoes
 **Tuna Melt**
 Roll · Havarti + Laughing Cow · Tuna salad, tomato, lettuce · German mustard + Thousand Island
 
-**Tuna Salad**
-Tuna, mayo, celery, red onion, salt and pepper · *Add:* tomato
-*Served cold. For a hot version, see Tuna Melt.*
+**Korean Spicy Tuna**
+Sourdough or Texas toast · Cream cheese + mozzarella · Korean canned hot pepper (gochugaru) tuna, drained, mixed with cream cheese, sliced green onions and sriracha · Sriracha mayo · *Add:* kimchi, sliced cucumber
+*Drain the oil from the can first, or the sandwich goes greasy. Mash the tuna with a spoonful of cream cheese, the green onions and a squeeze of sriracha. Cream cheese on both slices is the glue, so you can open it after pressing to add the kimchi and cucumber.*
 
 **Buffalo Tuna Melt**
 Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ranch, diced celery and carrot · *Serve with:* ranch for dipping · **Fry spread:** butter
