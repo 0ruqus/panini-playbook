@@ -235,9 +235,6 @@ Flatbread · Fontina · Roast beef · Onion jam / marmalade · *Add:* baby arugu
 **Pastrami One ("Pirate Pastrami")**
 Marble rye · Baby Swiss + Laughing Cow · Pastrami, sauerkraut · German mustard + Thousand Island
 
-**Meatball**
-French roll · Mozzarella · Meatballs · Marinara
-
 **Bulgogi ("Cow")**
 No cheese · Bulgogi beef, red onion, carrots *(see [Bulgogi marinade](#bulgogi-marinade))*
 
@@ -246,6 +243,9 @@ Hoagie roll (or semolina bread) · Provolone or mozzarella · Thin-sliced [Crock
 *Note: dip the finished sandwich in the au jus from the crock pot. [Chimichurri](#chimichurri) also works as the spread.*
 
 ### Italian & cured meats
+
+**Meatball Marinara**
+French roll · Mozzarella · Meatballs · Marinara
 
 **Italian**
 Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing

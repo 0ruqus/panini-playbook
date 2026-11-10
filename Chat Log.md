@@ -36,3 +36,4 @@
 - Added a **PBR Beer-Caramelized Onions** component recipe (butter, oil, brown sugar, a can of PBR added in splashes, about 1 hour). The Fig & Caramelized Onion card now uses and links to it, and the recipe suggests it for the other caramelized-onion cards. 11 house spreads and components.
 - PBR onions: the house version has no sugar, so brown sugar is now listed as optional.
 - Removed the menu board section from the page and the Markdown. 16 of its 18 items were already cards (Meatball Marinara = Meatball, Fresh Mozzarella & Tomato = Caprese, The Veggie = Veggie Two, and so on). Added the two that weren't: **Homemade Chicken Salad** (Chicken) and **Tuna Salad** (Fish), both served cold. 75 recipes in all.
+- Renamed the Meatball card to **Meatball Marinara** (its menu board name) and moved it from Beef to Italian so it's easier to find.
