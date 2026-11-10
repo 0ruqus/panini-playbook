@@ -1,0 +1,541 @@
+<title>Panini Playbook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a press-menu page. Grill-striped header, a six-layer formula strip, then a filterable wall of recipe cards and a menu board. */
+:root{
+  --bg:#fbfbf8; --surface:#ffffff; --sunk:#f1f2ec; --line:#dcdfd3;
+  --fg:#1d2119; --muted:#5b6253;
+  --basil:#2f6b3a; --basil-ink:#ffffff; --mustard:#c99a12; --char:#2a2622;
+  --stripe:rgba(42,38,34,.07);
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#151712; --surface:#1d2019; --sunk:#23271e; --line:#353a2e;
+  --fg:#ecefe6; --muted:#a7ae9c; --basil:#7cc08a; --basil-ink:#10200f; --mustard:#e3b83a; --char:#0d0e0b;
+  --stripe:rgba(255,255,255,.05); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151712; --surface:#1d2019; --sunk:#23271e; --line:#353a2e;
+  --fg:#ecefe6; --muted:#a7ae9c; --basil:#7cc08a; --basil-ink:#10200f; --mustard:#e3b83a; --char:#0d0e0b;
+  --stripe:rgba(255,255,255,.05); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.05;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;font-stretch:80%;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:750;font-stretch:90%}
+p{margin:0}
+a{color:var(--basil)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;border-radius:4px}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+section{padding-block:56px;border-top:1px solid var(--line);display:grid;gap:24px}
+.lede{color:var(--muted);max-width:62ch}
+
+/* header */
+header{padding-block:48px 32px;display:grid;gap:16px;border-bottom:3px solid var(--fg)}
+header + section{border-top:0}
+.title{font-size:clamp(3rem,11vw,7rem);font-weight:900;font-stretch:68%;letter-spacing:-.02em;text-transform:uppercase}
+.title span{color:var(--basil)}
+.sub{font:italic 400 1.15rem/1.4 var(--body);color:var(--muted);max-width:52ch}
+.insta{font:500 .9rem/1.3 var(--mono);color:var(--muted)}
+.insta a{color:var(--basil);font-weight:500;text-decoration-thickness:2px;text-underline-offset:3px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.fact{padding:14px 16px;display:grid;gap:6px;align-content:start;border-right:1px solid var(--line);min-width:0}
+.fact:last-child{border-right:0}
+.fact b{font:500 1.5rem/1 var(--mono);color:var(--basil);font-variant-numeric:tabular-nums}
+.fact span{font-size:.82rem;color:var(--muted)}
+@media (max-width:560px){
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(2){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+
+/* formula strip */
+.formula{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:2px solid var(--char);border-radius:10px;overflow:hidden;background:var(--surface)}
+.layer{padding:14px 12px;display:grid;gap:6px;align-content:start;border-right:1px solid var(--line);min-width:0}
+.layer:last-child{border-right:0;background:var(--sunk)}
+.layer .eyebrow{color:var(--basil)}
+.layer h3{font-size:1.25rem}
+.layer p{font-size:.86rem;color:var(--muted)}
+.note{border-left:4px solid var(--mustard);background:var(--sunk);padding:12px 16px;border-radius:0 8px 8px 0;max-width:72ch}
+
+/* technique */
+.tech{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tcard.key{border:2px solid var(--basil)}
+.steps{margin:0;padding-left:1.3em;display:grid;gap:6px;font-size:.93rem}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:10px;align-content:start}
+.temp{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.temp strong{font:500 1.6rem/1 var(--mono);color:var(--basil);font-variant-numeric:tabular-nums}
+.tcard ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.93rem}
+
+/* recipes */
+.controls{display:grid;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.search{width:100%;font:inherit;padding:10px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 .82rem/1 var(--body);padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--basil);border-color:var(--basil);color:var(--basil-ink)}
+.chip .n{font:500 .72rem var(--mono);opacity:.75;margin-left:4px}
+.count{font:500 .8rem var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.card header{all:unset;display:flex;justify-content:space-between;gap:8px;align-items:start}
+.card h3{font-size:1.2rem}
+.tag{font:500 .66rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:4px 6px;white-space:nowrap}
+.card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.9rem}
+.card dt{font:500 .68rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--basil)}
+.card dd{margin:0;min-width:0}
+.card .tip{font-size:.85rem;color:var(--muted);font-style:italic;border-top:1px dashed var(--line);padding-top:8px}
+.empty{color:var(--muted)}
+
+/* menu board */
+.board{background:var(--char);color:#f3f1ea;border-radius:12px;padding:28px clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.board h3{font-size:1.6rem;font-weight:900;font-stretch:70%;text-transform:uppercase;letter-spacing:.04em;color:#f0c43c;border-bottom:2px solid rgba(240,196,60,.4);padding-bottom:8px;margin-bottom:12px}
+.board ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.board li b{display:block;font-family:var(--display);font-stretch:88%;font-size:1.06rem;letter-spacing:.01em}
+.board li span{font-size:.88rem;color:#cfccc2}
+
+/* families table */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.95rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-family:var(--display);font-weight:800;font-stretch:80%;white-space:nowrap}
+.combos{margin:0;padding-left:1.1em;display:grid;gap:6px}
+
+/* spreads */
+.spreads{display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+summary{cursor:pointer;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary h3{font-size:1.15rem}
+summary .eyebrow::after{content:" +"}
+details[open] summary .eyebrow::after{content:" −"}
+.sp{padding:0 18px 18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px}
+.sp ul,.sp ol{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.93rem}
+.sp .full{grid-column:1/-1;font-size:.9rem;color:var(--muted)}
+.qty{font-family:var(--mono);font-size:.85em;font-variant-numeric:tabular-nums}
+
+/* pantry */
+.pantry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pantry div{display:grid;gap:8px;align-content:start}
+.pantry p{font-size:.92rem;color:var(--muted)}
+.ideas{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.names button{font:700 1rem/1.2 var(--display);font-stretch:85%;padding:8px 12px;border:1.5px dashed var(--line);border-radius:6px;background:var(--surface);color:var(--fg);cursor:pointer;text-align:left}
+.names button:hover{border-color:var(--basil)}
+.names button.fav{border-style:solid;border-color:var(--basil);color:var(--basil)}
+.names button[aria-pressed="true"]{background:var(--basil);border:1.5px solid var(--basil);color:var(--basil-ink)}
+footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+@media (max-width:860px){
+  .formula{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .layer:nth-child(3){border-right:0}
+  .layer:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .tech,.pantry{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .formula{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .layer{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .layer:nth-child(2n){border-right:0}
+  .board,.sp{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--basil)}}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">House recipe collection</p>
+  <h1 class="title">Panini <span>Playbook</span></h1>
+  <p class="sub"><strong id="tagline">Cheezus Saves</strong>. In the name of the Gouda, the Swiss, and the Provolone.</p>
+  <p class="insta">Follow along on Instagram: <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></p>
+  <div class="facts">
+    <div class="fact"><b id="factCount">67</b><span>Recipes</span></div>
+    <div class="fact"><b>6</b><span>Layers in every build</span></div>
+    <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
+    <div class="fact"><b>10</b><span>House spreads &amp; components</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="formula">
+  <p class="eyebrow">How every sandwich is built</p>
+  <h2 id="formula">The house formula</h2>
+  <div class="formula">
+    <div class="layer"><span class="eyebrow">01 · Bread</span><h3>Structure</h3><p>Has to survive the press. Sourdough, Texas toast, ciabatta, focaccia, rye.</p></div>
+    <div class="layer"><span class="eyebrow">02 · Melt</span><h3>Glue</h3><p>Cheese on the top and bottom slices. It holds the fillings and lets you open the sandwich after cooking.</p></div>
+    <div class="layer"><span class="eyebrow">03 · Fill</span><h3>Main event</h3><p>Turkey, ham, roast beef, chicken, vegetables, fruit.</p></div>
+    <div class="layer"><span class="eyebrow">04 · Spread</span><h3>Signature</h3><p>Sweet, spicy or tangy. Jams, aiolis, pesto, mustards, glazes.</p></div>
+    <div class="layer"><span class="eyebrow">05 · Add</span><h3>After the press</h3><p>Wet, fresh items go in after cooking: avocado, tomato, lettuce, kimchi.</p></div>
+    <div class="layer"><span class="eyebrow">06 · Fry spread</span><h3>Outside</h3><p>Mayonnaise by default, often with garlic. Butter for desserts.</p></div>
+  </div>
+  <p class="note"><strong>Default fry spread:</strong> unless a recipe says otherwise, spread a thin layer of mayonnaise on the outside of both slices. It browns more evenly than butter and doesn't burn as quickly. Stir in minced or roasted garlic for garlic-toasted bread.</p>
+</section>
+
+<section aria-labelledby="tech">
+  <p class="eyebrow">At the press</p>
+  <h2 id="tech">Press technique</h2>
+  <div class="tech">
+    <div class="tcard key">
+      <h3>Wet ingredients go in after the press</h3>
+      <p>Avocado, tomato, lettuce, kimchi and other wet ingredients turn soggy and steam the bread if you press them. Add them after cooking.</p>
+      <ol class="steps">
+        <li>Put cheese right against the bread on <strong>both</strong> the top and bottom slices, with the hot fillings in between.</li>
+        <li>Press until the cheese melts.</li>
+        <li>Lift the top slice, opening just <strong>below its layer of melted cheese</strong> so the gooey cheese stays stuck to the bread.</li>
+        <li>Add the wet ingredients on top of the hot fillings, close it and cut.</li>
+      </ol>
+    </div>
+    <div class="tcard">
+      <h3>Heat and time</h3>
+      <div class="temp"><strong>375°F</strong><span>about 3 min · thin melts</span></div>
+      <div class="temp"><strong>200°F</strong><span>about 10 min · thick, meaty</span></div>
+      <p>Lift the lid and check now and then. When you hear cheese sizzling on the grates, it's melted.</p>
+      <p><strong>Cook dessert paninis last.</strong> They leak hard, so press them after the savory ones, and use butter outside instead of mayo.</p>
+    </div>
+    <div class="tcard">
+      <h3>Bread</h3>
+      <ul>
+        <li>Focaccia and hearty whole-grain breads hold up to a hot press.</li>
+        <li>Sourdough, rye and French bread all handle high heat.</li>
+        <li>Pita and biscuits burn easily, so use low heat.</li>
+        <li>Thinner or lighter sandwiches also like a lower setting.</li>
+        <li><strong>Keep a spray bottle of water nearby.</strong> If the bread is getting too hard or dry, give the outside a quick mist.</li>
+      </ul>
+    </div>
+    <div class="tcard">
+      <h3>Cheese</h3>
+      <ul>
+        <li>4 clumps of brie <span class="qty">≈ 2 oz</span>.</li>
+        <li><strong>Cream cheese</strong> is a great filler with a strong cheese like Swiss. It softens the bite and adds creaminess.</li>
+        <li>Laughing Cow wedges (plain, garlic or hot) add cheap creaminess next to a sliced cheese.</li>
+        <li>Cheese on both slices locks the fillings in.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="recipes">
+  <p class="eyebrow">The collection</p>
+  <h2 id="recipes">Recipes</h2>
+  <p class="lede">Each card lists the layers. The fry spread is mayonnaise unless the card says otherwise. Add the wet items in the Add line, and any tomato, lettuce or avocado in the Fill line, after pressing.</p>
+  <div class="controls">
+    <label class="eyebrow" for="q">Search ingredients or names</label>
+    <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
+    <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section aria-labelledby="menu">
+  <p class="eyebrow">Ready to post</p>
+  <h2 id="menu">The menu board</h2>
+  <div class="board">
+    <div>
+      <h3>Grilled</h3>
+      <ul>
+        <li><b>Ham &amp; Havarti</b><span>Roasted pineapple habanero sauce</span></li>
+        <li><b>Ham &amp; Swiss</b><span>Red pepper onion glaze</span></li>
+        <li><b>Ham &amp; Havarti</b><span>Raspberry honey mustard</span></li>
+        <li><b>Turkey &amp; Swiss</b><span>Classic pesto and cucumber</span></li>
+        <li><b>Turkey &amp; Havarti</b><span>Swedish lingonberry sauce</span></li>
+        <li><b>Roast Beef &amp; Provolone</b><span>Chipotle mayo, white onion, cucumber</span></li>
+        <li><b>Meatball Marinara</b><span>Mozzarella in marinara</span></li>
+        <li><b>Turkey &amp; Bacon</b><span>Smoked gouda, chipotle mayo, tomato, roasted tomato hazelnut pesto</span></li>
+        <li><b>Pirate Pastrami</b><span>Swiss, sauerkraut, German mustard, Thousand Island, marble rye</span></li>
+        <li><b>Toasted Tuna Melt</b><span>Havarti, tomato, lettuce</span></li>
+        <li><b>The Veggie</b><span>Havarti, roasted red pepper, chipotle mayo, cucumber, white onion, avocado, lettuce</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Cold</h3>
+      <ul>
+        <li><b>Turkey &amp; Swiss</b><span>Whipped cream cheese, ancho chili jam, red onion, lettuce</span></li>
+        <li><b>Turkey, Swiss &amp; Bacon</b><span>Spicy mustard, lemon mayo, avocado, red onion, tomato, cucumber, lettuce</span></li>
+        <li><b>The Italian</b><span>Salami, pepperoni, ham, provolone, tomato, red onion, sweet Greek dressing</span></li>
+        <li><b>Fresh Mozzarella &amp; Tomato</b><span>Balsamic, basil, salt and pepper, rustic baguette</span></li>
+        <li><b>Roast Beef</b><span>Provolone, spicy mustard, mayo, red onion, cucumber, lettuce</span></li>
+        <li><b>Homemade Chicken Salad</b><span>Mayo, celery, grapes, salt and pepper</span></li>
+        <li><b>Tuna Salad</b><span>Mayo, celery, red onion, tomato, salt and pepper</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="families">
+  <p class="eyebrow">Short builds</p>
+  <h2 id="families">Quick builds by family</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Family</th><th>Protein</th><th>Builds</th></tr></thead>
+      <tbody>
+        <tr><td>HOG</td><td>Pork</td><td>Jam n' Ham · Cuban · Hawaiian</td></tr>
+        <tr><td>BOK BOK</td><td>Chicken</td><td>Chubish · Spinach Artichoke · Peri Peri · Breakfast</td></tr>
+        <tr><td>GOBBLE GOBBLE</td><td>Turkey</td><td>Pesto Turkey with red onion and tomato</td></tr>
+        <tr><td>COW</td><td>Beef</td><td>Bulgogi with red onion and carrots, no cheese</td></tr>
+        <tr><td>SUGAR</td><td>Sweet</td><td>Banana Nutella · Blueberry Brie · Raspberry</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>More combos to try</h3>
+  <ul class="combos">
+    <li>Turkey, pesto and mozzarella on Parmesan-crusted bread with onion</li>
+    <li>Roast beef, red onion, tomato, feta, Havarti habanero, pepperoni and bacon</li>
+    <li>Turkey, bacon, ham and tomato, topped with guacamole</li>
+    <li>Ham and pineapple</li>
+    <li>Buffalo chicken, blue cheese, Frank's RedHot and grilled chicken with chipotle gouda</li>
+  </ul>
+  <p class="note"><strong>Panini night shopping list:</strong> mozzarella, Parmesan, roast beef, turkey, feta, a spicy cheese, good bread, avocados.</p>
+</section>
+
+<section aria-labelledby="spreads">
+  <p class="eyebrow">Make ahead</p>
+  <h2 id="spreads">House spreads &amp; components</h2>
+  <div class="spreads">
+    <details id="sp-chipotle" open>
+      <summary><h3>Chipotle Aioli</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul>
+          <li><span class="qty">3</span> large egg yolks</li><li><span class="qty">1 cup</span> oil</li><li>Juice of <span class="qty">1</span> lime</li><li>Salt and pepper</li>
+          <li><span class="qty">1 can</span> chipotles in adobo, to taste</li><li><span class="qty">¼ tsp</span> onion powder</li><li><span class="qty">2–4</span> cloves roasted garlic</li>
+          <li><span class="qty">2 Tbsp</span> chopped cilantro</li><li><span class="qty">1 tsp</span> white vinegar</li><li><span class="qty">1 Tbsp</span> maple syrup</li>
+          <li><span class="qty">½ tsp</span> cumin</li><li><span class="qty">½ tsp</span> smoked paprika</li>
+        </ul>
+        <ol>
+          <li>Blend the yolks and lime juice for about 30 seconds.</li>
+          <li>With the blender running, add the oil in a thin, steady stream over 1–2 minutes. Stop at the thickness you like.</li>
+          <li>Add the garlic, chipotle, seasonings, cilantro, vinegar and maple. Blend briefly.</li>
+          <li>Let it rest so the flavors blend.</li>
+        </ol>
+        <p class="full">Shortcut: stir adobo sauce, a minced chipotle and lime into store-bought mayo.</p>
+      </div>
+    </details>
+    <details id="sp-pineapple">
+      <summary><h3>Pineapple Habanero Salsa</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul>
+          <li><span class="qty">6</span> firm Roma tomatoes</li><li><span class="qty">2 cups</span> pineapple <span class="qty">(250 g)</span>, grilled if you like</li>
+          <li><span class="qty">3–5</span> cloves garlic</li><li><span class="qty">2</span> serranos <span class="qty">(30 g)</span></li><li><span class="qty">4</span> jalapeños <span class="qty">(125 g)</span></li>
+          <li><span class="qty">4</span> habaneros <span class="qty">(24 g)</span></li><li><span class="qty">½</span> jumbo red onion <span class="qty">(200 g)</span></li><li>A handful of cilantro</li>
+          <li>Juice and zest of <span class="qty">1</span> lemon and <span class="qty">2</span> limes</li>
+        </ul>
+        <ol>
+          <li>Air-fry the serranos, jalapeños and habaneros at <span class="qty">450°F</span>. Watch closely and roast lightly.</li>
+          <li>Roughly cut the onion and peppers, and mince the garlic.</li>
+          <li>Dice the tomatoes and pineapple. Save the pineapple juice and mix it with the citrus juice and zest.</li>
+          <li>Combine everything and pulse in a food processor.</li>
+        </ol>
+        <p class="full">This is the base for the roasted pineapple habanero sauce: blend smoother and reduce slightly. It comes out medium. For real heat, use 7–8 habaneros.</p>
+      </div>
+    </details>
+    <details id="sp-blueberry">
+      <summary><h3>Blueberry Balsamic Reduction</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">½ cup</span> blueberries, fresh or frozen</li><li><span class="qty">1 Tbsp</span> balsamic vinegar</li><li><span class="qty">1½ Tbsp</span> brown sugar</li></ul>
+        <ol><li>Simmer over medium-high heat until syrupy.</li><li>Strain out the berries.</li><li>Spread on buttered bread, then layer cheese and spinach.</li></ol>
+      </div>
+    </details>
+    <details id="sp-lemon">
+      <summary><h3>Lemon Curd</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">1 cup</span> sugar</li><li><span class="qty">2 Tbsp</span> lemon zest</li><li><span class="qty">6</span> egg yolks</li><li>About <span class="qty">½ cup</span> lemon juice</li><li><span class="qty">½ cup</span> cold butter, cubed</li></ul>
+        <ol><li>Whisk the yolks and sugar, then add the lemon juice.</li><li>Cook in a rice cooker on sauté or simmer, whisking constantly, until it thickens and coats a spoon.</li><li>Off the heat, whisk in the butter. Strain for a silky finish.</li></ol>
+        <p class="full">Based on Preppy Kitchen's lemon curd (preppykitchen.com/lemon-curd). It keeps about two weeks in the fridge.</p>
+      </div>
+    </details>
+    <details id="sp-cowboy">
+      <summary><h3>Cowboy Caviar</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">1 can</span> black-eyed peas, rinsed</li><li><span class="qty">1 cup</span> chopped tomato</li><li><span class="qty">¾ cup</span> corn kernels</li><li><span class="qty">1 cup</span> chopped avocado</li><li><span class="qty">½ cup</span> red onion</li><li><span class="qty">¼ cup</span> cilantro</li></ul>
+        <ul><li>Dressing: <span class="qty">4 Tbsp</span> olive oil</li><li><span class="qty">2 Tbsp</span> lime juice</li><li><span class="qty">1</span> grated garlic clove</li><li><span class="qty">2 tsp</span> fine sea salt</li><li><span class="qty">1 tsp</span> black pepper</li></ul>
+        <p class="full">Whisk the dressing and toss it with everything else. Add the avocado last.</p>
+      </div>
+    </details>
+    <details id="sp-bulgogi">
+      <summary><h3>Bulgogi Marinade</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">3 Tbsp</span> soy sauce</li><li><span class="qty">2 Tbsp</span> light brown sugar</li><li><span class="qty">1 Tbsp</span> honey</li><li><span class="qty">2 Tbsp</span> rice wine, red wine or mirin</li><li><span class="qty">1 Tbsp</span> sesame oil</li><li><span class="qty">2 Tbsp</span> minced garlic</li></ul>
+        <ul><li><span class="qty">1 Tbsp</span> cider vinegar</li><li><span class="qty">1 tsp</span> black pepper</li><li><span class="qty">2 tsp</span> toasted sesame seeds</li><li><span class="qty">1 Tbsp</span> chopped green onion</li><li><span class="qty">2 Tbsp</span> pear purée (or kiwi or onion)</li><li><span class="qty">½</span> yellow onion, slivered</li></ul>
+        <p class="full">Marinate thin-sliced beef, then sear it hot before building the sandwich.</p>
+      </div>
+    </details>
+    <details id="sp-chimi">
+      <summary><h3>Chimichurri</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">1 cup</span> packed flat-leaf parsley, finely chopped</li><li><span class="qty">2 Tbsp</span> fresh oregano (or <span class="qty">2 tsp</span> dried)</li><li><span class="qty">3–4</span> cloves garlic, minced</li><li><span class="qty">¼ cup</span> red wine vinegar</li><li><span class="qty">½ cup</span> olive oil</li><li><span class="qty">½ tsp</span> red pepper flakes</li><li>Salt and pepper</li></ul>
+        <ol><li>Stir the garlic, vinegar, salt and pepper flakes together and let them sit for 5 minutes.</li><li>Stir in the parsley and oregano, then the olive oil.</li><li>Rest at least 20 minutes before using.</li></ol>
+        <p class="full">A standard version, not from the notes. Great on roast beef or Italian beef. It's wet, so add it after the press.</p>
+      </div>
+    </details>
+    <details id="sp-italianbeef">
+      <summary><h3>Crock Pot Italian Beef</h3><span class="eyebrow">Recipe</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">3 lb</span> rump roast</li><li><span class="qty">1 pkg</span> Good Seasons Italian dressing mix</li><li><span class="qty">1 cup</span> water</li><li><span class="qty">1 pkg</span> au jus gravy mix</li><li><span class="qty">2 tsp</span> Italian seasoning</li><li><span class="qty">6</span> pepperoncini peppers</li></ul>
+        <ol><li>Mix everything and pour it over the roast in a 5-quart crock pot.</li><li>Cook on low for 4 hours.</li><li>Take out the roast, slice it thin, return it to the pot and cook on low 1 more hour.</li></ol>
+        <p class="full">Serve on toasted hoagies with mozzarella or provolone and <a href="#sp-giardiniera" data-open="sp-giardiniera">giardiniera</a>.</p>
+      </div>
+    </details>
+    <details id="sp-giardiniera">
+      <summary><h3>Giardiniera</h3><span class="eyebrow">Recipe · 3 days</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">½</span> head cauliflower, chopped</li><li><span class="qty">1</span> red bell pepper, diced</li><li><span class="qty">2</span> carrots, diced</li><li><span class="qty">4</span> serranos, sliced</li><li><span class="qty">½</span> onion, chopped</li><li><span class="qty">¾ cup</span> white vinegar, plus more to cover</li><li><span class="qty">½ cup</span> vegetable oil</li></ul>
+        <ul><li><span class="qty">1 Tbsp</span> crushed red pepper</li><li><span class="qty">½ Tbsp</span> dried parsley</li><li><span class="qty">1 tsp</span> dried oregano</li><li><span class="qty">¾ tsp</span> ground pepper</li><li><span class="qty">½ tsp each</span> celery seed, mustard seed, fennel seed, coriander seed, dill weed</li><li><span class="qty">¼ tsp</span> ground allspice</li></ul>
+        <p class="full">Combine everything, adding vinegar until the vegetables are submerged. Cover and refrigerate at least 3 days.</p>
+      </div>
+    </details>
+    <details id="sp-peri">
+      <summary><h3>Peri Peri Sauce</h3><span class="eyebrow">In progress</span></summary>
+      <div class="sp">
+        <ul><li><span class="qty">1</span> bunch thyme</li><li><span class="qty">2</span> large red chilies</li><li>Juice of <span class="qty">1</span> lemon</li><li><span class="qty">200 g</span> Scotch bonnets, deseeded</li><li><span class="qty">8</span> small red chilies, seeds in</li></ul>
+        <p>The method isn't written down yet. This is the base so far.</p>
+      </div>
+    </details>
+  </div>
+  <p class="note"><strong>Named but not yet written up:</strong> Cuban Reuben orange sauce and kraut (in the High Protein note), IPA jam, red pepper onion glaze, roasted tomato hazelnut pesto, strawberry-balsamic sauce, fig aioli, ancho chili jam, raspberry honey mustard, chili flake butter, lemon mayo. Store-bought versions work well for most of them.</p>
+</section>
+
+<section aria-labelledby="pantry">
+  <p class="eyebrow">Stock the kitchen</p>
+  <h2 id="pantry">Pantry</h2>
+  <div class="pantry">
+    <div><h3>Breads</h3><p>Rustic sourdough (Harmons is a favorite) · Texas toast · French bread · French roll · rustic baguette · ciabatta · focaccia · marble rye · French rye · flatbread · rolls · white bread · circle bread</p></div>
+    <div><h3>Cheeses</h3><p>Havarti and Havarti habanero · Swiss and baby Swiss · Emmental · provolone · mozzarella · brie · smoked gouda · red wax gouda · aged and medium white cheddar · Muenster · pepper jack · Monterey Jack · American · feta · Parmesan · blue cheese · Gruyère (the splurge) · Fontina · cotija · coffee mascarpone · cream cheese · Laughing Cow</p></div>
+    <div><h3>Proteins</h3><p>Smoked, cracked-pepper, apple-smoked and blackened turkey · ham · prosciutto · bacon · roast beef · pastrami · Genoa and peppered salami · pepperoni · capocollo · Italian sausage · meatballs · roasted, blackened, grilled, buffalo, shawarma and air-fryer chicken · roast pork · tuna</p></div>
+    <div><h3>Adds</h3><p>Avocado · tomato · banana peppers · red, white and caramelized onion · spring onion · cucumber · lettuce · baby arugula · spinach · basil · cilantro · dill · thyme · jalapeño · roasted peppers · sautéed mushrooms · artichoke hearts · sauerkraut · pickles · grilled apple</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="ideas">
+  <p class="eyebrow">On the test bench</p>
+  <h2 id="ideas">Ideas in progress</h2>
+  <ul class="ideas">
+    <li><strong>Apple Cranberry:</strong> brie, apple, bacon, cranberry jam. The bread isn't chosen yet.</li>
+    <li><strong>Future menu items:</strong> shawarma, waffle rolls, waffle cookies and "Pirate O's".</li>
+  </ul>
+</section>
+
+<section aria-labelledby="names">
+  <p class="eyebrow">For the sign out front</p>
+  <h2 id="names">Names for the menu</h2>
+  <p class="lede">Tap a name to try it at the top of the page. Outlined names are the favorites.</p>
+  <div class="names" id="names" role="group" aria-label="Choose a tagline">
+    <button type="button">Cheezasaurus Rex</button><button type="button">In the Name of the Gouda</button><button type="button">Grilled Cheezus</button><button type="button" class="fav">E Pluribus Panini</button><button type="button" class="fav">Cheezus Saves</button><button type="button">Crust the Recheeser</button><button type="button">In the Name of the Cheddar, the Swiss, and the Provolone</button><button type="button" class="fav">Praise Cheesus</button><button type="button">For Crust's Sake</button><button type="button" class="fav" data-name="Sweet Cheezus Crust">Sweet Cheezus Crust · our Instagram</button><button type="button">Cheeses H. Vader</button><button type="button">Sweet Jumping Cheezus</button><button type="button">Glory 2 Cheezus</button><button type="button">Come 2 Cheesus</button><button type="button" class="fav">The Melt Down</button>
+  </div>
+</section>
+
+<footer>Compiled 10 Nov 2026 from the house PANINI recipe collection · Instagram <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></footer>
+</div>
+
+<script>
+// [name, family, bread, melt, fill, spread, add, fry, tip]
+const R=[
+["Ham + Havarti, Pineapple Habanero","Ham & pork","Texas toast","Havarti","Ham","Roasted pineapple habanero sauce","","",""],
+["Ham + Havarti, Raspberry Mustard","Ham & pork","Texas toast","Havarti","Ham","Raspberry honey mustard","","",""],
+["Ham + Swiss","Ham & pork","Texas toast","Swiss","Ham","Red pepper onion glaze","","",""],
+["Goody Monster","Ham & pork","Sourdough","Smoked gouda, Muenster","Ham","","","",""],
+["Hawaiian","Ham & pork","","Mozzarella, Parmesan","Grilled sliced ham, pineapple","Tomato paste","","",""],
+["Jam n' Ham","Ham & pork","","Cheese of choice","Ham","Spicy jam","","",""],
+["Cuban","Ham & pork","","Swiss","Roast pork, sliced ham, pickles","Yellow mustard","","",""],
+["Cuban Reuben","Ham & pork","Rye","Gruyère","Orange-braised shredded pork, dill pickles","Orange-mustard sauce","Red cabbage kraut","Butter","The full pork, kraut and orange sauce recipe is in the High Protein note."],
+["Turkey + Swiss, Pesto","Turkey","Texas toast","Swiss","Smoked turkey leg, cucumber","Classic pesto","","",""],
+["Turkey + Havarti, Lingonberry","Turkey","Texas toast","Havarti","Smoked turkey leg","Swedish lingonberry sauce","","",""],
+["Turkey Swiss, Ancho Chili Jam","Turkey","Roll","Swiss, cream cheese, Laughing Cow","Turkey, red onion, lettuce","Ancho chili jam","","",""],
+["Turkey Swiss + Bacon","Turkey","Sourdough","Swiss, cream cheese, Laughing Cow","Turkey, bacon, cucumber, lettuce, avocado, red onion, tomato","Spicy mustard, lemon mayo","","",""],
+["Turkey Gouda Bacon","Turkey","French roll","Smoked gouda","Smoked turkey, bacon","Chipotle mayo, roasted tomato hazelnut pesto","Tomato","",""],
+["Club Modified","Turkey","Sourdough","Pepper jack","Blackened turkey, caramelized onion, prosciutto","IPA jam","Tomato, avocado","","The prosciutto was too subtle here and can be skipped."],
+["Blue Turkey","Turkey","Rustic sourdough","Blue cheese, brie","Apple-smoked turkey, blueberries","Cranberry spice jam","Bacon","",""],
+["Turkey Blueberry","Turkey","Rustic sourdough","Provolone","Turkey, blueberries","Apple spread","Prosciutto","",""],
+["Strawberry Basil Turkey","Turkey","Sourdough","Spreadable brie, provolone","Turkey, basil, strawberries","","Tomato","","Choose a sweeter turkey. A salsa-seasoned turkey fought the strawberries."],
+["Pesto Turkey","Turkey","","Mozzarella, top and bottom","Turkey, tomato, red onion","Pesto","","",""],
+["Turkey Cranberry Jalapeño","Turkey","","Cheese of choice","Turkey, jalapeño","Cranberry","","",""],
+["Pepperoni Club","Turkey","","Swiss, Laughing Cow white cheddar","Cracked black pepper turkey, pepperoni, ham","","","",""],
+["Spinach Artichoke Turkey","Turkey","","Havarti, Laughing Cow","Cracked black pepper turkey, bacon","Spinach artichoke dip","Avocado, smashed toast-style","",""],
+["Chicken Panini","Chicken","","Provolone","Rub-roasted chicken thigh, grilled onion, roasted red and yellow pepper, tomato","Chipotle aioli","","",""],
+["BBQ Chicken","Chicken","Sourdough","Mozzarella, smoked gouda","Roasted chicken, cilantro","BBQ sauce","","",""],
+["Buffalo Bacon Ranch","Chicken","Sourdough","Mozzarella","Roasted chicken, crisp bacon, sweet red onion, cilantro","Buffalo sauce with cream cheese, garlic ranch","","",""],
+["Buffalo Apple Chicken","Chicken","Rustic sourdough","Pepper jack, brie","Deli buffalo chicken, caramelized onions","Cranberry spice jam","Grilled apple slices","",""],
+["Bacon Berry","Chicken","Sourdough","Mozzarella, feta","Roasted chicken, crisp bacon, sweet red onion, cilantro, strawberries","Strawberry-balsamic sauce","Avocado, banana peppers","",""],
+["Chicken Shawarma","Chicken","Sourdough","Brie","Shawarma chicken","Yogurt","Tomato, avocado, banana peppers","",""],
+["Grilled Chicken Pesto","Chicken","Rustic sourdough","Mozzarella, Laughing Cow","Grilled chicken, pesto","","Roasted garlic, tomato paste, balsamic","Garlic mayo",""],
+["Fajita","Chicken","Ciabatta","Pepper jack, Laughing Cow hot or cotija","Grilled seasoned chicken; grilled peppers, jalapeños and onions","","Jalapeño, tomato, avocado, guacamole","",""],
+["Kimchi","Chicken","French rye","Emmental","Blackened chicken, banana peppers","","","",""],
+["Peri Peri","Chicken","Flatbread dipped in egg and panko","American","Blackened chicken, banana peppers","Garlic mayo","Peri peri sauce","",""],
+["Peri Peri, Air-Fryer","Chicken","","Pepper jack","Air-fryer chicken, turkey, peppers or giardiniera","","Coleslaw","",""],
+["Praise Cheesus","Chicken","Circle bread","Havarti, Swiss, pepper jack","Blackened chicken, banana peppers","Garlic aioli","","",""],
+["Chubish","Chicken","","Monterey Jack","Air-fryer chicken, bacon, avocado, tomato","","","",""],
+["Spinach Artichoke Chicken","Chicken","","Brie","Air-fryer chicken","Spinach artichoke dip","","",""],
+["South Western","Chicken","","Havarti, Laughing Cow","Buffalo chicken, jalapeño","Cowboy caviar","Avocado, smashed toast-style","",""],
+["Chicken Pesto Focaccia","Chicken","Focaccia","Feta","Pounded, seared chicken breast, sun-dried tomatoes","Basil pesto","Mixed greens","",""],
+["Roast Beef + Provolone","Beef","Texas toast","Provolone","Roast beef, white onion, cucumber","Chipotle mayo","","",""],
+["Roast Beef","Beef","Rustic baguette","Provolone","Roast beef, red onion, cucumber, lettuce","Spicy mustard, mayo","","",""],
+["Roast Beef & Onion Marmalade","Beef","Flatbread","Fontina","Roast beef","Onion jam","Baby arugula, fig aioli","",""],
+["Pirate Pastrami","Beef","Marble rye","Baby Swiss, Laughing Cow","Pastrami, sauerkraut","German mustard, Thousand Island","","",""],
+["Meatball","Beef","French roll","Mozzarella","Meatballs","Marinara","","",""],
+["Bulgogi","Beef","","No cheese","Bulgogi beef, red onion, carrots","","","",""],
+["Italian Beef","Beef","Hoagie roll (or semolina bread)","Provolone or mozzarella","Crock Pot Italian beef, thin-sliced","","Giardiniera, pepperoncini","","Dip the finished sandwich in the au jus from the crock pot. Chimichurri also works as the spread."],
+["Italian","Italian","Sourdough","Provolone","Salami, pepperoni, ham, red onion, tomato","Greek dressing","","",""],
+["Hot Honey","Italian","French bread","Mozzarella, Laughing Cow garlic","Capocollo, Genoa salami, pepperoni, roasted jalapeño","Honey","Italian sausage","Butter",""],
+["Honey Pepperoni","Italian","Sourdough","Mozzarella","Pepperoni, red onion, jalapeño","Honey, tomato paste","","",""],
+["Jalapeño Honey Pizza-Style","Italian","","Mozzarella","Jalapeño","Honey, tomato paste","","",""],
+["Peppered Salami Melt","Italian","Sourdough, pressed at 400°F","American","Peppered salami, tomatoes","","","",""],
+["Tuna Melt","Fish","Roll","Havarti, Laughing Cow","Tuna salad, tomato, lettuce","German mustard, Thousand Island","","",""],
+["Buffalo Tuna Melt","Fish","Thick white, rye or sourdough","Mozzarella","Tuna mixed with buffalo sauce, ranch, diced celery and carrot","","Ranch for dipping","Butter",""],
+["Caprese","Vegetarian","Rustic baguette","Mozzarella","Basil, tomato","Balsamic vinegar","","",""],
+["Veggie","Vegetarian","Sourdough","Feta, mozzarella","Spinach, artichoke hearts, Sicilian-spiced tomatoes, red onion","Yogurt","Avocado, banana peppers","",""],
+["Veggie Two","Vegetarian","Roll","Havarti, Laughing Cow","Roasted red peppers, cucumber, grilled white onion, avocado, lettuce","Chipotle mayo","","",""],
+["Asiago-Style Mushroom","Vegetarian","Texas toast","Medium white cheddar","Sautéed mushrooms, spring onion","Chili flake butter","","",""],
+["Springer (Dill & Spring Onion)","Vegetarian","Sourdough","Cheddar, mozzarella, gouda","Dill, tomato, spring onion","Japanese mayo","","",""],
+["Pesto Tomato","Vegetarian","","Mozzarella, 5 slices top and bottom","Tomato","Pesto","","",""],
+["Jalapeño Pear","Vegetarian","","Brie or Havarti","Pear, jalapeño","","","",""],
+["Cheesy Roasted Mushroom Melt","Vegetarian","Crusty Italian bread","Fresh mozzarella, ricotta, cream cheese","Balsamic-roasted portobellos and sweet onion","","","Olive oil",""],
+["Hummus Grilled Cheese","Vegetarian","Sandwich bread","Aged cheddar","","Roasted garlic hummus","Arugula, tomato","Butter",""],
+["Apple & Prosciutto","Fruit","Rustic sourdough","Brie (4 clumps ≈ 2 oz), provolone","Apple, prosciutto","Apple spice jam","","",""],
+["Honey Apple Cheddar & Bacon","Fruit","Sourdough","Aged white cheddar, Havarti","Bacon, thyme, Honeycrisp apple","Apple butter, honey","Tomato, avocado","",""],
+["Blueberry Lemon","Dessert","Rustic sourdough","Spreadable brie","Blueberries","Lemon curd","Prosciutto (optional)","Butter","Cook last, because it leaks."],
+["Balsamic Blueberry","Fruit","White bread","Mozzarella, Monterey Jack or Swiss, Laughing Cow","Fresh spinach","Blueberry balsamic reduction","","Butter",""],
+["Blueberry Brie","Fruit","","Brie","Blueberries","","","",""],
+["Raspberry","Fruit","","A mild cheese","","Raspberry jam","","",""],
+["Honey Banana","Dessert","White bread","Coffee mascarpone (3 tsp) with butter (3 tsp)","1 banana, 1 tsp honey, cinnamon sugar, pecans, coconut","","Crushed vanilla wafers","Butter","Cook last, because it leaks. The original card lists onion jam as the spread. Skip it for a straight dessert."],
+["Banana Nutella","Dessert","","","Banana","Nutella","","Butter","Cook last, because it leaks."],
+["French Onion","Big builds","French bread","4 slices Gruyère, 4 clumps brie","Cremini mushrooms and caramelized onions cooked in red wine with thyme","IPA jam","Optional: grilled apple, Swiss, thin potatoes, jalapeño brown mustard","",""],
+["Thanksgiving Mashup","Big builds","Rustic sourdough","Red wax gouda","Cracked pepper turkey, mashed potatoes, green beans, stuffing, onion crisps","Cranberry jam","Gravy for dipping","",""],
+["Springer (Fettuccine)","Big builds","Focaccia","Parmesan, mozzarella, American","Fettuccine","Garlic mayo","White sauce for dipping","",""],
+["Breakfast","Big builds","","American","Scrambled eggs, sausage","","","",""]
+];
+const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
+const LINK={"Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
+let fam="All",q="";
+const grid=document.getElementById("grid"),chips=document.getElementById("chips"),count=document.getElementById("count");
+document.getElementById("factCount").textContent=R.length;
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function linkify(s){let h=esc(s);for(const k in LINK){h=h.replace(esc(k),`<a href="#${LINK[k]}" data-open="${LINK[k]}">${esc(k)}</a>`)}return h}
+function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.filter(r=>r[1]===f).length;return `<button class="chip" type="button" aria-pressed="${f===fam}" data-f="${esc(f)}">${esc(f)}<span class="n">${n}</span></button>`}).join("")}
+function draw(){
+  const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
+  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&terms.every(t=>r.join(" ").toLowerCase().includes(t)));
+  count.textContent=`${rows.length} of ${R.length} recipes`;
+  grid.innerHTML=rows.length?rows.map(r=>{
+    const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
+    return `<article class="card"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}).join("")
+    :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
+}
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
+grid.addEventListener("click",e=>{const a=e.target.closest("a[data-open]");if(a){const d=document.getElementById(a.dataset.open);if(d)d.open=true}});
+try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
+drawChips();draw();
+
+// Names: tap one to use it as the tagline
+const names=document.getElementById("names"),tag=document.getElementById("tagline");
+const nameOf=b=>b.dataset.name||b.textContent.trim();
+function pick(n){tag.textContent=n;names.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(nameOf(b)===n)))}
+names.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const n=nameOf(b);pick(n);try{localStorage.setItem("pp-tag2",n)}catch(_){}});
+let saved="Cheezus Saves";try{saved=localStorage.getItem("pp-tag2")||saved}catch(_){}
+pick(saved);
+</script>

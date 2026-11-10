@@ -1,0 +1,33 @@
+# Chat Log
+
+## 2026-11-10
+- Asked for all panini recipes compiled into one shareable Markdown file, keeping the notes as they are.
+- Read 54 notes (53 in Recipes › PANINI plus the panini name list) and the related spread recipes. Nothing in Notes was changed.
+- Wrote Panini Playbook.md:
+  - The six-layer house formula, with mayonnaise as the default fry spread
+  - Press heat and time guide, and pantry lists
+  - Recipes grouped as ham & pork, turkey, chicken, beef, Italian, fish, vegetarian, fruit, dessert, and big builds
+  - The grilled/cold menu board and quick builds by family (HOG, BOK BOK, GOBBLE GOBBLE, COW, SUGAR)
+  - Seven house spread recipes and the brand-name ideas
+- Cleaned up typos (Bagette → Baguette, Mozzerella, Meunster → Muenster, Itallian, Bananna). The two different "Springer" recipes were renamed Fettuccine and Dill & Spring Onion. The incomplete Peri Peri sauce and the empty Italian Beef card are marked as works in progress.
+- Built a shareable web page from the playbook: https://claude.ai/artifact/X3spMFpYs81hwMXmq1LGKq. It has 67 recipe cards with search and family filters, the formula strip, press technique, the menu board, collapsible spread recipes, pantry, ideas and names. Spread names on the cards link to their recipes. Source file: panini-playbook.html.
+- Removed the diagonal stripes from the page header and replaced them with a plain header, a solid rule and four even stat tiles.
+- Added your technique tips to both the page and the Markdown:
+  - **Wet ingredients after the press:** avocado, tomato, lettuce, kimchi and similar items go in after cooking. Cheese "glue" on the top and bottom slices lets you open the cooked panini to add them. This is now a highlighted step-by-step card, and the Melt and Add layers are reworded to match.
+  - **Cream cheese** as a filler that balances strong cheeses like Swiss.
+  - **Garlic mixed into the outside mayo** as a fry-spread option.
+- More tips added to the page and the Markdown:
+  - **Dessert paninis go last** because they leak hard, and they use butter as the fry coating.
+  - The wet-ingredients steps now say to open the sandwich **just below the top layer of melted cheese**, so the cheese stays on the bread.
+  - Removed the brownie-and-frozen-yogurt trick and its Brownie Froyo recipe card. The page now has 66 recipes.
+- Moved Blueberry Lemon from Sweet & savory fruit to Dessert, with butter as the fry spread and the cook-last note. The prosciutto is now optional.
+- Added the Instagram account @Sweet_Cheezus_Crust under the subtitle and in the footer of the page, and under the title of the Markdown. Sweet Cheezus Crust is highlighted in the names list as the Instagram name.
+- Replaced the "E Pluribus Panini" subtitle with "Our family's panini recipes, built one layer at a time" on the page and in the Markdown, and removed its highlight in the names list. It stays in the list as one of the name ideas.
+- Reverted the subtitle change at your request: "E Pluribus Panini" is back as the subtitle and highlighted in the names list again.
+- Made the Names for the Menu labels clickable. Tapping a name makes it the tagline at the top of the page and highlights it. The choice is remembered on that viewer's device only, and the default is E Pluribus Panini.
+- Header line changed to "Cheezus Saves. In the name of the Gouda, the Swiss, and the Provolone." on the page and in the Markdown. Cheezus Saves is now the default name in the picker and is highlighted as a favorite.
+- Added the spray-bottle tip (mist the bread when it's getting too hard or dry) to the Bread card on the page and in the Markdown.
+- Searched all of Notes for chimichurri. There's no recipe, only mentions in the GRID WORKS PIZZA competitor list and the NUGG LOVE sauce list. Found sandwiches outside PANINI that could be added: the Crock Pot Italian Beef and Italian Beef Giardiniera (which would fill the Italian Beef placeholder), plus Chicken Pesto Focaccia, Hummus Grilled Cheese, Cuban Reuben, Cheesy Roasted Mushroom Melts and Buffalo Tuna Melt from High Protein. These haven't been added yet.
+- Added 6 recipe cards (72 in all): **Italian Beef** (filling the placeholder, from the Crock Pot Italian Beef and Giardiniera notes), **Cuban Reuben**, **Chicken Pesto Focaccia**, **Cheesy Roasted Mushroom Melt**, **Hummus Grilled Cheese** and **Buffalo Tuna Melt** (from Recipes › High Protein).
+- Added 3 component recipes: Crock Pot Italian Beef, Giardiniera, and a standard **Chimichurri**. The chimichurri is marked as not from the notes, since no chimichurri note exists.
+- Removed Italian Beef from Ideas in progress. Ingredient links on the cards now open these recipes.
