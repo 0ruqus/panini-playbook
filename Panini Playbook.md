@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-75 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+76 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -314,6 +314,10 @@ Rustic sourdough · Brie (4 clumps ≈ 2 oz) + provolone · Apple, prosciutto ·
 
 **Honey Apple Cheddar & Bacon**
 Sourdough · Aged white cheddar + Havarti · Bacon, thyme, Honeycrisp apple · Apple butter + honey · *Add:* tomato, avocado
+
+**Gorgonzola, Apple & Walnut**
+Sourdough or walnut bread · Gorgonzola crumbles + cream cheese · Thin-sliced apple, toasted walnuts · *Add:* honey or maple syrup, drizzled in after pressing
+*Made from the house gorgonzola appetizer. Crumbles don't glue like sliced cheese, so spread cream cheese on both slices and press the gorgonzola into it. The cream cheese also softens the blue-cheese bite. Toast the walnuts in a dry pan first.*
 
 **Balsamic Blueberry**
 White bread · Mozzarella, Monterey Jack or Swiss + Laughing Cow · Fresh spinach · [Blueberry balsamic reduction](#blueberry-balsamic-reduction) · **Fry spread:** butter
