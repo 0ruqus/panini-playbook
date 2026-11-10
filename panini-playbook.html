@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: a press-menu page. Grill-striped header, a six-layer formula strip, then a filterable wall of recipe cards and a menu board. */
+/* Layout: a press-menu page. Plain header with stat tiles, a six-layer formula strip, then a filterable wall of recipe cards. */
 :root{
   --bg:#fbfbf8; --surface:#ffffff; --sunk:#f1f2ec; --line:#dcdfd3;
   --fg:#1d2119; --muted:#5b6253;
@@ -94,13 +94,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .card .tip{font-size:.85rem;color:var(--muted);font-style:italic;border-top:1px dashed var(--line);padding-top:8px}
 .empty{color:var(--muted)}
 
-/* menu board */
-.board{background:var(--char);color:#f3f1ea;border-radius:12px;padding:28px clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-.board h3{font-size:1.6rem;font-weight:900;font-stretch:70%;text-transform:uppercase;letter-spacing:.04em;color:#f0c43c;border-bottom:2px solid rgba(240,196,60,.4);padding-bottom:8px;margin-bottom:12px}
-.board ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.board li b{display:block;font-family:var(--display);font-stretch:88%;font-size:1.06rem;letter-spacing:.01em}
-.board li span{font-size:.88rem;color:#cfccc2}
-
 /* families table */
 .tablewrap{overflow-x:auto}
 table{border-collapse:collapse;width:100%;min-width:480px;font-size:.95rem}
@@ -144,7 +137,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
   .formula{grid-template-columns:repeat(2,minmax(0,1fr))}
   .layer{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
   .layer:nth-child(2n){border-right:0}
-  .board,.sp{grid-template-columns:minmax(0,1fr)}
+  .sp{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--basil)}}
 </style>
@@ -231,41 +224,6 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
     <p class="count" id="count" aria-live="polite"></p>
   </div>
   <div class="grid" id="grid"></div>
-</section>
-
-<section aria-labelledby="menu">
-  <p class="eyebrow">Ready to post</p>
-  <h2 id="menu">The menu board</h2>
-  <div class="board">
-    <div>
-      <h3>Grilled</h3>
-      <ul>
-        <li><b>Ham &amp; Havarti</b><span>Roasted pineapple habanero sauce</span></li>
-        <li><b>Ham &amp; Swiss</b><span>Red pepper onion glaze</span></li>
-        <li><b>Ham &amp; Havarti</b><span>Raspberry honey mustard</span></li>
-        <li><b>Turkey &amp; Swiss</b><span>Classic pesto and cucumber</span></li>
-        <li><b>Turkey &amp; Havarti</b><span>Swedish lingonberry sauce</span></li>
-        <li><b>Roast Beef &amp; Provolone</b><span>Chipotle mayo, white onion, cucumber</span></li>
-        <li><b>Meatball Marinara</b><span>Mozzarella in marinara</span></li>
-        <li><b>Turkey &amp; Bacon</b><span>Smoked gouda, chipotle mayo, tomato, roasted tomato hazelnut pesto</span></li>
-        <li><b>Pirate Pastrami</b><span>Swiss, sauerkraut, German mustard, Thousand Island, marble rye</span></li>
-        <li><b>Toasted Tuna Melt</b><span>Havarti, tomato, lettuce</span></li>
-        <li><b>The Veggie</b><span>Havarti, roasted red pepper, chipotle mayo, cucumber, white onion, avocado, lettuce</span></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Cold</h3>
-      <ul>
-        <li><b>Turkey &amp; Swiss</b><span>Whipped cream cheese, ancho chili jam, red onion, lettuce</span></li>
-        <li><b>Turkey, Swiss &amp; Bacon</b><span>Spicy mustard, lemon mayo, avocado, red onion, tomato, cucumber, lettuce</span></li>
-        <li><b>The Italian</b><span>Salami, pepperoni, ham, provolone, tomato, red onion, sweet Greek dressing</span></li>
-        <li><b>Fresh Mozzarella &amp; Tomato</b><span>Balsamic, basil, salt and pepper, rustic baguette</span></li>
-        <li><b>Roast Beef</b><span>Provolone, spicy mustard, mayo, red onion, cucumber, lettuce</span></li>
-        <li><b>Homemade Chicken Salad</b><span>Mayo, celery, grapes, salt and pepper</span></li>
-        <li><b>Tuna Salad</b><span>Mayo, celery, red onion, tomato, salt and pepper</span></li>
-      </ul>
-    </div>
-  </div>
 </section>
 
 <section aria-labelledby="families">
@@ -480,6 +438,7 @@ const R=[
 ["Spinach Artichoke Chicken","Chicken","","Brie","Air-fryer chicken","Spinach artichoke dip","","",""],
 ["South Western","Chicken","","Havarti, Laughing Cow","Buffalo chicken, jalapeño","Cowboy caviar","Avocado, smashed toast-style","",""],
 ["Chicken Pesto Focaccia","Chicken","Focaccia","Feta","Pounded, seared chicken breast, sun-dried tomatoes","Basil pesto","Mixed greens","",""],
+["Homemade Chicken Salad","Chicken","","","Chicken salad: chicken, mayo, celery, grapes, salt and pepper","","","","Served cold. No press needed."],
 ["Roast Beef + Provolone","Beef","Texas toast","Provolone","Roast beef, white onion, cucumber","Chipotle mayo","","",""],
 ["Roast Beef","Beef","Rustic baguette","Provolone","Roast beef, red onion, cucumber, lettuce","Spicy mustard, mayo","","",""],
 ["Roast Beef & Onion Marmalade","Beef","Flatbread","Fontina","Roast beef","Onion jam","Baby arugula, fig aioli","",""],
@@ -493,6 +452,7 @@ const R=[
 ["Jalapeño Honey Pizza-Style","Italian","","Mozzarella","Jalapeño","Honey, tomato paste","","",""],
 ["Peppered Salami Melt","Italian","Sourdough, pressed at 400°F","American","Peppered salami, tomatoes","","","",""],
 ["Tuna Melt","Fish","Roll","Havarti, Laughing Cow","Tuna salad, tomato, lettuce","German mustard, Thousand Island","","",""],
+["Tuna Salad","Fish","","","Tuna salad: tuna, mayo, celery, red onion, salt and pepper","","Tomato","","Served cold. For a hot version, see Tuna Melt."],
 ["Buffalo Tuna Melt","Fish","Thick white, rye or sourdough","Mozzarella","Tuna mixed with buffalo sauce, ranch, diced celery and carrot","","Ranch for dipping","Butter",""],
 ["Caprese","Vegetarian","Rustic baguette","Mozzarella","Basil, tomato","Balsamic vinegar","","",""],
 ["Veggie","Vegetarian","Sourdough","Feta, mozzarella","Spinach, artichoke hearts, Sicilian-spiced tomatoes, red onion","Yogurt","Avocado, banana peppers","",""],

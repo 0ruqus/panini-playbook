@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-More than 70 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+75 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -22,11 +22,10 @@ More than 70 pressed and cold sandwiches, all built from the same simple formula
    - [Sweet & savory fruit](#sweet--savory-fruit)
    - [Dessert](#dessert)
    - [Big & unusual builds](#big--unusual-builds)
-5. [The menu board](#the-menu-board)
-6. [Quick builds by family](#quick-builds-by-family)
-7. [House spreads & components](#house-spreads--components)
-8. [Ideas in progress](#ideas-in-progress)
-9. [Names for the menu](#names-for-the-menu)
+5. [Quick builds by family](#quick-builds-by-family)
+6. [House spreads & components](#house-spreads--components)
+7. [Ideas in progress](#ideas-in-progress)
+8. [Names for the menu](#names-for-the-menu)
 
 ---
 
@@ -218,6 +217,10 @@ Havarti + Laughing Cow · Buffalo chicken, jalapeño · [Cowboy caviar](#cowboy-
 **Chicken Pesto Focaccia**
 Focaccia · Feta · Pounded, seared chicken breast, sun-dried tomatoes · Basil pesto · *Add:* mixed greens
 
+**Homemade Chicken Salad**
+Chicken, mayo, celery, grapes, salt and pepper
+*Served cold. No press needed.*
+
 ### Beef
 
 **Roast Beef + Provolone**
@@ -263,6 +266,10 @@ Sourdough at 400°F · American · Peppered salami, tomatoes
 
 **Tuna Melt**
 Roll · Havarti + Laughing Cow · Tuna salad, tomato, lettuce · German mustard + Thousand Island
+
+**Tuna Salad**
+Tuna, mayo, celery, red onion, salt and pepper · *Add:* tomato
+*Served cold. For a hot version, see Tuna Melt.*
 
 **Buffalo Tuna Melt**
 Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ranch, diced celery and carrot · *Serve with:* ranch for dipping · **Fry spread:** butter
@@ -344,34 +351,6 @@ Focaccia · Parmesan + mozzarella + American · Fettuccine · Garlic mayo · *Se
 
 **Breakfast**
 Scrambled eggs, sausage · American
-
----
-
-## The menu board
-
-A ready-to-use menu built from the recipes above.
-
-**Grilled**
-- **Ham & Havarti** with roasted pineapple habanero sauce
-- **Ham & Swiss** with red pepper onion glaze
-- **Ham & Havarti** with raspberry honey mustard
-- **Turkey & Swiss** with classic pesto and cucumber
-- **Turkey & Havarti** with Swedish lingonberry sauce
-- **Roast Beef & Provolone** with chipotle mayo, white onion and cucumber
-- **Meatball Marinara**: mozzarella in marinara
-- **Turkey & Bacon**: smoked gouda, bacon, chipotle mayo, tomato, roasted tomato hazelnut pesto
-- **Pirate Pastrami**: Swiss, sauerkraut, German mustard and Thousand Island on marble rye
-- **Toasted Tuna Melt** with Havarti, tomato and lettuce
-- **The Veggie**: Havarti, roasted red pepper, chipotle mayo, cucumber, white onion, avocado, lettuce
-
-**Cold**
-- **Turkey & Swiss** with whipped cream cheese, ancho chili jam, red onion and lettuce
-- **Turkey, Swiss & Bacon** with spicy mustard, lemon mayo, avocado, red onion, tomato, cucumber, lettuce
-- **The Italian**: salami, pepperoni, ham, provolone, tomato, red onion, sweet Greek dressing
-- **Fresh Mozzarella & Tomato** with balsamic, basil, salt and pepper on a rustic baguette
-- **Roast Beef** with provolone, spicy mustard, mayo, red onion, cucumber, lettuce
-- **Homemade Chicken Salad**: mayo, celery, grapes, salt and pepper
-- **Tuna Salad**: mayo, celery, red onion, tomato, salt and pepper
 
 ---
 
