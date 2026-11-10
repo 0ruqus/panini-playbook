@@ -37,3 +37,4 @@
 - PBR onions: the house version has no sugar, so brown sugar is now listed as optional.
 - Removed the menu board section from the page and the Markdown. 16 of its 18 items were already cards (Meatball Marinara = Meatball, Fresh Mozzarella & Tomato = Caprese, The Veggie = Veggie Two, and so on). Added the two that weren't: **Homemade Chicken Salad** (Chicken) and **Tuna Salad** (Fish), both served cold. 75 recipes in all.
 - Renamed the Meatball card to **Meatball Marinara** (its menu board name) and moved it from Beef to Italian so it's easier to find.
+- Color-coded the recipe families: each filter chip has a colored dot and fills with its family color when selected, and each card has a matching top stripe and colored tag. There are 10 colors, with light and dark versions, so the page is no longer all green.

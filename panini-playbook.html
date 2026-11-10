@@ -10,6 +10,9 @@
   --fg:#1d2119; --muted:#5b6253;
   --basil:#2f6b3a; --basil-ink:#ffffff; --mustard:#c99a12; --char:#2a2622;
   --stripe:rgba(42,38,34,.07);
+  /* one color per recipe family */
+  --c-ham:#b8456e; --c-turkey:#b0631a; --c-chicken:#a87f05; --c-beef:#a33a2c; --c-italian:#2f6b3a;
+  --c-fish:#1f6f8b; --c-veg:#6a8a12; --c-fruit:#8a3fa0; --c-dessert:#7a4e2b; --c-big:#45546b; --chip-ink:#ffffff;
   --display:"Archivo","Arial Narrow",Arial,sans-serif;
   --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -17,11 +20,22 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#151712; --surface:#1d2019; --sunk:#23271e; --line:#353a2e;
   --fg:#ecefe6; --muted:#a7ae9c; --basil:#7cc08a; --basil-ink:#10200f; --mustard:#e3b83a; --char:#0d0e0b;
+  --c-ham:#ec8fb0; --c-turkey:#eaa463; --c-chicken:#e8c24a; --c-beef:#ee8676; --c-italian:#7cc08a;
+  --c-fish:#6cbcdb; --c-veg:#b8d66a; --c-fruit:#cf96e6; --c-dessert:#d6ab84; --c-big:#a9b9d0; --chip-ink:#12150f;
   --stripe:rgba(255,255,255,.05); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#151712; --surface:#1d2019; --sunk:#23271e; --line:#353a2e;
   --fg:#ecefe6; --muted:#a7ae9c; --basil:#7cc08a; --basil-ink:#10200f; --mustard:#e3b83a; --char:#0d0e0b;
+  --c-ham:#ec8fb0; --c-turkey:#eaa463; --c-chicken:#e8c24a; --c-beef:#ee8676; --c-italian:#7cc08a;
+  --c-fish:#6cbcdb; --c-veg:#b8d66a; --c-fruit:#cf96e6; --c-dessert:#d6ab84; --c-big:#a9b9d0; --chip-ink:#12150f;
   --stripe:rgba(255,255,255,.05); color-scheme:dark}
+
+/* family color mapping */
+[data-fam]{--fc:var(--basil)}
+[data-fam="Ham & pork"]{--fc:var(--c-ham)} [data-fam="Turkey"]{--fc:var(--c-turkey)} [data-fam="Chicken"]{--fc:var(--c-chicken)}
+[data-fam="Beef"]{--fc:var(--c-beef)} [data-fam="Italian"]{--fc:var(--c-italian)} [data-fam="Fish"]{--fc:var(--c-fish)}
+[data-fam="Vegetarian"]{--fc:var(--c-veg)} [data-fam="Fruit"]{--fc:var(--c-fruit)} [data-fam="Dessert"]{--fc:var(--c-dessert)}
+[data-fam="Big builds"]{--fc:var(--c-big)} [data-fam="All"]{--fc:var(--fg)}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
@@ -80,16 +94,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .search{width:100%;font:inherit;padding:10px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font:600 .82rem/1 var(--body);padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--basil);border-color:var(--basil);color:var(--basil-ink)}
+.chip{display:inline-flex;align-items:center;gap:6px}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--fc);flex:none}
+.chip:hover{border-color:var(--fc)}
+.chip[aria-pressed="true"]{background:var(--fc);border-color:var(--fc);color:var(--chip-ink)}
+.chip[aria-pressed="true"]::before{background:var(--chip-ink)}
+.chip[data-fam="All"][aria-pressed="true"]{color:var(--bg)}
+.chip[data-fam="All"][aria-pressed="true"]::before{background:var(--bg)}
 .chip .n{font:500 .72rem var(--mono);opacity:.75;margin-left:4px}
 .count{font:500 .8rem var(--mono);color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--fc);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
 .card header{all:unset;display:flex;justify-content:space-between;gap:8px;align-items:start}
 .card h3{font-size:1.2rem}
-.tag{font:500 .66rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:4px 6px;white-space:nowrap}
+.tag{font:500 .66rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fc);border:1px solid var(--fc);background:color-mix(in srgb,var(--fc) 10%,transparent);border-radius:4px;padding:4px 6px;white-space:nowrap}
 .card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.9rem}
-.card dt{font:500 .68rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--basil)}
+.card dt{font:500 .68rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .card dd{margin:0;min-width:0}
 .card .tip{font-size:.85rem;color:var(--muted);font-style:italic;border-top:1px dashed var(--line);padding-top:8px}
 .empty{color:var(--muted)}
@@ -484,14 +504,14 @@ const grid=document.getElementById("grid"),chips=document.getElementById("chips"
 document.getElementById("factCount").textContent=R.length;
 function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function linkify(s){let h=esc(s);for(const k in LINK){h=h.replace(esc(k),`<a href="#${LINK[k]}" data-open="${LINK[k]}">${esc(k)}</a>`)}return h}
-function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.filter(r=>r[1]===f).length;return `<button class="chip" type="button" aria-pressed="${f===fam}" data-f="${esc(f)}">${esc(f)}<span class="n">${n}</span></button>`}).join("")}
+function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.filter(r=>r[1]===f).length;return `<button class="chip" type="button" aria-pressed="${f===fam}" data-f="${esc(f)}" data-fam="${esc(f)}">${esc(f)}<span class="n">${n}</span></button>`}).join("")}
 function draw(){
   const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
   const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&terms.every(t=>r.join(" ").toLowerCase().includes(t)));
   count.textContent=`${rows.length} of ${R.length} recipes`;
   grid.innerHTML=rows.length?rows.map(r=>{
     const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}).join("")
+    return `<article class="card" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}).join("")
     :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
 }
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
