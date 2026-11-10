@@ -32,3 +32,4 @@
 - Added 3 component recipes: Crock Pot Italian Beef, Giardiniera, and a standard **Chimichurri**. The chimichurri is marked as not from the notes, since no chimichurri note exists.
 - Removed Italian Beef from Ideas in progress. Ingredient links on the cards now open these recipes.
 - Installed the GitHub CLI (signed in as 0ruqus). Turned this folder into a git repo, with commits using the GitHub private noreply email for this repo only. Created the public repo https://github.com/0ruqus/panini-playbook and pushed. Turned on GitHub Pages, and the site is live at https://0ruqus.github.io/panini-playbook/ (confirmed loading). `build-index.sh` wraps panini-playbook.html into the standalone index.html that Pages serves.
+- Added **Fig & Caramelized Onion** (Vegetarian): rustic sourdough · brie + cream cheese spread · slow-caramelized onions · fig jam · optional arugula. No note existed for it, so it's built from your description. 73 recipes in all.

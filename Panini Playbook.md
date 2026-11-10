@@ -296,6 +296,10 @@ Crusty Italian bread · Fresh mozzarella + ricotta + cream cheese · Balsamic-ro
 **Hummus Grilled Cheese**
 Sandwich bread · Aged cheddar · Roasted garlic hummus · *Add:* arugula, tomato · **Fry spread:** butter
 
+**Fig & Caramelized Onion**
+Rustic sourdough · Brie + cream cheese spread · Slow-caramelized onions · Fig jam · *Add:* arugula (optional)
+*Note: caramelize the onions low and slow, 45–60 minutes, with a pinch of brown sugar.*
+
 ### Sweet & savory fruit
 
 **Apple & Prosciutto**
