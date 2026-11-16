@@ -179,6 +179,8 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .fact-link{color:inherit;text-decoration:none}
 .fact-link:hover{background:var(--sunk)}
 .fact-link span{color:var(--basil);font-weight:600}
+.card.idea{border-style:dashed;border-top-style:solid;background:transparent}
+.card.idea .tag{border-style:dashed}
 </style>
 
 <div class="wrap">
@@ -409,15 +411,6 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
   </div>
 </section>
 
-<section aria-labelledby="ideas">
-  <p class="eyebrow">On the test bench</p>
-  <h2 id="ideas">Ideas in progress</h2>
-  <ul class="ideas">
-    <li><strong>Apple Cranberry:</strong> brie, apple, bacon, cranberry jam. The bread isn't chosen yet.</li>
-    <li><strong>Future menu items:</strong> shawarma, waffle rolls, waffle cookies and "Pirate O's".</li>
-  </ul>
-</section>
-
 <section aria-labelledby="names">
   <p class="eyebrow">For the sign out front</p>
   <h2 id="names">Names for the menu</h2>
@@ -447,6 +440,14 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
     <p class="count" id="count" aria-live="polite"></p>
   </div>
   <div class="grid" id="grid"></div>
+</section>
+
+<section aria-labelledby="kitchen">
+  <p class="eyebrow">Never made yet</p>
+  <h2 id="kitchen">Test Kitchen</h2>
+  <p class="lede">Ideas to try. Make one, and if it's a keeper it moves up into the recipes.</p>
+  <div class="grid" id="kgrid"></div>
+  <p class="note"><strong>Also on the future menu list:</strong> shawarma, waffle rolls, waffle cookies and "Pirate O's".</p>
 </section>
 </div>
 
@@ -537,6 +538,8 @@ const R=[
 ["Springer (Fettuccine)","Big builds","Focaccia","Parmesan, mozzarella, American","Fettuccine","Garlic mayo","White sauce for dipping","",""],
 ["Breakfast","Big builds","","American","Scrambled eggs, sausage","","","",""]
 ];
+// Test Kitchen: never made yet. Same columns as R.
+const T=[["Brat & Kraut", "Ham & pork", "Rye", "Swiss, Muenster", "Grilled bratwurst split lengthwise, sauerkraut squeezed dry", "Spicy brown mustard", "", "Butter", "Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions."], ["Birria Melt", "Beef", "Sourdough", "Oaxaca or Monterey Jack", "Shredded birria beef, diced white onion, cilantro", "", "Lime", "Fat skimmed from the consommé", "Brush the outside with the red fat off the top of the consommé instead of mayo, and serve a cup of consommé for dipping."], ["Fry Sauce Patty Melt", "Beef", "Texas toast", "American, Swiss", "Two thin smash patties, PBR beer-caramelized onions", "Fry sauce", "", "Butter", "Smash and cook the patties first, then press. A Utah take on the classic patty melt."], ["Chimichurri Steak", "Beef", "Ciabatta", "Provolone", "Thin-sliced grilled steak, roasted red peppers", "", "Chimichurri", "", "Fresh herbs go dull in the press, so spoon on the chimichurri after cooking."], ["Bulgogi Cheesesteak", "Beef", "Hoagie roll", "Provolone", "Bulgogi beef, grilled onions and peppers", "Gochujang mayo", "Kimchi", "", "The current Bulgogi card has no cheese. This tests it with provolone as the glue."], ["Banh Mi Pork", "Ham & pork", "Baguette", "Havarti or Laughing Cow", "Roast or grilled pork, sliced jalapeño", "Sriracha mayo", "Pickled carrot and daikon, cucumber, cilantro", "", "Keep all the pickled and fresh items for after the press."], ["Nashville Hot Chicken", "Chicken", "Texas toast", "Pepper jack", "Fried chicken tenders tossed in Nashville hot oil", "Ranch", "Dill pickles, coleslaw", "", ""], ["Gochujang Turkey", "Turkey", "Sourdough", "Provolone", "Smoked turkey, sliced green onion", "Gochujang mayo", "Kimchi, cucumber", "", ""], ["Smoked Salmon Dill", "Fish", "Rye", "Cream cheese, Havarti dill", "", "", "Smoked salmon, capers, red onion, fresh dill", "", "Press just the cheese and bread, then open it and add the salmon so it stays silky."], ["Elote Street Corn", "Vegetarian", "Sourdough", "Mozzarella, cotija", "Charred corn, jalapeño, cilantro", "Chipotle aioli", "Lime, Tajín", "", ""], ["Pimento Cheese & Pepper Jelly", "Vegetarian", "Texas toast", "Pimento cheese (sharp cheddar, cream cheese, pimentos)", "Bacon (optional)", "Apple jalapeño jelly", "", "Butter", ""], ["Mac & Cheese Melt", "Big builds", "Sourdough", "Sharp cheddar", "Cold leftover mac and cheese, bacon", "", "Hot honey drizzle", "Butter", "Use mac that's cold and firm so it slices. A good test bed for Choochi's sauces."], ["Apple Cranberry", "Fruit", "Not chosen yet", "Brie", "Apple, bacon", "Cranberry jam", "", "", "From the Ideas in progress list in the notes."], ["Apple Pie", "Dessert", "Cinnamon raisin bread", "Cream cheese", "Apple pie filling", "Caramel", "", "Butter with cinnamon sugar", "Cook it last like the other desserts."], ["S'mores", "Dessert", "Brioche", "", "Chocolate bar, marshmallow fluff, crushed graham crackers", "", "", "Butter", "It will leak, so press it last and go easy on the fluff."]];
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
 const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
 let fam="All",q="";
@@ -550,14 +553,17 @@ function draw(){
   const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&terms.every(t=>r.join(" ").toLowerCase().includes(t)));
   count.textContent=`${rows.length} of ${R.length} recipes`;
   grid.innerHTML=rows.length?rows.map(r=>{
-    const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}).join("")
+    return cardHTML(r,"")}).join("")
     :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
 }
+function cardHTML(r,cls){
+    const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
+    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
 drawChips();draw();
+document.getElementById("kgrid").innerHTML=T.map(r=>cardHTML(r," idea")).join("");
 
 // Tabs: The Playbook (default) and Recipes. #recipes in the URL opens Recipes.
 const tabBtns=[...document.querySelectorAll(".tab")];

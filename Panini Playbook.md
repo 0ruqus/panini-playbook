@@ -24,7 +24,7 @@ Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/swee
    - [Big & unusual builds](#big--unusual-builds)
 5. [Quick builds by family](#quick-builds-by-family)
 6. [House spreads & components](#house-spreads--components)
-7. [Ideas in progress](#ideas-in-progress)
+7. [Test Kitchen](#test-kitchen)
 8. [Names for the menu](#names-for-the-menu)
 
 ---
@@ -551,9 +551,67 @@ Store-bought versions work well for most of them.
 
 ---
 
-## Ideas in progress
-- **Apple Cranberry:** brie, apple, bacon, cranberry jam. The bread isn't chosen yet.
-- **Shawarma, waffle rolls, waffle cookies and "Pirate O's":** listed as future menu items.
+## Test Kitchen
+
+Never made yet. Make one, and if it's a keeper it moves up into the recipes.
+
+**Brat & Kraut** (Ham & pork)
+Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeezed dry · Spicy brown mustard · **Fry spread:** butter
+*Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
+
+**Birria Melt** (Beef)
+Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · **Fry spread:** fat skimmed from the consommé
+*Brush the outside with the red fat off the top of the consommé instead of mayo, and serve a cup of consommé for dipping.*
+
+**Fry Sauce Patty Melt** (Beef)
+Texas toast · American + Swiss · Two thin smash patties, PBR beer-caramelized onions · Fry sauce · **Fry spread:** butter
+*Smash and cook the patties first, then press. A Utah take on the classic patty melt.*
+
+**Chimichurri Steak** (Beef)
+Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:* chimichurri
+*Fresh herbs go dull in the press, so spoon on the chimichurri after cooking.*
+
+**Bulgogi Cheesesteak** (Beef)
+Hoagie roll · Provolone · Bulgogi beef, grilled onions and peppers · Gochujang mayo · *Add:* kimchi
+*The current Bulgogi card has no cheese. This tests it with provolone as the glue.*
+
+**Banh Mi Pork** (Ham & pork)
+Baguette · Havarti or Laughing Cow · Roast or grilled pork, sliced jalapeño · Sriracha mayo · *Add:* pickled carrot and daikon, cucumber, cilantro
+*Keep all the pickled and fresh items for after the press.*
+
+**Nashville Hot Chicken** (Chicken)
+Texas toast · Pepper jack · Fried chicken tenders tossed in Nashville hot oil · Ranch · *Add:* dill pickles, coleslaw
+
+**Gochujang Turkey** (Turkey)
+Sourdough · Provolone · Smoked turkey, sliced green onion · Gochujang mayo · *Add:* kimchi, cucumber
+
+**Smoked Salmon Dill** (Fish)
+Rye · Cream cheese + Havarti dill · *Add:* smoked salmon, capers, red onion, fresh dill
+*Press just the cheese and bread, then open it and add the salmon so it stays silky.*
+
+**Elote Street Corn** (Vegetarian)
+Sourdough · Mozzarella + cotija · Charred corn, jalapeño, cilantro · Chipotle aioli · *Add:* lime, Tajín
+
+**Pimento Cheese & Pepper Jelly** (Vegetarian)
+Texas toast · Pimento cheese (sharp cheddar + cream cheese, pimentos) · Bacon (optional) · Apple jalapeño jelly · **Fry spread:** butter
+
+**Mac & Cheese Melt** (Big builds)
+Sourdough · Sharp cheddar · Cold leftover mac and cheese, bacon · *Add:* hot honey drizzle · **Fry spread:** butter
+*Use mac that's cold and firm so it slices. A good test bed for Choochi's sauces.*
+
+**Apple Cranberry** (Fruit)
+Not chosen yet · Brie · Apple, bacon · Cranberry jam
+*From the Ideas in progress list in the notes.*
+
+**Apple Pie** (Dessert)
+Cinnamon raisin bread · Cream cheese · Apple pie filling · Caramel · **Fry spread:** butter with cinnamon sugar
+*Cook it last like the other desserts.*
+
+**S'mores** (Dessert)
+Brioche · Chocolate bar, marshmallow fluff, crushed graham crackers · **Fry spread:** butter
+*It will leak, so press it last and go easy on the fluff.*
+
+Also on the future menu list: shawarma, waffle rolls, waffle cookies and "Pirate O's".
 
 ---
 
