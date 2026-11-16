@@ -55,3 +55,4 @@
 - Added **Greek Chicken** (Chicken): Havarti as the glue + cream cheese, chicken, feta, red onion, Italian dressing, with cucumber and banana peppers added after the press. 84 recipes.
 - Added **Jalapeño Popper Chicken** (Chicken): cream cheese + sharp cheddar, shredded or air-fryer chicken, jalapeños, bacon. Not in Notes; built from the classic popper with chicken, as chosen. 85 recipes.
 - 2026-11-15: Added a seventh layer, **05 · Heat**, that defines spicy: optional, with a Mild / Medium / Hot ladder listing where the heat comes from. Add and Fry spread renumbered to 06 and 07; layer tiles now read 7.
+- 2026-11-15: Tagged every spicy card with a heat level (44 cards: recipes and Test Kitchen ideas), added a Mild / Medium / Hot filter on the Recipes tab, and dropped banana peppers from the Mild list since they are tangy, not hot.

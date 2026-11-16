@@ -190,6 +190,11 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .fact-link span{color:var(--basil);font-weight:600}
 .card.idea{border-style:dashed;border-top-style:solid;background:transparent}
 .card.idea .tag{border-style:dashed}
+.card .tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.heat{font:600 .7rem/1 var(--mono);letter-spacing:.04em;color:var(--c-beef);border:1px solid var(--c-beef);border-radius:4px;padding:3px 6px;white-space:nowrap}
+.heat[data-h="Hot"]{background:var(--c-beef);color:var(--chip-ink)}
+.heatchips .chip{--fc:var(--c-beef)}
+.heatchips .chip[data-h="Any"]{--fc:var(--char)}
 h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 .tabs{overflow-x:auto;scrollbar-width:none}
 .panel > .facts + section.first{border-top:0}
@@ -231,7 +236,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
     <div class="layer"><span class="eyebrow">07 · Fry spread</span><h3>Outside</h3><p>Mayonnaise by default, often with garlic. Butter for desserts.</p></div>
   </div>
   <div class="heatlad" aria-label="Heat levels">
-    <div><b>Mild</b><p>Pepper jack · Havarti habanero · Laughing Cow hot · hot honey · spicy brown mustard · apple jalapeño jelly · banana peppers</p></div>
+    <div><b>Mild</b><p>Pepper jack · Havarti habanero · Laughing Cow hot · hot honey · spicy brown mustard · apple jalapeño jelly</p></div>
     <div><b>Medium</b><p>Jalapeños, fresh or pickled · chipotles in adobo · chipotle aioli · sriracha · gochujang · gochugaru tuna · Frank's RedHot · giardiniera</p></div>
     <div><b>Hot</b><p>Roasted pineapple habanero sauce made with 7–8 habaneros · fresh serrano or habanero · Nashville hot oil · peri peri sauce</p></div>
   </div>
@@ -454,11 +459,12 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 <section aria-labelledby="recipes">
   <p class="eyebrow">The collection</p>
   <h2 id="recipes">Recipes</h2>
-  <p class="lede">Each card lists the layers. The fry spread is mayonnaise unless the card says otherwise. Add the wet items in the Add line, and any tomato, lettuce or avocado in the Fill line, after pressing.</p>
+  <p class="lede">Each card lists the layers, and a 🌶 badge shows its heat level. The fry spread is mayonnaise unless the card says otherwise. Add the wet items in the Add line, and any tomato, lettuce or avocado in the Fill line, after pressing.</p>
   <div class="controls">
     <label class="eyebrow" for="q">Search ingredients or names</label>
     <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
     <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
+    <div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div>
     <p class="count" id="count" aria-live="polite"></p>
   </div>
   <div class="grid" id="grid"></div>
@@ -577,18 +583,24 @@ const R=[
 ];
 // Test Kitchen: never made yet. Same columns as R.
 const T=[["Brat & Kraut", "Ham & pork", "Rye", "Swiss, Muenster", "Grilled bratwurst split lengthwise, sauerkraut squeezed dry", "Spicy brown mustard", "", "Butter", "Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions."], ["Birria Melt", "Beef", "Sourdough", "Oaxaca or Monterey Jack", "Shredded birria beef, diced white onion, cilantro", "", "Lime", "Fat skimmed from the consommé", "Brush the outside with the red fat off the top of the consommé instead of mayo, and serve a cup of consommé for dipping."], ["Fry Sauce Patty Melt", "Beef", "Texas toast", "American, Swiss", "Two thin smash patties, PBR beer-caramelized onions", "Fry sauce", "", "Butter", "Smash and cook the patties first, then press. A Utah take on the classic patty melt."], ["Bulgogi Cheesesteak", "Beef", "Hoagie roll", "Provolone", "Bulgogi beef, grilled onions and peppers", "Gochujang mayo", "Kimchi", "", "The current Bulgogi card has no cheese. This tests it with provolone as the glue."], ["Banh Mi Pork", "Ham & pork", "Baguette", "Havarti or Laughing Cow", "Roast or grilled pork, sliced jalapeño", "Sriracha mayo", "Pickled carrot and daikon, cucumber, cilantro", "", "Keep all the pickled and fresh items for after the press."], ["Nashville Hot Chicken", "Chicken", "Texas toast", "Pepper jack", "Fried chicken tenders tossed in Nashville hot oil", "Ranch", "Dill pickles, coleslaw", "", ""], ["Gochujang Turkey", "Turkey", "Sourdough", "Provolone", "Smoked turkey, sliced green onion", "Gochujang mayo", "Kimchi, cucumber", "", ""], ["Smoked Salmon Dill", "Fish", "Rye", "Cream cheese, Havarti dill", "", "", "Smoked salmon, capers, red onion, fresh dill", "", "Press just the cheese and bread, then open it and add the salmon so it stays silky."], ["Elote Street Corn", "Vegetarian", "Sourdough", "Mozzarella, cotija", "Charred corn, jalapeño, cilantro", "Chipotle aioli", "Lime, Tajín", "", ""], ["Pimento Cheese & Pepper Jelly", "Vegetarian", "Texas toast", "Pimento cheese (sharp cheddar, cream cheese, pimentos)", "Bacon (optional)", "Apple jalapeño jelly", "", "Butter", ""], ["Mac & Cheese Melt", "Big builds", "Sourdough", "Sharp cheddar", "Cold leftover mac and cheese, bacon", "", "Hot honey drizzle", "Butter", "Use mac that's cold and firm so it slices. A good test bed for Choochi's sauces."], ["Apple Cranberry", "Fruit", "Not chosen yet", "Brie", "Apple, bacon", "Cranberry jam", "", "", "From the Ideas in progress list in the notes."], ["Apple Pie", "Dessert", "Cinnamon raisin bread", "Cream cheese", "Apple pie filling", "Caramel", "", "Butter with cinnamon sugar", "Cook it last like the other desserts."], ["S'mores", "Dessert", "Brioche", "", "Chocolate bar, marshmallow fluff, crushed graham crackers", "", "", "Butter", "It will leak, so press it last and go easy on the fluff."], ["Bodega Chopped Cheese", "Beef", "Hero roll", "American", "Ground beef chopped on the griddle with onions, adobo and sazón", "Mayo, ketchup", "Shredded lettuce, tomato", "", "Chop the beef and onions on the flat-top, lay the American over it to melt, then scoop it all into the roll and press. The New York bodega classic."], ["Pineapple Habanero Pulled Pork", "Ham & pork", "Hawaiian roll or brioche", "Pepper jack", "Pulled pork", "Roasted pineapple habanero sauce", "Coleslaw", "", ""], ["Lemon Curd Ricotta", "Dessert", "Brioche", "Ricotta", "Raspberries", "Lemon curd", "", "Butter", "A lighter dessert than Nutella. Cook it last."], ["Cowboy Caviar Steak", "Beef", "Sourdough", "Pepper jack", "Thin-sliced steak", "", "Cowboy caviar, avocado", "", ""], ["Spam Musubi", "Ham & pork", "Sourdough", "American", "Seared Spam, a thin layer of sushi rice pressed flat", "Teriyaki glaze", "Furikake", "", "Teriyaki leaks, so press it late and go light."], ["Korean Corn Cheese", "Vegetarian", "Texas toast", "Mozzarella", "Corn, green onion, a pinch of sugar", "Kewpie mayo", "", "", "Ties in with Choochi's Corn Cheese Crush."], ["Tonkatsu", "Ham & pork", "Milk bread or Texas toast", "Swiss (optional)", "Fried panko pork cutlet", "Tonkatsu sauce", "Shredded cabbage", "", "Use Japanese mayo with the cabbage."], ["Philly Cheesesteak", "Beef", "Hoagie roll", "Provolone or Cheez Whiz", "Shaved ribeye, grilled onions", "", "", "", ""], ["Hot Brown", "Turkey", "Texas toast", "Quick Mornay sauce (Gruyère, Parmesan)", "Roast turkey, bacon, tomato slice", "", "", "Butter", "The Kentucky classic, turned into a panini."], ["Muffuletta", "Italian", "Round sesame loaf or focaccia", "Provolone", "Genoa salami, ham, mortadella", "", "Olive salad", "", "Olive salad is oily, so add it after the press."], ["Chorizo Egg", "Big builds", "Bolillo or sourdough", "Pepper jack", "Scrambled egg, chorizo", "Salsa verde", "", "", ""], ["Monte Cristo", "Ham & pork", "Bread dipped in egg", "Swiss", "Ham, turkey", "", "Powdered sugar, raspberry jam for dipping", "Butter", "Dip the bread in egg like the fried Peri Peri."], ["Elvis", "Dessert", "White bread", "", "Peanut butter, banana, bacon", "Honey drizzle", "", "Butter", ""], ["Cookie Butter Apple", "Dessert", "Brioche", "Cream cheese", "Thin apple slices", "Biscoff cookie butter", "", "Butter", ""], ["Crunchy PB&J", "Dessert", "White bread", "", "Peanut butter, crushed potato chips", "Jam", "", "Butter", "The chips stay crunchy inside the press."], ["Chilaquiles", "Big builds", "Bolillo", "Oaxaca, cotija", "Tortilla chips tossed in warm salsa verde, scrambled egg, shredded chicken (optional)", "", "Crema, pickled red onion, cilantro, avocado", "", "Toss the chips in the salsa right before building so they soften without turning to mush. Everything cold and creamy goes on after the press."]];
+// Heat layer: Mild / Medium / Hot. Recipes not listed have no heat.
+const HEAT={"Ham + Havarti, Pineapple Habanero": "Medium", "Jam n' Ham": "Mild", "Turkey Swiss, Ancho Chili Jam": "Mild", "Turkey Swiss + Bacon": "Mild", "Turkey Gouda Bacon": "Medium", "Club Modified": "Mild", "Turkey Cranberry Jalapeño": "Medium", "Chicken Panini": "Medium", "Buffalo Bacon Ranch": "Medium", "Buffalo Apple Chicken": "Medium", "Fajita": "Medium", "Kimchi": "Mild", "Peri Peri, Fried": "Hot", "Peri Peri, Air-Fryer": "Medium", "Praise Cheesus": "Mild", "South Western": "Medium", "Costco Chipotle Chicken": "Medium", "Jalapeño Popper Chicken": "Medium", "Roast Beef + Provolone": "Medium", "Roast Beef": "Mild", "Italian Beef": "Medium", "Hot Honey": "Medium", "Honey Pepperoni": "Medium", "Jalapeño Honey Pizza-Style": "Medium", "Giardiniera Sausage": "Medium", "Korean Spicy Tuna": "Medium", "Buffalo Tuna Melt": "Medium", "Veggie Two": "Medium", "Asiago-Style Mushroom": "Mild", "Jalapeño Pear": "Medium", "Pineapple Jalapeño Mushroom": "Medium", "Brat & Kraut": "Mild", "Birria Melt": "Mild", "Bulgogi Cheesesteak": "Medium", "Banh Mi Pork": "Medium", "Nashville Hot Chicken": "Hot", "Gochujang Turkey": "Medium", "Elote Street Corn": "Medium", "Pimento Cheese & Pepper Jelly": "Mild", "Mac & Cheese Melt": "Mild", "Pineapple Habanero Pulled Pork": "Medium", "Cowboy Caviar Steak": "Mild", "Chorizo Egg": "Medium", "Chilaquiles": "Mild"};
+const HL=["Any heat","Mild","Medium","Hot"],PEP={Mild:"🌶",Medium:"🌶🌶",Hot:"🌶🌶🌶"};
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
 const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
-let fam="All",q="";
+let fam="All",q="",heat="Any heat";
 const grid=document.getElementById("grid"),chips=document.getElementById("chips"),count=document.getElementById("count");
 document.querySelectorAll(".factCount").forEach(e=>e.textContent=R.length);
 document.querySelectorAll(".tkCount").forEach(e=>e.textContent=T.length);
 function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function linkify(s){let h=esc(s);for(const k in LINK){h=h.replace(esc(k),`<a href="#${LINK[k]}" data-open="${LINK[k]}">${esc(k)}</a>`)}return h}
 function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.filter(r=>r[1]===f).length;return `<button class="chip" type="button" aria-pressed="${f===fam}" data-f="${esc(f)}" data-fam="${esc(f)}">${esc(f)}<span class="n">${n}</span></button>`}).join("")}
+const hc=document.getElementById("heatchips");
+function drawHeat(){hc.innerHTML=HL.map(h=>{const n=h==="Any heat"?R.length:R.filter(r=>HEAT[r[0]]===h).length;return `<button class="chip" type="button" aria-pressed="${h===heat}" data-h="${h==="Any heat"?"Any":h}" data-v="${h}">${h==="Any heat"?h:PEP[h]+" "+h}<span class="n">${n}</span></button>`}).join("")}
+hc.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;heat=b.dataset.v;drawHeat();draw()});
 function draw(){
   const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
-  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&terms.every(t=>r.join(" ").toLowerCase().includes(t)));
+  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&(heat==="Any heat"||HEAT[r[0]]===heat)&&terms.every(t=>(r.join(" ")+" "+(HEAT[r[0]]||"")).toLowerCase().includes(t)));
   count.textContent=`${rows.length} of ${R.length} recipes`;
   grid.innerHTML=rows.length?rows.map(r=>{
     return cardHTML(r,"")}).join("")
@@ -596,11 +608,11 @@ function draw(){
 }
 function cardHTML(r,cls){
     const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tag">${esc(r[1])}</span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}
+    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
-drawChips();draw();
+drawChips();drawHeat();draw();
 document.getElementById("kgrid").innerHTML=T.map(r=>cardHTML(r," idea")).join("");
 
 // Tabs: The Playbook (default) and Recipes. #recipes in the URL opens Recipes.
