@@ -60,15 +60,16 @@ header + section{border-top:0}
 .insta{font:normal 500 .88rem/1.3 var(--mono);color:var(--muted);white-space:nowrap}
 .insta a{color:var(--basil);font-weight:500;text-decoration-thickness:2px;text-underline-offset:3px}
 .panel > .facts{margin-top:24px}
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
 .fact{padding:14px 16px;display:grid;gap:6px;align-content:start;border-right:1px solid var(--line);min-width:0}
 .fact:last-child{border-right:0}
 .fact b{font:500 1.5rem/1 var(--mono);color:var(--basil);font-variant-numeric:tabular-nums}
 .fact span{font-size:.82rem;color:var(--muted)}
 @media (max-width:560px){
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .fact:nth-child(2){border-right:0}
-  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .fact:nth-child(5){grid-column:1/-1}
+  .fact:nth-child(2n){border-right:0}
+  .fact:nth-child(-n+4){border-bottom:1px solid var(--line)}
 }
 
 /* formula strip */
@@ -189,6 +190,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 <div class="panel" id="tab-guide" role="tabpanel" aria-labelledby="t-guide">
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">81</b><span>Recipes →</span></a>
+    <a class="fact fact-link" href="#kitchen" data-goto="recipes" data-scroll="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
@@ -416,6 +418,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 <div class="panel" id="tab-recipes" role="tabpanel" aria-labelledby="t-recipes" hidden>
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">81</b><span>Recipes →</span></a>
+    <a class="fact fact-link" href="#kitchen" data-goto="recipes" data-scroll="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
@@ -537,6 +540,7 @@ const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera
 let fam="All",q="";
 const grid=document.getElementById("grid"),chips=document.getElementById("chips"),count=document.getElementById("count");
 document.querySelectorAll(".factCount").forEach(e=>e.textContent=R.length);
+document.querySelectorAll(".tkCount").forEach(e=>e.textContent=T.length);
 function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function linkify(s){let h=esc(s);for(const k in LINK){h=h.replace(esc(k),`<a href="#${LINK[k]}" data-open="${LINK[k]}">${esc(k)}</a>`)}return h}
 function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.filter(r=>r[1]===f).length;return `<button class="chip" type="button" aria-pressed="${f===fam}" data-f="${esc(f)}" data-fam="${esc(f)}">${esc(f)}<span class="n">${n}</span></button>`}).join("")}
@@ -566,7 +570,7 @@ function showTab(t,scroll){
 }
 document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",b.dataset.tab==="recipes"?"#recipes":location.pathname+location.search)}catch(_){}});
 document.addEventListener("click",e=>{
-  const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);document.querySelector(".tabs").scrollIntoView({behavior:"smooth"});return}
+  const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);(document.getElementById(g.dataset.scroll||"")||document.querySelector(".tabs")).scrollIntoView({behavior:"smooth"});return}
   const a=e.target.closest("a[data-open]");if(a){e.preventDefault();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}}
 });
 if(location.hash==="#recipes")showTab("recipes",false);
