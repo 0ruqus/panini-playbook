@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-78 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+80 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -113,6 +113,9 @@ Sourdough · Smoked gouda + Muenster · Ham
 
 **Hawaiian**
 Mozzarella (+ Parmesan) · Grilled sliced ham · Pineapple · Tomato paste as the sauce
+
+**Grilled Pineapple, Ham & Bacon**
+Parmesan · Grilled pineapple, ham, bacon · Marinara
 
 **Jam n' Ham**
 Ham · Spicy jam · Cheese of choice
@@ -312,6 +315,9 @@ Sandwich bread · Aged cheddar · Roasted garlic hummus · *Add:* arugula, tomat
 **Fig & Caramelized Onion**
 Rustic sourdough · Brie + cream cheese spread · [PBR beer-caramelized onions](#pbr-beer-caramelized-onions) · Fig jam · *Add:* arugula (optional)
 *Note: make the onions ahead. They keep about a week in the fridge.*
+
+**Pineapple Jalapeño Mushroom**
+Mozzarella · Pineapple, jalapeño, mushrooms · Marinara
 
 ### Sweet & savory fruit
 

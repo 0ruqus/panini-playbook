@@ -44,3 +44,4 @@
 - Replaced the cold **Tuna Salad** card with **Korean Spicy Tuna** (Fish): Korean canned gochugaru hot pepper tuna mixed with cream cheese, green onions and sriracha; cream cheese + mozzarella; sriracha mayo; kimchi and cucumber added after pressing. Still 76 recipes.
 - Added two butter-fried Chicken cards: **Costco Chipotle Chicken** (Monterey Jack, Costco chipotle chicken, sautéed onions, jarred sliced chipotles, apple jalapeño jelly) and **Garlic Chicken Bacon** (provolone, rotisserie chicken, sautéed onions, bacon, garlic aioli). 78 recipes.
 - Renamed **Chubish** to **Club-ish** and **Peri Peri** to **Peri Peri, Fried**. The air-fryer Peri Peri fill is now peri peri seasoned air-fryer chicken and jalapeños.
+- Added **Pineapple Jalapeño Mushroom** (Vegetarian: mozzarella, pineapple, jalapeño, mushrooms, marinara) and **Grilled Pineapple, Ham & Bacon** (Ham & pork: Parmesan, grilled pineapple, ham, bacon, marinara; placed next to Hawaiian). 80 recipes.
