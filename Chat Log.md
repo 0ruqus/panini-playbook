@@ -48,3 +48,4 @@
 - Added a **Test Kitchen** section at the bottom of the Recipes tab for paninis not made yet: 15 dashed-outline cards (Brat & Kraut with sauerkraut and spicy brown mustard, Birria Melt, Fry Sauce Patty Melt, Chimichurri Steak, Bulgogi Cheesesteak, Banh Mi Pork, Nashville Hot Chicken, Gochujang Turkey, Smoked Salmon Dill, Elote Street Corn, Pimento Cheese & Pepper Jelly, Mac & Cheese Melt, Apple Cranberry, Apple Pie, S'mores). They are not counted as recipes. The old Ideas in progress section on the Playbook tab was folded into it. Markdown section renamed to Test Kitchen.
 - Added **Cali Black Bean Chicken** (Chicken): Monterey Jack + queso fresco, Cali-rub air-fryer chicken, roasted red peppers, black bean and onion paste. 81 recipes.
 - Added a **Test Kitchen ideas** stat tile (15, counted automatically) next to Recipes on both tabs. Tapping it opens the Recipes tab and scrolls to Test Kitchen.
+- Removed "Pirate O's" from the future menu list under Test Kitchen.

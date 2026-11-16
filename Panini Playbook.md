@@ -614,7 +614,7 @@ Cinnamon raisin bread · Cream cheese · Apple pie filling · Caramel · **Fry s
 Brioche · Chocolate bar, marshmallow fluff, crushed graham crackers · **Fry spread:** butter
 *It will leak, so press it last and go easy on the fluff.*
 
-Also on the future menu list: shawarma, waffle rolls, waffle cookies and "Pirate O's".
+Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 
 ---
 
