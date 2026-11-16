@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-80 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+81 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -225,6 +225,9 @@ Monterey Jack · Costco chipotle chicken, sautéed onions, jarred sliced chipotl
 
 **Garlic Chicken Bacon**
 Provolone · Rotisserie chicken, sautéed onions, bacon · Garlic aioli · **Fry spread:** butter
+
+**Cali Black Bean Chicken**
+Monterey Jack + queso fresco · Cali-rub air-fryer chicken, roasted red peppers · Black bean and onion paste
 
 **Homemade Chicken Salad**
 Chicken, mayo, celery, grapes, salt and pepper
