@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-81 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+83 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -254,6 +254,10 @@ No cheese · Bulgogi beef, red onion, carrots *(see [Bulgogi marinade](#bulgogi-
 Hoagie roll (or semolina bread) · Provolone or mozzarella · Thin-sliced [Crock Pot Italian beef](#crock-pot-italian-beef) · *Add:* [giardiniera](#giardiniera), pepperoncini
 *Note: dip the finished sandwich in the au jus from the crock pot. [Chimichurri](#chimichurri) also works as the spread.*
 
+**Chimichurri Steak**
+Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:* [chimichurri](#chimichurri)
+*Fresh herbs go dull in the press, so spoon on the chimichurri after cooking.*
+
 ### Italian & cured meats
 
 **Meatball Marinara**
@@ -273,6 +277,10 @@ Mozzarella · Jalapeño · Honey · Tomato paste
 
 **Peppered Salami Melt**
 Sourdough at 400°F · American · Peppered salami, tomatoes
+
+**Giardiniera Sausage**
+Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:* [giardiniera](#giardiniera)
+*A cousin of the Italian Beef.*
 
 ### Fish
 
@@ -570,10 +578,6 @@ Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion,
 Texas toast · American + Swiss · Two thin smash patties, PBR beer-caramelized onions · Fry sauce · **Fry spread:** butter
 *Smash and cook the patties first, then press. A Utah take on the classic patty melt.*
 
-**Chimichurri Steak** (Beef)
-Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:* chimichurri
-*Fresh herbs go dull in the press, so spoon on the chimichurri after cooking.*
-
 **Bulgogi Cheesesteak** (Beef)
 Hoagie roll · Provolone · Bulgogi beef, grilled onions and peppers · Gochujang mayo · *Add:* kimchi
 *The current Bulgogi card has no cheese. This tests it with provolone as the glue.*
@@ -621,10 +625,6 @@ Hero roll · American · Ground beef chopped on the griddle with onions, adobo a
 **Pineapple Habanero Pulled Pork** (Ham & pork)
 Hawaiian roll or brioche · Pepper jack · Pulled pork · Roasted pineapple habanero sauce · *Add:* coleslaw
 
-**Giardiniera Sausage** (Italian)
-Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:* giardiniera
-*A cousin of the Italian Beef.*
-
 **Lemon Curd Ricotta** (Dessert)
 Brioche · Ricotta · Raspberries · Lemon curd · **Fry spread:** butter
 *A lighter dessert than Nutella. Cook it last.*
@@ -671,6 +671,10 @@ Brioche · Cream cheese · Thin apple slices · Biscoff cookie butter · **Fry s
 **Crunchy PB&J** (Dessert)
 White bread · Peanut butter, crushed potato chips · Jam · **Fry spread:** butter
 *The chips stay crunchy inside the press.*
+
+**Chilaquiles** (Big builds)
+Bolillo · Oaxaca + cotija · Tortilla chips tossed in warm salsa verde, scrambled egg, shredded chicken (optional) · *Add:* crema, pickled red onion, cilantro, avocado
+*Toss the chips in the salsa right before building so they soften without turning to mush. Everything cold and creamy goes on after the press.*
 
 Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 
