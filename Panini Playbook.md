@@ -47,9 +47,11 @@ Every sandwich here is built in the same seven layers:
 
 | Level | Where it comes from |
 |---|---|
-| **Mild** | Pepper jack, Havarti habanero, Laughing Cow hot, hot honey, spicy brown mustard, apple jalapeño jelly |
-| **Medium** | Jalapeños (fresh or pickled), chipotles in adobo, chipotle aioli, sriracha, gochujang, gochugaru tuna, Frank's RedHot, giardiniera |
-| **Hot** | Roasted pineapple habanero sauce made with 7–8 habaneros, fresh serrano or habanero, Nashville hot oil, peri peri sauce |
+| **Mild** | Pepper jack, Laughing Cow hot, hot honey, spicy brown mustard, apple jalapeño jelly |
+| **Medium** | Jalapeños (fresh or pickled), chipotles in adobo, chipotle aioli, sriracha, gochujang, gochugaru tuna, Frank's RedHot |
+| **Hot** | Anything with serrano or habanero: roasted pineapple habanero sauce, Havarti habanero, giardiniera (made with serranos), fresh serrano or habanero. Plus Nashville hot oil and peri peri sauce |
+
+**House rule:** pepper jack makes a card Mild, and any serrano or habanero makes it Hot. Hot wins when a card has both.
 
 Recipe and Test Kitchen cards carry a heat tag after the name: 🌶 Mild, 🌶🌶 Medium, 🌶🌶🌶 Hot. No tag means no heat.
 
@@ -110,7 +112,7 @@ Each card lists **Bread · Melt · Fill · Spread · Add**. The fry spread is ma
 
 ### Ham & pork
 
-**Ham + Havarti with Pineapple Habanero** · 🌶🌶 Medium
+**Ham + Havarti with Pineapple Habanero** · 🌶🌶🌶 Hot
 Texas toast · Havarti · Ham · Roasted pineapple habanero sauce *(see [Pineapple Habanero Salsa](#pineapple-habanero-salsa))*
 
 **Ham + Havarti with Raspberry Honey Mustard**
@@ -175,7 +177,7 @@ Mozzarella top and bottom · Turkey, tomato, red onion · Pesto
 **Turkey Cranberry Jalapeño** · 🌶🌶 Medium
 Turkey · Cranberry · Jalapeño · Cheese of choice
 
-**Peppered Turkey Serrano** · 🌶🌶 Medium
+**Peppered Turkey Serrano** · 🌶🌶🌶 Hot
 Sourdough · Havarti · Cracked black pepper deli turkey, prosciutto crisped in the press first · Serrano cream cheese aioli (roasted serrano, garlic and lime blended into mayo, then stirred into softened cream cheese) · *Add:* baby arugula, tomato
 *Lay the prosciutto in the hot press for a minute until it crisps, then build. Crisp prosciutto stands up to the pepper and serrano, where soft prosciutto gets lost. Spread the aioli on both slices under the Havarti, and add the arugula and tomato after pressing. For more heat, keep the serrano seeds in.*
 
@@ -196,7 +198,7 @@ Sourdough · Mozzarella + smoked gouda · Roasted chicken, cilantro · BBQ sauce
 **Buffalo Bacon Ranch** · 🌶🌶 Medium
 Sourdough · Mozzarella · Roasted chicken, crisp bacon, sweet red onion, cilantro · Buffalo sauce mixed with cream cheese + garlic ranch
 
-**Buffalo Apple Chicken** · 🌶🌶 Medium
+**Buffalo Apple Chicken** · 🌶 Mild
 Rustic sourdough · Pepper jack + brie · Deli buffalo chicken, caramelized onions · Cranberry spice jam · *Add:* sliced grilled apples
 
 **Bacon Berry**
@@ -208,7 +210,7 @@ Sourdough · Brie · Shawarma chicken · Yogurt · *Add:* tomato, avocado, banan
 **Grilled Chicken Pesto**
 Rustic sourdough · Mozzarella + Laughing Cow · Grilled chicken, pesto · *Add:* roasted garlic, tomato paste, balsamic · **Fry spread:** garlic mayo
 
-**Fajita** · 🌶🌶 Medium
+**Fajita** · 🌶 Mild
 Ciabatta · Pepper jack + Laughing Cow hot (or cotija) · Grilled seasoned chicken; grilled peppers, jalapeños and onions · *Add:* jalapeño, tomato, avocado, guacamole
 
 **Kimchi** · 🌶 Mild
@@ -217,7 +219,7 @@ French rye · Emmental · Blackened chicken, banana peppers
 **Peri Peri, fried** · 🌶🌶🌶 Hot
 Flatbread dipped in egg and panko · American · Blackened chicken, banana peppers · Garlic mayo · *Add:* peri peri sauce *(see [Peri Peri sauce](#peri-peri-sauce))*
 
-**Peri Peri, air-fryer version** · 🌶🌶 Medium
+**Peri Peri, air-fryer version** · 🌶 Mild
 Pepper jack · Peri peri seasoned air-fryer chicken, jalapeños · *Add:* coleslaw
 
 **Praise Cheesus** · 🌶 Mild
@@ -273,7 +275,7 @@ Marble rye · Baby Swiss + Laughing Cow · Pastrami, sauerkraut · German mustar
 **Bulgogi ("Cow")**
 No cheese · Bulgogi beef, red onion, carrots *(see [Bulgogi marinade](#bulgogi-marinade))*
 
-**Italian Beef** · 🌶🌶 Medium
+**Italian Beef** · 🌶🌶🌶 Hot
 Hoagie roll (or semolina bread) · Provolone or mozzarella · Thin-sliced [Crock Pot Italian beef](#crock-pot-italian-beef) · *Add:* [giardiniera](#giardiniera), pepperoncini
 *Note: dip the finished sandwich in the au jus from the crock pot. [Chimichurri](#chimichurri) also works as the spread.*
 
@@ -301,7 +303,7 @@ Mozzarella · Jalapeño · Honey · Tomato paste
 **Peppered Salami Melt**
 Sourdough at 400°F · American · Peppered salami, tomatoes
 
-**Giardiniera Sausage** · 🌶🌶 Medium
+**Giardiniera Sausage** · 🌶🌶🌶 Hot
 Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:* [giardiniera](#giardiniera)
 *A cousin of the Italian Beef.*
 
@@ -645,7 +647,7 @@ Brioche · Chocolate bar, marshmallow fluff, crushed graham crackers · **Fry sp
 Hero roll · American · Ground beef chopped on the griddle with onions, adobo and sazón · Mayo, ketchup · *Add:* shredded lettuce, tomato
 *Chop the beef and onions on the flat-top, lay the American over it to melt, then scoop it all into the roll and press. The New York bodega classic.*
 
-**Pineapple Habanero Pulled Pork** (Ham & pork) · 🌶🌶 Medium
+**Pineapple Habanero Pulled Pork** (Ham & pork) · 🌶🌶🌶 Hot
 Hawaiian roll or brioche · Pepper jack · Pulled pork · Roasted pineapple habanero sauce · *Add:* coleslaw
 
 **Lemon Curd Ricotta** (Dessert)
@@ -678,7 +680,7 @@ Texas toast · Quick Mornay sauce (Gruyère, Parmesan) · Roast turkey, bacon, t
 Round sesame loaf or focaccia · Provolone · Genoa salami, ham, mortadella · *Add:* olive salad
 *Olive salad is oily, so add it after the press.*
 
-**Chorizo Egg** (Big builds) · 🌶🌶 Medium
+**Chorizo Egg** (Big builds) · 🌶 Mild
 Bolillo or sourdough · Pepper jack · Scrambled egg, chorizo · Salsa verde
 
 **Monte Cristo** (Ham & pork)
