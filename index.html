@@ -183,6 +183,9 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .card.idea{border-style:dashed;border-top-style:solid;background:transparent}
 .card.idea .tag{border-style:dashed}
 h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
+.tabs{overflow-x:auto;scrollbar-width:none}
+.panel > .facts + section.first{border-top:0}
+@media (max-width:560px){.tab{padding:12px 10px 13px;font-size:.92rem;white-space:nowrap}}
 </style>
 
 <div class="wrap">
@@ -195,12 +198,13 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 <nav class="tabs" role="tablist" aria-label="Sections">
   <button class="tab" role="tab" id="t-guide" aria-controls="tab-guide" aria-selected="true" data-tab="guide">The Playbook</button>
   <button class="tab" role="tab" id="t-recipes" aria-controls="tab-recipes" aria-selected="false" data-tab="recipes">Recipes <span class="n" id="tabCount"></span></button>
+  <button class="tab" role="tab" id="t-kitchen" aria-controls="tab-kitchen" aria-selected="false" data-tab="kitchen">Test Kitchen <span class="n" id="tkTab"></span></button>
 </nav>
 
 <div class="panel" id="tab-guide" role="tabpanel" aria-labelledby="t-guide">
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">81</b><span>Recipes →</span></a>
-    <a class="fact fact-link" href="#kitchen" data-goto="recipes" data-scroll="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
+    <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
@@ -428,7 +432,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 <div class="panel" id="tab-recipes" role="tabpanel" aria-labelledby="t-recipes" hidden>
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">81</b><span>Recipes →</span></a>
-    <a class="fact fact-link" href="#kitchen" data-goto="recipes" data-scroll="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
+    <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
     <div class="fact"><b>6</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
@@ -446,7 +450,17 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
   <div class="grid" id="grid"></div>
 </section>
 
-<section aria-labelledby="kitchen">
+</div>
+
+<div class="panel" id="tab-kitchen" role="tabpanel" aria-labelledby="t-kitchen" hidden>
+  <div class="facts">
+    <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">81</b><span>Recipes →</span></a>
+    <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">15</b><span>Test Kitchen ideas →</span></a>
+    <div class="fact"><b>6</b><span>Layers in every build</span></div>
+    <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
+    <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
+  </div>
+<section aria-labelledby="kitchen" class="first">
   <p class="eyebrow">Never made yet</p>
   <h2 id="kitchen">Test Kitchen</h2>
   <p class="lede">Ideas to try. Make one, and if it's a keeper it moves up into the recipes.</p>
@@ -574,16 +588,18 @@ document.getElementById("kgrid").innerHTML=T.map(r=>cardHTML(r," idea")).join(""
 // Tabs: The Playbook (default) and Recipes. #recipes in the URL opens Recipes.
 const tabBtns=[...document.querySelectorAll(".tab")];
 document.getElementById("tabCount").textContent=R.length;
+document.getElementById("tkTab").textContent=T.length;
 function showTab(t,scroll){
   tabBtns.forEach(b=>{const on=b.dataset.tab===t;b.setAttribute("aria-selected",String(on));document.getElementById("tab-"+b.dataset.tab).hidden=!on});
   if(scroll){const nav=document.querySelector(".tabs");const y=nav.getBoundingClientRect().top+scrollY-1;if(scrollY>y)scrollTo(0,y)}
 }
-document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",b.dataset.tab==="recipes"?"#recipes":location.pathname+location.search)}catch(_){}});
+document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",{recipes:"#recipes",kitchen:"#test-kitchen"}[b.dataset.tab]||location.pathname+location.search)}catch(_){}});
 document.addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);(document.getElementById(g.dataset.scroll||"")||document.querySelector(".tabs")).scrollIntoView({behavior:"smooth"});return}
   const a=e.target.closest("a[data-open]");if(a){e.preventDefault();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}}
 });
 if(location.hash==="#recipes")showTab("recipes",false);
+if(location.hash==="#test-kitchen"||location.hash==="#kitchen")showTab("kitchen",false);
 
 // Names: tap one to use it as the tagline
 const names=document.getElementById("names"),tag=document.getElementById("tagline");

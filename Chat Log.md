@@ -49,3 +49,4 @@
 - Added **Cali Black Bean Chicken** (Chicken): Monterey Jack + queso fresco, Cali-rub air-fryer chicken, roasted red peppers, black bean and onion paste. 81 recipes.
 - Added a **Test Kitchen ideas** stat tile (15, counted automatically) next to Recipes on both tabs. Tapping it opens the Recipes tab and scrolls to Test Kitchen.
 - Removed "Pirate O's" from the future menu list under Test Kitchen.
+- Moved Test Kitchen out of the Recipes tab into its own third tab, **Test Kitchen**, with its count on the tab and the stat tiles at the top. The Test Kitchen tile now opens that tab, and a link ending in #test-kitchen opens straight to it.
