@@ -196,16 +196,16 @@ Ciabatta · Pepper jack + Laughing Cow hot (or cotija) · Grilled seasoned chick
 **Kimchi**
 French rye · Emmental · Blackened chicken, banana peppers
 
-**Peri Peri**
+**Peri Peri, fried**
 Flatbread dipped in egg and panko · American · Blackened chicken, banana peppers · Garlic mayo · *Add:* peri peri sauce *(see [Peri Peri sauce](#peri-peri-sauce))*
 
 **Peri Peri, air-fryer version**
-Air-fryer chicken, turkey · Pepper jack · Peppers / giardiniera · Coleslaw
+Pepper jack · Peri peri seasoned air-fryer chicken, jalapeños · *Add:* coleslaw
 
 **Praise Cheesus**
 Circle bread · Havarti + Swiss + pepper jack · Blackened chicken, banana peppers · Garlic aioli
 
-**Chubish**
+**Club-ish**
 Monterey Jack · Air-fryer chicken, bacon, avocado, tomato
 
 **Spinach Artichoke Chicken**
@@ -371,7 +371,7 @@ Short builds for when you don't need a full card.
 | Family | Builds |
 |---|---|
 | **HOG** (pork) | Jam n' Ham · Cuban · Hawaiian |
-| **BOK BOK** (chicken) | Chubish · Spinach Artichoke · Peri Peri · Breakfast |
+| **BOK BOK** (chicken) | Club-ish · Spinach Artichoke · Peri Peri · Breakfast |
 | **GOBBLE GOBBLE** (turkey) | Pesto Turkey with red onion and tomato |
 | **COW** (beef) | Bulgogi (no cheese, red onion, carrots) |
 | **SUGAR** (sweet) | Banana Nutella · Blueberry Brie · Raspberry |
