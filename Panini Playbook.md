@@ -31,16 +31,25 @@ Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/swee
 
 ## The house formula
 
-Every sandwich here is built in the same six layers:
+Every sandwich here is built in the same seven layers:
 
 | Layer | What it is | Examples |
 |---|---|---|
 | **Bread** | The structure. It has to survive the press | Sourdough, Texas toast, ciabatta, focaccia, marble rye, French roll |
 | **Melt** | The "glue": cheese on the top *and* bottom slices. It holds the fillings and lets you open the sandwich after cooking | Havarti, Swiss, provolone, brie, smoked gouda, pepper jack |
 | **Fill** | The main event | Turkey, ham, roast beef, chicken, vegetables, fruit |
-| **Spread** | The flavor signature, usually sweet, spicy or tangy | Jams, aiolis, pesto, mustards, glazes |
+| **Spread** | The flavor signature, usually sweet, savory or tangy | Jams, aiolis, pesto, mustards, glazes |
+| **Heat** | Optional kick. Pick a level (mild, medium or hot). It can ride in the melt, fill, spread or add | Pepper jack, jalapeños, chipotle, sriracha, habanero |
 | **Add** | Wet and fresh items, added **after** pressing | Avocado, tomato, lettuce, kimchi, banana peppers, arugula |
 | **Fry spread** | What goes on the *outside* of the bread | **Mayonnaise** (default), garlic mayo, butter |
+
+**Heat levels**
+
+| Level | Where it comes from |
+|---|---|
+| **Mild** | Pepper jack, Havarti habanero, Laughing Cow hot, hot honey, spicy brown mustard, apple jalapeño jelly, banana peppers |
+| **Medium** | Jalapeños (fresh or pickled), chipotles in adobo, chipotle aioli, sriracha, gochujang, gochugaru tuna, Frank's RedHot, giardiniera |
+| **Hot** | Roasted pineapple habanero sauce made with 7–8 habaneros, fresh serrano or habanero, Nashville hot oil, peri peri sauce |
 
 > **Default fry spread:** unless a recipe says otherwise, spread a thin layer of **mayonnaise on the outside of both slices** before pressing. It browns more evenly than butter and won't burn as quickly. Stir in minced or roasted garlic for garlic-toasted bread. Dessert paninis use butter instead.
 

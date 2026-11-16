@@ -54,3 +54,4 @@
 - Promoted **Chimichurri Steak** (Beef) and **Giardiniera Sausage** (Italian) from Test Kitchen to recipes (83). Added **Chilaquiles** to Test Kitchen (Big builds: bolillo, Oaxaca + cotija, chips tossed in salsa verde, egg, optional chicken; crema, pickled onion, cilantro, avocado after the press). Test Kitchen now 30.
 - Added **Greek Chicken** (Chicken): Havarti as the glue + cream cheese, chicken, feta, red onion, Italian dressing, with cucumber and banana peppers added after the press. 84 recipes.
 - Added **Jalapeño Popper Chicken** (Chicken): cream cheese + sharp cheddar, shredded or air-fryer chicken, jalapeños, bacon. Not in Notes; built from the classic popper with chicken, as chosen. 85 recipes.
+- 2026-11-15: Added a seventh layer, **05 · Heat**, that defines spicy: optional, with a Mild / Medium / Hot ladder listing where the heat comes from. Add and Fry spread renumbered to 06 and 07; layer tiles now read 7.

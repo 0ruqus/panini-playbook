@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Family panini recipes: the six-layer formula, press technique, house spreads, plus a Recipes tab with searchable cards.">
+<meta name="description" content="Family panini recipes: the seven-layer formula, press technique, house spreads, plus a Recipes tab with searchable cards.">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: a press-menu page. Plain header with stat tiles, a six-layer formula strip, then a filterable wall of recipe cards. */
+/* Layout: a press-menu page. Plain header with stat tiles, a seven-layer formula strip, then a filterable wall of recipe cards. */
 :root{
   --bg:#fbfbf8; --surface:#ffffff; --sunk:#f1f2ec; --line:#dcdfd3;
   --fg:#1d2119; --muted:#5b6253;
@@ -82,12 +82,17 @@ header + section{border-top:0}
 }
 
 /* formula strip */
-.formula{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:2px solid var(--char);border-radius:10px;overflow:hidden;background:var(--surface)}
+.formula{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:2px solid var(--char);border-radius:10px;overflow:hidden;background:var(--surface)}
 .layer{padding:14px 12px;display:grid;gap:6px;align-content:start;border-right:1px solid var(--line);min-width:0}
 .layer:last-child{border-right:0;background:var(--sunk)}
 .layer .eyebrow{color:var(--basil)}
 .layer h3{font-size:1.25rem}
 .layer p{font-size:.86rem;color:var(--muted)}
+.layer.heat .eyebrow{color:var(--c-beef)}
+.heatlad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.heatlad div{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--surface);min-width:0}
+.heatlad b{display:block;font-size:1rem;margin-bottom:4px;color:var(--c-beef)}
+.heatlad p{font-size:.86rem;color:var(--muted)}
 .note{border-left:4px solid var(--mustard);background:var(--sunk);padding:12px 16px;border-radius:0 8px 8px 0;max-width:72ch}
 
 /* technique */
@@ -159,15 +164,18 @@ details[open] summary .eyebrow::after{content:" −"}
 footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 
 @media (max-width:860px){
-  .formula{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .layer:nth-child(3){border-right:0}
-  .layer:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .formula{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .layer:nth-child(4){border-right:0}
+  .layer:nth-child(-n+4){border-bottom:1px solid var(--line)}
+  .layer:last-child{grid-column:span 2}
   .tech,.pantry{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
   .formula{grid-template-columns:repeat(2,minmax(0,1fr))}
   .layer{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
   .layer:nth-child(2n){border-right:0}
+  .layer:last-child{grid-column:1/-1;border-bottom:0}
+  .heatlad{grid-template-columns:minmax(0,1fr)}
   .sp{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--basil)}}
@@ -205,7 +213,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">85</b><span>Recipes →</span></a>
     <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">30</b><span>Test Kitchen ideas →</span></a>
-    <div class="fact"><b>6</b><span>Layers in every build</span></div>
+    <div class="fact"><b>7</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
   </div>
@@ -217,9 +225,15 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
     <div class="layer"><span class="eyebrow">01 · Bread</span><h3>Structure</h3><p>Has to survive the press. Sourdough, Texas toast, ciabatta, focaccia, rye.</p></div>
     <div class="layer"><span class="eyebrow">02 · Melt</span><h3>Glue</h3><p>Cheese on the top and bottom slices. It holds the fillings and lets you open the sandwich after cooking.</p></div>
     <div class="layer"><span class="eyebrow">03 · Fill</span><h3>Main event</h3><p>Turkey, ham, roast beef, chicken, vegetables, fruit.</p></div>
-    <div class="layer"><span class="eyebrow">04 · Spread</span><h3>Signature</h3><p>Sweet, spicy or tangy. Jams, aiolis, pesto, mustards, glazes.</p></div>
-    <div class="layer"><span class="eyebrow">05 · Add</span><h3>After the press</h3><p>Wet, fresh items go in after cooking: avocado, tomato, lettuce, kimchi.</p></div>
-    <div class="layer"><span class="eyebrow">06 · Fry spread</span><h3>Outside</h3><p>Mayonnaise by default, often with garlic. Butter for desserts.</p></div>
+    <div class="layer"><span class="eyebrow">04 · Spread</span><h3>Signature</h3><p>Sweet, savory or tangy. Jams, aiolis, pesto, mustards, glazes.</p></div>
+    <div class="layer heat"><span class="eyebrow">05 · Heat</span><h3>Kick</h3><p>Optional. Pick a level: mild, medium or hot. It can ride in the melt, fill, spread or add.</p></div>
+    <div class="layer"><span class="eyebrow">06 · Add</span><h3>After the press</h3><p>Wet, fresh items go in after cooking: avocado, tomato, lettuce, kimchi.</p></div>
+    <div class="layer"><span class="eyebrow">07 · Fry spread</span><h3>Outside</h3><p>Mayonnaise by default, often with garlic. Butter for desserts.</p></div>
+  </div>
+  <div class="heatlad" aria-label="Heat levels">
+    <div><b>Mild</b><p>Pepper jack · Havarti habanero · Laughing Cow hot · hot honey · spicy brown mustard · apple jalapeño jelly · banana peppers</p></div>
+    <div><b>Medium</b><p>Jalapeños, fresh or pickled · chipotles in adobo · chipotle aioli · sriracha · gochujang · gochugaru tuna · Frank's RedHot · giardiniera</p></div>
+    <div><b>Hot</b><p>Roasted pineapple habanero sauce made with 7–8 habaneros · fresh serrano or habanero · Nashville hot oil · peri peri sauce</p></div>
   </div>
   <p class="note"><strong>Default fry spread:</strong> unless a recipe says otherwise, spread a thin layer of mayonnaise on the outside of both slices. It browns more evenly than butter and doesn't burn as quickly. Stir in minced or roasted garlic for garlic-toasted bread.</p>
 </section>
@@ -433,7 +447,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">85</b><span>Recipes →</span></a>
     <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">30</b><span>Test Kitchen ideas →</span></a>
-    <div class="fact"><b>6</b><span>Layers in every build</span></div>
+    <div class="fact"><b>7</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
   </div>
@@ -456,7 +470,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">85</b><span>Recipes →</span></a>
     <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">30</b><span>Test Kitchen ideas →</span></a>
-    <div class="fact"><b>6</b><span>Layers in every build</span></div>
+    <div class="fact"><b>7</b><span>Layers in every build</span></div>
     <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
     <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
   </div>
