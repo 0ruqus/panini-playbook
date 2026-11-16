@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-76 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+78 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -216,6 +216,12 @@ Havarti + Laughing Cow · Buffalo chicken, jalapeño · [Cowboy caviar](#cowboy-
 
 **Chicken Pesto Focaccia**
 Focaccia · Feta · Pounded, seared chicken breast, sun-dried tomatoes · Basil pesto · *Add:* mixed greens
+
+**Costco Chipotle Chicken**
+Monterey Jack · Costco chipotle chicken, sautéed onions, jarred sliced chipotles · Apple jalapeño jelly · **Fry spread:** butter
+
+**Garlic Chicken Bacon**
+Provolone · Rotisserie chicken, sautéed onions, bacon · Garlic aioli · **Fry spread:** butter
 
 **Homemade Chicken Salad**
 Chicken, mayo, celery, grapes, salt and pepper
