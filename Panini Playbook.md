@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-83 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+84 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -228,6 +228,10 @@ Provolone · Rotisserie chicken, sautéed onions, bacon · Garlic aioli · **Fry
 
 **Cali Black Bean Chicken**
 Monterey Jack + queso fresco · Cali-rub air-fryer chicken, roasted red peppers · Black bean and onion paste
+
+**Greek Chicken**
+Havarti + cream cheese · Chicken, feta, red onion · Italian dressing · *Add:* cucumber, banana peppers
+*Havarti is the glue on both slices. Add the cucumber and banana peppers after the press so they stay crisp.*
 
 **Homemade Chicken Salad**
 Chicken, mayo, celery, grapes, salt and pepper
