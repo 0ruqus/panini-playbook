@@ -596,7 +596,7 @@ Rye · Cream cheese + Havarti dill · *Add:* smoked salmon, capers, red onion, f
 Sourdough · Mozzarella + cotija · Charred corn, jalapeño, cilantro · Chipotle aioli · *Add:* lime, Tajín
 
 **Pimento Cheese & Pepper Jelly** (Vegetarian)
-Texas toast · Pimento cheese (sharp cheddar + cream cheese, pimentos) · Bacon (optional) · Apple jalapeño jelly · **Fry spread:** butter
+Texas toast · Pimento cheese (sharp cheddar, cream cheese, pimentos) · Bacon (optional) · Apple jalapeño jelly · **Fry spread:** butter
 
 **Mac & Cheese Melt** (Big builds)
 Sourdough · Sharp cheddar · Cold leftover mac and cheese, bacon · *Add:* hot honey drizzle · **Fry spread:** butter
@@ -613,6 +613,64 @@ Cinnamon raisin bread · Cream cheese · Apple pie filling · Caramel · **Fry s
 **S'mores** (Dessert)
 Brioche · Chocolate bar, marshmallow fluff, crushed graham crackers · **Fry spread:** butter
 *It will leak, so press it last and go easy on the fluff.*
+
+**Bodega Chopped Cheese** (Beef)
+Hero roll · American · Ground beef chopped on the griddle with onions, adobo and sazón · Mayo, ketchup · *Add:* shredded lettuce, tomato
+*Chop the beef and onions on the flat-top, lay the American over it to melt, then scoop it all into the roll and press. The New York bodega classic.*
+
+**Pineapple Habanero Pulled Pork** (Ham & pork)
+Hawaiian roll or brioche · Pepper jack · Pulled pork · Roasted pineapple habanero sauce · *Add:* coleslaw
+
+**Giardiniera Sausage** (Italian)
+Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:* giardiniera
+*A cousin of the Italian Beef.*
+
+**Lemon Curd Ricotta** (Dessert)
+Brioche · Ricotta · Raspberries · Lemon curd · **Fry spread:** butter
+*A lighter dessert than Nutella. Cook it last.*
+
+**Cowboy Caviar Steak** (Beef)
+Sourdough · Pepper jack · Thin-sliced steak · *Add:* cowboy caviar, avocado
+
+**Spam Musubi** (Ham & pork)
+Sourdough · American · Seared Spam, a thin layer of sushi rice pressed flat · Teriyaki glaze · *Add:* furikake
+*Teriyaki leaks, so press it late and go light.*
+
+**Korean Corn Cheese** (Vegetarian)
+Texas toast · Mozzarella · Corn, green onion, a pinch of sugar · Kewpie mayo
+*Ties in with Choochi's Corn Cheese Crush.*
+
+**Tonkatsu** (Ham & pork)
+Milk bread or Texas toast · Swiss (optional) · Fried panko pork cutlet · Tonkatsu sauce · *Add:* shredded cabbage
+*Use Japanese mayo with the cabbage.*
+
+**Philly Cheesesteak** (Beef)
+Hoagie roll · Provolone or Cheez Whiz · Shaved ribeye, grilled onions
+
+**Hot Brown** (Turkey)
+Texas toast · Quick Mornay sauce (Gruyère, Parmesan) · Roast turkey, bacon, tomato slice · **Fry spread:** butter
+*The Kentucky classic, turned into a panini.*
+
+**Muffuletta** (Italian)
+Round sesame loaf or focaccia · Provolone · Genoa salami, ham, mortadella · *Add:* olive salad
+*Olive salad is oily, so add it after the press.*
+
+**Chorizo Egg** (Big builds)
+Bolillo or sourdough · Pepper jack · Scrambled egg, chorizo · Salsa verde
+
+**Monte Cristo** (Ham & pork)
+Bread dipped in egg · Swiss · Ham, turkey · *Add:* powdered sugar, raspberry jam for dipping · **Fry spread:** butter
+*Dip the bread in egg like the fried Peri Peri.*
+
+**Elvis** (Dessert)
+White bread · Peanut butter, banana, bacon · Honey drizzle · **Fry spread:** butter
+
+**Cookie Butter Apple** (Dessert)
+Brioche · Cream cheese · Thin apple slices · Biscoff cookie butter · **Fry spread:** butter
+
+**Crunchy PB&J** (Dessert)
+White bread · Peanut butter, crushed potato chips · Jam · **Fry spread:** butter
+*The chips stay crunchy inside the press.*
 
 Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 

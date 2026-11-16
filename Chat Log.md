@@ -50,3 +50,4 @@
 - Added a **Test Kitchen ideas** stat tile (15, counted automatically) next to Recipes on both tabs. Tapping it opens the Recipes tab and scrolls to Test Kitchen.
 - Removed "Pirate O's" from the future menu list under Test Kitchen.
 - Moved Test Kitchen out of the Recipes tab into its own third tab, **Test Kitchen**, with its count on the tab and the stat tiles at the top. The Test Kitchen tile now opens that tab, and a link ending in #test-kitchen opens straight to it.
+- Added 16 Test Kitchen ideas (31 in all): Bodega Chopped Cheese, Pineapple Habanero Pulled Pork, Giardiniera Sausage, Lemon Curd Ricotta, Cowboy Caviar Steak, Spam Musubi, Korean Corn Cheese, Tonkatsu, Philly Cheesesteak, Hot Brown, Muffuletta, Chorizo Egg, Monte Cristo, Elvis, Cookie Butter Apple, Crunchy PB&J. Pastrami Burger Melt was suggested but left out.
