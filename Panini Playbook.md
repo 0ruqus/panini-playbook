@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-85 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+86 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -174,6 +174,10 @@ Mozzarella top and bottom · Turkey, tomato, red onion · Pesto
 
 **Turkey Cranberry Jalapeño** · 🌶🌶 Medium
 Turkey · Cranberry · Jalapeño · Cheese of choice
+
+**Peppered Turkey Serrano** · 🌶🌶 Medium
+Sourdough · Havarti · Cracked black pepper deli turkey, prosciutto crisped in the press first · Serrano cream cheese aioli (roasted serrano, garlic and lime blended into mayo, then stirred into softened cream cheese) · *Add:* baby arugula, tomato
+*Lay the prosciutto in the hot press for a minute until it crisps, then build. Crisp prosciutto stands up to the pepper and serrano, where soft prosciutto gets lost. Spread the aioli on both slices under the Havarti, and add the arugula and tomato after pressing. For more heat, keep the serrano seeds in.*
 
 **Pepperoni Club**
 Swiss + Laughing Cow white cheddar · Cracked black pepper turkey, pepperoni, ham

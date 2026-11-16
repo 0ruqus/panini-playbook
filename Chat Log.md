@@ -57,3 +57,4 @@
 - 2026-11-15: Added a seventh layer, **05 · Heat**, that defines spicy: optional, with a Mild / Medium / Hot ladder listing where the heat comes from. Add and Fry spread renumbered to 06 and 07; layer tiles now read 7.
 - 2026-11-15: Tagged every spicy card with a heat level (44 cards: recipes and Test Kitchen ideas), added a Mild / Medium / Hot filter on the Recipes tab, and dropped banana peppers from the Mild list since they are tangy, not hot.
 - 2026-11-15: Fixed the "Any heat" chip, which went black-on-black when selected in dark mode. It now matches the All chip.
+- 2026-11-15: Added **Peppered Turkey Serrano** (Turkey, 🌶🌶 Medium) from memory: peppered deli turkey, prosciutto and a serrano aioli mixed with cream cheese. Enhanced with sourdough, Havarti as the glue, prosciutto crisped in the press first, and arugula and tomato after. Recipe count 86.
