@@ -710,8 +710,8 @@ Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in th
 *Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
 
 **Ham + Swiss, Slider-Style** (Ham & pork) · 🌶 Mild
-Texas toast or Hawaiian bread · Swiss + half Gruyère · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
-*Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
+Texas toast or Hawaiian bread · Swiss against both slices + brie in the middle (or swap brie for Gruyère) · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
+*An amped-up take on the Ham + Swiss card, with party ham slider flavors. Slice the brie cold so it cuts cleanly; the rind can stay on. Brie with ham and honey Dijon is a classic French pairing. Cook the bacon crisp first, and fold the thick ham slices loosely so they heat through. Other directions: dill pickles for a Cuban lean, or a thin layer of raspberry or fig jam.*
 
 **Sage Cali Chicken** (Chicken) · 🌶 Mild
 Sourdough · Monterey pepper jack · Roasted chicken seasoned with sage and Cali rub, grilled orange bell pepper, caramelized onion · Apple jalapeño jelly, or garlic Dijon aioli for savory · *Add:* baby arugula · **Fry spread:** mayo with fresh sage leaves pressed in
