@@ -596,7 +596,7 @@ Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeez
 *Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
 
 **Beer Cheese Brat** (Ham & pork) · 🌶 Mild
-Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise (or hot dogs, air fried and split), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
+Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise (or air-fried split hot dogs), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
 *Cooked Nov 2026: swapped in hot dogs, air fried, with Kewpie. It works as the quick weeknight version. Split the brat flat so it presses evenly. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
 
 **Birria Melt** (Beef) · 🌶 Mild
