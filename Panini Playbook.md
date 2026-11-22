@@ -595,6 +595,10 @@ Never made yet. Make one, and if it's a keeper it moves up into the recipes.
 Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeezed dry · Spicy brown mustard · **Fry spread:** butter
 *Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
 
+**Beer Cheese Brat** (Ham & pork) · 🌶 Mild
+Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise, PBR beer-caramelized onions · Beaver spicy brown mustard · *Add:* dill pickle chips · **Fry spread:** butter
+*Split the brat flat so it presses evenly. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
+
 **Birria Melt** (Beef) · 🌶 Mild
 Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · **Fry spread:** fat skimmed from the consommé
 *Brush the outside with the red fat off the top of the consommé instead of mayo, and serve a cup of consommé for dipping.*
@@ -705,9 +709,9 @@ Bolillo · Oaxaca + cotija · Tortilla chips tossed in warm salsa verde, scrambl
 Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Marinara simmered down thick, between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
 *Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
 
-**Ham + Swiss, Slider-Style** (Ham & pork)
-Texas toast or Hawaiian bread · Swiss, half Gruyère · Ham, PBR beer-caramelized onions · Honey Dijon · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
-*An amped-up take on the Ham + Swiss card, with party ham slider flavors. Other directions: yellow mustard and dill pickles for a Cuban lean, or a thin layer of raspberry or fig jam.*
+**Ham + Swiss, Slider-Style** (Ham & pork) · 🌶 Mild
+Texas toast or Hawaiian bread · Swiss + half Gruyère · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
+*Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
 
 **Sage Cali Chicken** (Chicken) · 🌶 Mild
 Sourdough · Monterey pepper jack · Roasted chicken seasoned with sage and Cali rub, grilled orange bell pepper, caramelized onion · Apple jalapeño jelly, or garlic Dijon aioli for savory · *Add:* baby arugula · **Fry spread:** mayo with fresh sage leaves pressed in
