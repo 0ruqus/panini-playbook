@@ -3,6 +3,7 @@
 A shareable panini cookbook built from the Recipes › PANINI folder in Apple Notes.
 
 - [Panini Playbook.md](Panini%20Playbook.md): the house formula (bread · melt · fill · spread · add · fry spread), press technique, pantry lists, 86 recipes grouped by protein, quick builds, house spread recipes and brand-name ideas.
+- `panini-playbook.html`: the single-file site. The **Builder** tab asks about protein, cheese and heat, then suggests up to six recipes; the other tabs hold the playbook, searchable recipes and Test Kitchen.
 - [Chat Log.md](Chat%20Log.md): what was made and when.
 
 **Source:** 53 notes in Recipes › PANINI, the "Kungfu Cheezus" name list in Ideas › Business, and spread recipes from other recipe folders (chipotle aioli, pineapple habanero salsa, lemon curd, cowboy caviar, bulgogi marinade, peri peri). The notes were only read, never changed.

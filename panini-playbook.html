@@ -184,6 +184,10 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .card .tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .card .heat{font:600 .7rem/1 var(--mono);letter-spacing:.04em;color:var(--c-beef);border:1px solid var(--c-beef);border-radius:4px;padding:3px 6px;white-space:nowrap}
 .card .heat[data-h="Hot"]{background:var(--c-beef);color:var(--chip-ink)}
+.card .vlink{justify-self:start;font:600 .82rem/1.2 var(--body);color:var(--basil);background:none;border:0;padding:2px 0;cursor:pointer;text-decoration:none}
+.card .vlink:hover{text-decoration:underline}
+.card .vlink:focus-visible{outline:2px solid var(--basil);outline-offset:2px}
+.card .tkbadge{--fc:var(--muted);border-style:dashed;color:var(--muted)}
 .heatchips .chip{--fc:var(--c-beef)}
 .heatchips .chip[data-h="Any"]{--fc:var(--fg)}
 .heatchips .chip[data-h="Any"][aria-pressed="true"]{color:var(--bg)}
@@ -192,6 +196,59 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 .tabs{overflow-x:auto;scrollbar-width:none}
 .panel > .facts + section.first{border-top:0}
 @media (max-width:560px){.tabs{gap:0}.tab{padding:12px 8px 13px;font-size:.88rem;gap:5px;white-space:nowrap}.tab .n{padding:2px 5px;font-size:.66rem}}
+
+/* builder */
+.bq{display:grid;gap:18px}
+.bprogress{display:flex;gap:8px;align-items:center}
+.bprogress .dot{width:28px;height:6px;border-radius:999px;background:var(--line)}
+.bprogress .dot.done{background:var(--mustard)}
+.bprogress .dot.on{background:var(--basil)}
+.boptions{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.bopt{display:flex;align-items:center;gap:10px;text-align:left;font:700 1.05rem/1.2 var(--display);font-stretch:85%;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);cursor:pointer}
+.bopt::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--basil);flex:none}
+.bopt:hover{border-color:var(--basil)}
+.bopt .hint{display:block;margin-top:4px;font:400 .82rem/1.35 var(--body);color:var(--muted)}
+.bopt .n{margin-left:auto;font:500 .75rem/1 var(--mono);color:var(--muted)}
+.bopt:disabled{opacity:.45;cursor:not-allowed}
+.bopt:disabled::before{background:var(--muted)}
+.bopt:disabled:hover{border-color:var(--line)}
+.bnav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.bbtn{font:700 .9rem/1 var(--display);font-stretch:85%;padding:10px 16px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);cursor:pointer}
+.bbtn:hover{border-color:var(--basil)}
+.bbtn.primary{background:var(--basil);border-color:var(--basil);color:var(--basil-ink)}
+.bcount{font:500 .85rem var(--mono);color:var(--muted)}
+.recap{display:flex;flex-wrap:wrap;gap:8px}
+.recap .tag{--fc:var(--basil)}
+.bmix{display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:start}
+.bmix>.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bmix .bideas .grid{grid-template-columns:minmax(0,1fr)}
+@media (max-width:860px){.bmix{grid-template-columns:minmax(0,1fr)}.bmix>.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.boptions{grid-template-columns:minmax(0,1fr)}.bopt{padding:12px 14px}.bmix>.grid{grid-template-columns:minmax(0,1fr)}}
+
+.vmask{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.55);display:grid;place-items:center;padding:20px;overflow:auto}
+.vmask[hidden]{display:none}
+.vmodal{--fc:var(--basil);background:var(--bg);border:1px solid var(--line);border-radius:12px;width:min(880px,100%);max-height:calc(100vh - 40px);overflow:auto;padding:24px;display:grid;gap:28px;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+.vmhead{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.vmhead h2{font-size:1.3rem}
+.vmclose{font:700 1.1rem/1 var(--mono);width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);cursor:pointer}
+.vmclose:hover{border-color:var(--basil)}
+.vmnote{color:var(--muted);font-size:.9rem}
+.vsection+.vsection{border-top:1px solid var(--line);padding-top:24px}
+.vsection h3{font-size:1.05rem;margin:0}
+.vsection .vmnote{margin:6px 0 0}
+.vmrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:14px}
+.vcard{--fc:var(--basil);border:1px solid var(--line);border-top:3px solid var(--fc);border-radius:10px;padding:14px;background:var(--surface);display:grid;gap:10px;align-content:start;cursor:pointer;text-align:left;font:inherit;color:var(--fg)}
+.vcard:hover{border-color:var(--basil)}
+.vcard:focus-visible{outline:2px solid var(--basil);outline-offset:2px}
+.vcard h3{font-size:1rem;margin:0}
+.vcard .vheat{font:600 .68rem/1 var(--mono);color:var(--c-beef)}
+.vdiffs{display:grid;gap:8px}
+.vdiff{display:grid;gap:3px;padding:8px 10px;border-radius:7px;background:var(--sunk)}
+.vlabel{font:600 .62rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.vfrom{font-size:.82rem;line-height:1.35;color:var(--muted);overflow-wrap:anywhere}
+.varrow{font-size:.8rem;line-height:1;color:var(--muted)}
+.vto{font-size:.88rem;font-weight:600;line-height:1.35;color:var(--basil);overflow-wrap:anywhere}
+@media (max-width:560px){.vmask{padding:10px}.vmodal{padding:16px;max-height:calc(100vh - 20px)}.vmrow{grid-template-columns:minmax(0,1fr)}}
 </style>
 
 <div class="wrap">
@@ -203,6 +260,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 
 <nav class="tabs" role="tablist" aria-label="Sections">
   <button class="tab" role="tab" id="t-guide" aria-controls="tab-guide" aria-selected="true" data-tab="guide">The Playbook</button>
+  <button class="tab" role="tab" id="t-builder" aria-controls="tab-builder" aria-selected="false" data-tab="builder">Builder</button>
   <button class="tab" role="tab" id="t-recipes" aria-controls="tab-recipes" aria-selected="false" data-tab="recipes">Recipes <span class="n" id="tabCount"></span></button>
   <button class="tab" role="tab" id="t-kitchen" aria-controls="tab-kitchen" aria-selected="false" data-tab="kitchen">Test Kitchen <span class="n" id="tkTab"></span></button>
 </nav>
@@ -442,6 +500,22 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 
 </div>
 
+<div class="panel" id="tab-builder" role="tabpanel" aria-labelledby="t-builder" hidden>
+  <div class="facts">
+    <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">86</b><span>Recipes →</span></a>
+    <a class="fact fact-link" href="#test-kitchen" data-goto="kitchen"><b class="tkCount">30</b><span>Test Kitchen ideas →</span></a>
+    <div class="fact"><b>7</b><span>Layers in every build</span></div>
+    <div class="fact"><b>375° / 200°</b><span>Thin / thick press, °F</span></div>
+    <div class="fact"><b>11</b><span>House spreads &amp; components</span></div>
+  </div>
+<section aria-labelledby="builder" class="builder">
+  <p class="eyebrow">Pick a few things</p>
+  <h2 id="builder">Build a panini</h2>
+  <p class="lede">Answer three quick questions — protein, cheese and heat — and get a handful of recipes from the collection. Skip any question you don't care about.</p>
+  <div id="bquiz"></div>
+</section>
+</div>
+
 <div class="panel" id="tab-recipes" role="tabpanel" aria-labelledby="t-recipes" hidden>
   <div class="facts">
     <a class="fact fact-link" href="#recipes" data-goto="recipes"><b class="factCount">86</b><span>Recipes →</span></a>
@@ -484,6 +558,13 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 </div>
 
 <footer>Compiled 10 Nov 2026 from the house PANINI recipe collection · Instagram <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></footer>
+</div>
+
+<div class="vmask" id="vmask" hidden>
+  <div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-labelledby="vmtitle">
+    <div class="vmhead"><h2 id="vmtitle">Similar paninis</h2><button class="vmclose" id="vmclose" type="button" aria-label="Close variants">×</button></div>
+    <div id="vmbody"></div>
+  </div>
 </div>
 
 <script>
@@ -581,6 +662,55 @@ const T=[["Brat & Kraut", "Ham & pork", "Rye", "Swiss, Muenster", "Grilled bratw
 // Heat layer: Mild / Medium / Hot. Recipes not listed have no heat.
 const HEAT={"Ham + Havarti, Pineapple Habanero": "Hot", "Jam n' Ham": "Mild", "Turkey Swiss, Ancho Chili Jam": "Mild", "Turkey Swiss + Bacon": "Mild", "Turkey Gouda Bacon": "Medium", "Club Modified": "Mild", "Turkey Cranberry Jalapeño": "Medium", "Peppered Turkey Serrano": "Hot", "Chicken Panini": "Medium", "Buffalo Bacon Ranch": "Medium", "Buffalo Apple Chicken": "Mild", "Fajita": "Mild", "Kimchi": "Mild", "Peri Peri, Fried": "Hot", "Peri Peri, Air-Fryer": "Mild", "Praise Cheesus": "Mild", "South Western": "Medium", "Costco Chipotle Chicken": "Medium", "Jalapeño Popper Chicken": "Medium", "Roast Beef + Provolone": "Medium", "Roast Beef": "Mild", "Italian Beef": "Hot", "Hot Honey": "Medium", "Honey Pepperoni": "Medium", "Jalapeño Honey Pizza-Style": "Medium", "Giardiniera Sausage": "Hot", "Korean Spicy Tuna": "Medium", "Buffalo Tuna Melt": "Medium", "Veggie Two": "Medium", "Asiago-Style Mushroom": "Mild", "Jalapeño Pear": "Medium", "Pineapple Jalapeño Mushroom": "Medium", "Brat & Kraut": "Mild", "Birria Melt": "Mild", "Bulgogi Cheesesteak": "Medium", "Banh Mi Pork": "Medium", "Nashville Hot Chicken": "Hot", "Gochujang Turkey": "Medium", "Elote Street Corn": "Medium", "Pimento Cheese & Pepper Jelly": "Mild", "Mac & Cheese Melt": "Mild", "Pineapple Habanero Pulled Pork": "Hot", "Cowboy Caviar Steak": "Mild", "Chorizo Egg": "Mild", "Chilaquiles": "Mild"};
 const HL=["Any heat","Mild","Medium","Hot"],PEP={Mild:"🌶",Medium:"🌶🌶",Hot:"🌶🌶🌶"};
+const TK=new Set(T.map(r=>r[0])),ALL=[...R,...T];
+const VGSETS=[
+  ["Ham + Havarti, Raspberry Mustard","Ham + Havarti, Pineapple Habanero","Ham + Swiss"],
+  ["Hawaiian","Grilled Pineapple, Ham & Bacon"],
+  ["Turkey + Swiss, Pesto","Turkey Swiss, Ancho Chili Jam","Turkey Swiss + Bacon"],
+  ["Turkey Blueberry","Strawberry Basil Turkey"],
+  ["Roast Beef + Provolone","Roast Beef","Roast Beef & Onion Marmalade"],
+  ["Honey Pepperoni","Jalapeño Honey Pizza-Style","Hot Honey"],
+  ["Caprese","Pesto Tomato"],
+  ["Blueberry Brie","Balsamic Blueberry","Blueberry Lemon"],
+  ["Peri Peri, Fried","Peri Peri, Air-Fryer"],
+  ["Springer (Dill & Spring Onion)","Springer (Fettuccine)"],
+  ["Cuban","Cuban Reuben"],
+  ["Blueberry Brie","Apple & Prosciutto","Apple Cranberry"],
+  ["Elvis","Crunchy PB&J","S'mores","Cookie Butter Apple","Lemon Curd Ricotta"],
+  ["Ham + Havarti, Pineapple Habanero","Pineapple Habanero Pulled Pork"],
+  ["Philly Cheesesteak","Bulgogi Cheesesteak"],
+  ["Italian","Giardiniera Sausage","Muffuletta"]
+];
+function vparts(a,b){
+  const L=["Bread","Melt","Fill","Spread","Add","Fry"],out=[];
+  for(let i=0;i<6;i++){
+    const from=a[i+2]||"",to=b[i+2]||"";
+    if(from===to)continue;
+    out.push({layer:L[i],from,to,kind:from?to?"change":"remove":"add"});
+  }
+  return out;
+}
+function vdiff(a,b){return vparts(a,b).map(p=>p.from?p.to?`${p.layer}: ${p.from} → ${p.to}`:`− ${p.layer}: ${p.from}`:`+ ${p.layer}: ${p.to}`)}
+const VGMAP=(()=>{
+  const by=Object.fromEntries(ALL.map(r=>[r[0],r])),m=new Map();
+  for(const g of VGSETS){
+    const rows=g.map(n=>by[n]).filter(Boolean);
+    if(rows.length<2)continue;
+    const limit=g.some(n=>TK.has(n))?4:3;
+    const totals=rows.map(a=>rows.reduce((s,b)=>s+(a===b?0:vdiff(a,b).length),0));
+    const anchor=rows[totals.indexOf(Math.min(...totals))];
+    const keep=[anchor,...rows.filter(r=>r!==anchor&&vdiff(anchor,r).length<=limit)];
+    if(keep.length<2)continue;
+    const names=keep.map(r=>r[0]);
+    names.forEach(n=>{
+      const s=m.get(n)||new Set();
+      names.forEach(x=>{if(x!==n)s.add(x)});
+      m.set(n,s);
+    });
+  }
+  for(const [n,s] of m)m.set(n,[...s]);
+  return m;
+})();
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
 const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
 let fam="All",q="",heat="Any heat";
@@ -601,9 +731,12 @@ function draw(){
     return cardHTML(r,"")}).join("")
     :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
 }
-function cardHTML(r,cls){
+function cardHTML(r,cls,noLink){
     const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}
+    const vs=noLink?null:VGMAP.get(r[0]);
+    const link=vs?`<button class="vlink" type="button" data-vg="${esc(r[0])}">View ${vs.length} variant${vs.length>1?"s":""} →</button>`:"";
+    const tk=cls.includes("idea")?`<span class="tag tkbadge">Test Kitchen</span>`:"";
+    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}${tk}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}${link}</article>`}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
@@ -618,11 +751,58 @@ function showTab(t,scroll){
   tabBtns.forEach(b=>{const on=b.dataset.tab===t;b.setAttribute("aria-selected",String(on));document.getElementById("tab-"+b.dataset.tab).hidden=!on});
   if(scroll){const nav=document.querySelector(".tabs");const y=nav.getBoundingClientRect().top+scrollY-1;if(scrollY>y)scrollTo(0,y)}
 }
-document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",{recipes:"#recipes",kitchen:"#test-kitchen"}[b.dataset.tab]||location.pathname+location.search)}catch(_){}});
+document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",{builder:"#builder",recipes:"#recipes",kitchen:"#test-kitchen"}[b.dataset.tab]||location.pathname+location.search)}catch(_){}});
+let vreturn=null,voverflow="";
+const vmask=document.getElementById("vmask"),vmbody=document.getElementById("vmbody"),vmclose=document.getElementById("vmclose");
+function openVariants(name){
+  const sibs=VGMAP.get(name),r=ALL.find(x=>x[0]===name);
+  if(!sibs||!r)return;
+  if(vmask.hidden){vreturn=document.activeElement;voverflow=document.body.style.overflow}
+  const cards=sibs.map(n=>{
+    const vr=ALL.find(x=>x[0]===n),parts=vparts(r,vr);
+    const rows=parts.length?parts.map(p=>{
+      const from=p.from?`<span class="vfrom">${p.kind==="remove"?"− ":""}${esc(p.from)}</span>`:"";
+      const arrow=p.from&&p.to?`<span class="varrow">↓</span>`:"";
+      const to=p.to?`<span class="vto">${p.kind==="add"?"+ ":""}${esc(p.to)}</span>`:"";
+      return `<div class="vdiff"><span class="vlabel">${esc(p.layer)}</span>${from}${arrow}${to}</div>`;
+    }).join(""):`<div class="vdiff"><span class="vlabel">Build</span><span class="vto">Same build</span></div>`;
+    return `<button class="vcard" type="button" data-vv="${esc(n)}"><h3>${esc(n)}</h3>${HEAT[n]?`<span class="vheat">${PEP[HEAT[n]]} ${HEAT[n]}</span>`:""}<div class="vdiffs">${rows}</div></button>`;
+  }).join("");
+  vmbody.innerHTML=`<div class="vsection"><div class="vtop">${cardHTML(r,TK.has(name)?" idea":"",true)}</div></div><div class="vsection"><h3>Variants (${sibs.length})</h3><p class="vmnote">Changes compared with the card above. Tap a variant to make it the main card.</p><div class="vmrow">${cards}</div></div>`;
+  document.getElementById("vmtitle").textContent=`Similar to ${name}`;
+  vmask.hidden=false;
+  document.body.style.overflow="hidden";
+  vmclose.focus();
+}
+function closeVariants(){
+  if(vmask.hidden)return;
+  vmask.hidden=true;
+  document.body.style.overflow=voverflow;
+  if(vreturn&&vreturn.focus)vreturn.focus();
+  vreturn=null;
+}
+vmclose.addEventListener("click",closeVariants);
+vmask.addEventListener("click",e=>{if(e.target===vmask)closeVariants()});
+document.addEventListener("keydown",e=>{
+  if(!vmask.hidden){
+    if(e.key==="Escape"){closeVariants();return}
+    if(e.key==="Tab"){
+      const f=[...vmask.querySelectorAll("button, a[href]")];
+      if(!f.length)return;
+      const first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+    return;
+  }
+});
 document.addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);(document.getElementById(g.dataset.scroll||"")||document.querySelector(".tabs")).scrollIntoView({behavior:"smooth"});return}
-  const a=e.target.closest("a[data-open]");if(a){e.preventDefault();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}}
+  const a=e.target.closest("a[data-open]");if(a){e.preventDefault();if(!vmask.hidden)closeVariants();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}return}
+  const vv=e.target.closest("[data-vv]");if(vv){e.preventDefault();openVariants(vv.dataset.vv);return}
+  const vc=e.target.closest("[data-vg]");if(vc&&!e.target.closest("a")){e.preventDefault();openVariants(vc.dataset.vg)}
 });
+if(location.hash==="#builder")showTab("builder",false);
 if(location.hash==="#recipes")showTab("recipes",false);
 if(location.hash==="#test-kitchen"||location.hash==="#kitchen")showTab("kitchen",false);
 
@@ -633,4 +813,148 @@ function pick(n){tag.textContent=n;names.querySelectorAll("button").forEach(b=>b
 names.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const n=nameOf(b);pick(n);try{localStorage.setItem("pp-tag2",n)}catch(_){}});
 let saved="Cheezus Saves";try{saved=localStorage.getItem("pp-tag2")||saved}catch(_){}
 pick(saved);
+
+// Builder: protein → cheese style → heat → suggestions
+const PROTEINS=[
+  {label:"Turkey",hint:"Smoked, blackened or cracked pepper",families:["Turkey"]},
+  {label:"Chicken",hint:"Grilled, roasted, buffalo, air-fryer",families:["Chicken"]},
+  {label:"Ham & pork",hint:"Ham, bacon, sausage, roast pork",families:["Ham & pork"]},
+  {label:"Beef",hint:"Roast beef, pastrami, steak, bulgogi",families:["Beef"]},
+  {label:"Italian & cured",hint:"Salami, pepperoni, meatballs",families:["Italian"]},
+  {label:"Fish",hint:"Tuna and smoked seafood",families:["Fish"]},
+  {label:"Fruit & dessert",hint:"Sweet, fruity or chocolatey",families:["Fruit","Dessert"]},
+  {label:"No meat",hint:"Vegetarian, fruit and desserts",families:["Vegetarian","Fruit","Dessert"]},
+  {label:"Anything",hint:"Surprise me across all families",families:[]}
+];
+const CHEESES=[
+  {label:"Creamy & soft",hint:"Brie, cream cheese, Laughing Cow",re:/brie|cream cheese|laughing cow|mascarpone|ricotta|fontina|oaxaca/i},
+  {label:"Sharp cheddar",hint:"Cheddar and American",re:/cheddar|american/i},
+  {label:"Mild melters",hint:"Swiss, Havarti, provolone, Jack",re:/swiss|havarti|provolone|emmental|monterey jack|muenster|american/i},
+  {label:"Mozzarella & Italian",hint:"Mozzarella, Parmesan, feta",re:/mozzarella|parmesan|feta|ricotta/i},
+  {label:"Smoky gouda",hint:"Smoked or red wax gouda",re:/gouda/i},
+  {label:"Spicy cheese",hint:"Pepper jack, habanero, hot wedges",re:/pepper jack|habanero|hot/i},
+  {label:"Any cheese",hint:"No preference",re:null}
+];
+const HEATQ=[
+  {label:"Any heat",value:"Any",hint:"Sweet, savory or spicy"},
+  {label:"No heat",value:"None",hint:"No chiles or hot sauce"},
+  {label:"Mild",value:"Mild",hint:"🌶 Pepper jack and gentle heat"},
+  {label:"Medium",value:"Medium",hint:"🌶🌶 Jalapeño, chipotle, sriracha"},
+  {label:"Hot",value:"Hot",hint:"🌶🌶🌶 Serrano, habanero, Nashville"}
+];
+const BQ=[
+  {key:"protein",title:"What kind of panini are you in the mood for?",options:PROTEINS.map(o=>({label:o.label,hint:o.hint,value:o.label}))},
+  {key:"cheese",title:"What kind of cheese?",options:CHEESES.map(o=>({label:o.label,hint:o.hint,value:o.label}))},
+  {key:"heat",title:"How much heat?",options:HEATQ.map(o=>({label:o.label,hint:o.hint,value:o.value}))}
+];
+const BLABEL={protein:"Protein",cheese:"Cheese",heat:"Heat"};
+const bz=document.getElementById("bquiz");
+let bans={protein:null,cheese:null,heat:null},bstep=0,bresults=false,bearly=false,bSeed=Math.floor(Math.random()*4294967296);
+function bLabel(key,value){const o=BQ.find(q=>q.key===key).options.find(x=>x.value===value);return o?o.label:value}
+function bFits(r,a){
+  const p=PROTEINS.find(x=>x.label===a.protein);
+  if(p&&p.families.length&&!p.families.includes(r[1]))return false;
+  const c=CHEESES.find(x=>x.label===a.cheese);
+  if(c&&c.re&&!c.re.test(r[3]))return false;
+  if(a.heat&&a.heat!=="Any"&&(HEAT[r[0]]||"None")!==a.heat)return false;
+  return true;
+}
+function bPool(a){return R.filter(r=>bFits(r,a))}
+function bWith(key,value){const a=Object.assign({},bans);a[key]=value;return a}
+function bScore(r,a){
+  let s=0;
+  const p=PROTEINS.find(x=>x.label===a.protein);
+  if(p&&p.families.includes(r[1]))s+=3;
+  const c=CHEESES.find(x=>x.label===a.cheese);
+  if(c&&c.re&&c.re.test(r[3]))s+=2;
+  if(a.heat&&a.heat!=="Any"&&(HEAT[r[0]]||"None")===a.heat)s+=1;
+  return s;
+}
+function bRoll(){bSeed=Math.floor(Math.random()*4294967296)}
+function bShuffle(rows,seed){
+  const a=rows.slice();let s=seed>>>0;
+  for(let i=a.length-1;i>0;i--){s=(s*1664525+1013904223)>>>0;const j=s%(i+1);[a[i],a[j]]=[a[j],a[i]]}
+  return a;
+}
+function bSuggest(){
+  const active=["protein","cheese","heat"].filter(k=>bans[k]);
+  let keys=active.slice(),sets=[];
+  while(true){
+    sets.push(keys.slice());
+    const drop=keys.includes("cheese")?"cheese":keys.includes("heat")?"heat":keys.includes("protein")?"protein":null;
+    if(!drop)break;
+    keys=keys.filter(k=>k!==drop);
+  }
+  let picked=sets[sets.length-1],pool=[],eff={protein:null,cheese:null,heat:null};
+  for(const s of sets){
+    const a={protein:s.includes("protein")?bans.protein:null,cheese:s.includes("cheese")?bans.cheese:null,heat:s.includes("heat")?bans.heat:null};
+    const rows=R.filter(r=>bFits(r,a));
+    eff=a;
+    if(rows.length>=3){picked=s;pool=rows;break}
+  }
+  if(!pool.length){pool=R.slice();eff={protein:null,cheese:null,heat:null}}
+  return {pool,dropped:active.filter(k=>!picked.includes(k)),answers:eff};
+}
+function drawBuilder(){
+  if(bresults){drawBResults();return}
+  const q=BQ[bstep];
+  const counts=q.options.map(o=>bPool(bWith(q.key,o.value)).length);
+  if(!counts.some(Boolean)){bearly=true;bresults=true;bRoll();drawBResults();return}
+  const dots=BQ.map((_,i)=>`<span class="dot${i===bstep?" on":i<bstep?" done":""}"></span>`).join("");
+  bz.innerHTML=`<div class="bq">
+    <div class="bprogress" aria-hidden="true">${dots}</div>
+    <p class="eyebrow" aria-live="polite">Step ${bstep+1} of ${BQ.length}${bans[q.key]?" · "+esc(bLabel(q.key,bans[q.key])):""}</p>
+    <h3>${esc(q.title)}</h3>
+    <div class="boptions" role="group" aria-label="${esc(q.title)}">${q.options.map((o,i)=>`<button type="button" class="bopt" data-v="${esc(o.value)}"${counts[i]?"":" disabled"}><span>${esc(o.label)}<span class="hint">${esc(o.hint)}</span></span><span class="n">${counts[i]}</span></button>`).join("")}</div>
+    <div class="bnav">
+      <button type="button" class="bbtn" id="bskip">Skip this question</button>
+      ${bstep?`<button type="button" class="bbtn" id="bback">Back</button>`:""}
+      ${Object.values(bans).some(Boolean)?`<button type="button" class="bbtn" id="breset">Start over</button>`:""}
+    </div>
+  </div>`;
+}
+function drawBResults(){
+  const suggested=bearly?{pool:bPool(bans),dropped:[],answers:bans}:bSuggest();
+  const {pool,dropped,answers}=suggested;
+  const sorted=pool.slice().sort((x,y)=>bScore(y,answers)-bScore(x,answers));
+  const top=sorted.length>6?bShuffle(sorted,bSeed).slice(0,6):sorted;
+  const ideaPool=T.filter(r=>bFits(r,answers)).sort((x,y)=>bScore(y,answers)-bScore(x,answers));
+  const ideas=ideaPool.length>2?bShuffle(ideaPool,bSeed+1).slice(0,2):ideaPool;
+  const canShuffle=sorted.length>6||ideaPool.length>2;
+  const canNarrow=bearly&&BQ.some(q=>!bans[q.key])&&top.length>=2;
+  const recap=["protein","cheese","heat"].filter(k=>bans[k]).map(k=>`<span class="tag">${esc(BLABEL[k])}: ${esc(bLabel(k,bans[k]))}</span>`).join("");
+  const note=canNarrow?`<p class="note"><strong>Only a few match your answers so far.</strong> Here they are, or keep narrowing.</p>`:dropped.length?`<p class="note"><strong>No exact match for all your answers.</strong> Dropped the ${dropped.map(k=>BLABEL[k].toLowerCase()).join(" and ")} filter${dropped.length>1?"s":""} to find these.</p>`:"";
+  const ideaGrid=`<div class="grid">${ideas.map(r=>cardHTML(r," idea")).join("")}</div>`;
+  const ideaHTML=ideas.length?`<div class="bideas"><h3>More from the Test Kitchen</h3><p class="bcount">Ideas, not made yet.</p>${ideaGrid}</div>`:"";
+  const cards=top.length<=4&&ideas.length?`<div class="bmix"><div class="grid">${top.map(r=>cardHTML(r,"")).join("")}</div><div class="bideas"><h3>Test Kitchen</h3><p class="bcount">Ideas, not made yet.</p>${ideaGrid}</div></div>`:`<div class="grid">${top.map(r=>cardHTML(r,"")).join("")}</div>${ideaHTML}`;
+  bz.innerHTML=`<div class="bq">
+    <p class="eyebrow" aria-live="polite">Your build</p>
+    <div class="recap">${recap||`<span class="tag">Anything goes</span>`}</div>
+    <p class="bcount" aria-live="polite">${top.length} of ${R.length} recipes${dropped.length?" · filters relaxed":canNarrow?" · from your answers so far":""}${ideas.length?` · + ${ideas.length} Test Kitchen idea${ideas.length>1?"s":""}`:""}</p>
+    ${note}
+    ${cards}
+    <div class="bnav">
+      <button type="button" class="bbtn" id="bb-back">Change answers</button>
+      ${canNarrow?`<button type="button" class="bbtn" id="bb-more">Keep narrowing</button>`:""}
+      ${canShuffle?`<button type="button" class="bbtn" id="bb-shuffle">Shuffle</button>`:""}
+      <button type="button" class="bbtn primary" id="bb-again">Start over</button>
+    </div>
+  </div>`;
+}
+bz.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b||b.disabled)return;
+  if(b.id==="bskip"){bans[BQ[bstep].key]=null;bAdvance();return}
+  if(b.id==="bback"){bstep=Math.max(0,bstep-1);bearly=false;drawBuilder();return}
+  if(b.id==="breset"||b.id==="bb-again"){bans={protein:null,cheese:null,heat:null};bstep=0;bresults=false;bearly=false;bRoll();drawBuilder();return}
+  if(b.id==="bb-back"){bresults=false;bearly=false;drawBuilder();return}
+  if(b.id==="bb-more"){bresults=false;bearly=false;const i=BQ.findIndex(q=>!bans[q.key]);bstep=i<0?BQ.length-1:i;drawBuilder();return}
+  if(b.id==="bb-shuffle"){bRoll();drawBResults();return}
+  if(b.classList.contains("bopt")){bans[BQ[bstep].key]=b.dataset.v;bAdvance()}
+});
+function bAdvance(){
+  if(bPool(bans).length<=6){bearly=true;bresults=true;bRoll();drawBuilder();return}
+  bearly=false;
+  if(bstep<BQ.length-1){bstep++;drawBuilder()}else{bresults=true;bRoll();drawBuilder()}
+}
+drawBuilder();
 </script>
