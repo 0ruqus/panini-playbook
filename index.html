@@ -756,10 +756,13 @@ const short=n=>n.length>22?n.slice(0,20)+"…":n;
 function ingBtn(n,count){return `<button class="ing" type="button" data-ing="${esc(n)}" aria-pressed="${n===xing}">${esc(n)}${count?` <b>×${count}</b>`:""}</button>`}
 function prepOf(r){
   const out=[];const t=[r[3],r[4],r[5],r[6]].join(", ");
-  for(const k in LINK){if(t.includes(k))out.push({txt:`Make ahead: ${k}`,link:LINK[k]})}
-  const re=/\b(rub-roasted|roasted|grilled|sautéed|caramelized|crisped|air-fry(?:er)?|air-fried|blackened|seared|simmered|fried|smash(?:ed)?|pulled|scrambled|shredded|chopped|marinated|pounded|toasted)\b[^,;:()·]*/gi;
-  let m;while((m=re.exec(t))){let p=m[0].trim().replace(/\s+(then|so|and then)\b.*$/i,"");if(p.split(" ").length>1)out.push({txt:p[0].toUpperCase()+p.slice(1)})}
-  if(/bacon/i.test(t)&&!out.some(o=>/bacon/i.test(o.txt)))out.push({txt:"Cook the bacon crisp"});
+  const COOK=/\b(rub-roasted|roasted|grilled|saut[ée]ed|carameli[sz]ed|crisped|air-fry(?:er)?|air-fried|blackened|seared|simmered|fried|smash(?:ed)?|pulled|scrambled|shredded|chopped|marinated|pounded|toasted|crisp)\b/i;
+  for(const k in LINK){if(t.includes(k)&&k!=="PBR beer-caramelized onions")out.push({txt:`Make ahead: ${k}`,link:LINK[k],key:"link:"+k})}
+  for(let seg of t.split(/[,;]|·/)){seg=seg.replace(/\((optional|or [^)]*)\)/gi,"").trim();if(!seg||!COOK.test(seg))continue;
+    if(/carameli[sz]ed onion/i.test(seg)){out.push({txt:"Caramelize the onions (PBR beer version in House spreads)",link:"sp-pbr",key:"caramelized onions"});continue}
+    if(/^(roasted red|grilled apple|grilled pineapple)/i.test(seg)&&seg.split(" ").length<4){out.push({txt:seg[0].toUpperCase()+seg.slice(1),key:seg.toLowerCase()});continue}
+    out.push({txt:seg[0].toUpperCase()+seg.slice(1),key:seg.toLowerCase().replace(/s\b/g,"")})}
+  if(/bacon/i.test(t)&&!out.some(o=>/bacon/i.test(o.txt)))out.push({txt:"Cook the bacon crisp",key:"bacon"});
   return out}
 function renderPlan(){
   const sel=picks.map(n=>BYN[n]).filter(Boolean);
@@ -773,7 +776,7 @@ function renderPlan(){
     // shopping list
     h+=`<section><h3>Shopping list</h3><div class="ptable">${GROUPS.map(g=>{const items=Object.keys(cnt).filter(n=>ING.find(i=>i[1]===n)[0]===g);if(!items.length)return "";return `<div><span class="k">${g==="Spread"?"Spreads & sauces":g}</span><span class="v">${items.map(n=>`${ingBtn(n)}<span class="who">${cnt[n].map(short).join(", ")}</span><br>`).join("")}</span></div>`}).join("")}<div><span class="k">Bread</span><span class="v">${sel.map(o=>`${esc(o.r[2]||"Your choice (sourdough is the house default)")} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div></div></section>`;
     // prep
-    const seen=new Set(),prep=[];sel.forEach(o=>prepOf(o.r).forEach(p=>{const key=p.txt.toLowerCase().replace(/pbr beer-/,"");const ex=prep.find(x=>x.key===key);if(ex)ex.who.push(o.r[0]);else prep.push({...p,key,who:[o.r[0]]})}));
+    const prep=[];sel.forEach(o=>prepOf(o.r).forEach(p=>{const ex=prep.find(x=>x.key===p.key);if(ex){if(!ex.who.includes(o.r[0]))ex.who.push(o.r[0])}else prep.push({...p,who:[o.r[0]]})}));
     h+=`<section><h3>Prep ahead</h3><p class="sub">Cook these before you start pressing. Shared items are done once.</p>${prep.length?`<ol class="prep">${prep.map(p=>`<li>${p.link?`<a href="#${p.link}" data-open="${p.link}">${esc(p.txt)}</a>`:esc(p.txt)} <span class="who">${p.who.map(short).join(", ")}</span></li>`).join("")}</ol>`:`<p class="empty-note">Nothing to cook ahead. Build and press.</p>`}</section>`;
     // press plan
     const fry={};sel.forEach(o=>{const f=o.r[7]||"Mayo (house default)";(fry[f]=fry[f]||[]).push(o.r[0])});
