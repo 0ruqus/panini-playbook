@@ -701,6 +701,18 @@ White bread · Peanut butter, crushed potato chips · Jam · **Fry spread:** but
 Bolillo · Oaxaca + cotija · Tortilla chips tossed in warm salsa verde, scrambled egg, shredded chicken (optional) · *Add:* crema, pickled red onion, cilantro, avocado
 *Toss the chips in the salsa right before building so they soften without turning to mush. Everything cold and creamy goes on after the press.*
 
+**Chicken Parm** (Chicken)
+Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Marinara simmered down thick, between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
+*Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
+
+**Ham + Swiss, Slider-Style** (Ham & pork)
+Texas toast or Hawaiian bread · Swiss, half Gruyère · Ham, PBR beer-caramelized onions · Honey Dijon · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
+*An amped-up take on the Ham + Swiss card, with party ham slider flavors. Other directions: yellow mustard and dill pickles for a Cuban lean, or a thin layer of raspberry or fig jam.*
+
+**Sage Cali Chicken** (Chicken) · 🌶 Mild
+Sourdough · Monterey pepper jack · Roasted chicken seasoned with sage and Cali rub, grilled orange bell pepper, caramelized onion · Apple jalapeño jelly, or garlic Dijon aioli for savory · *Add:* baby arugula · **Fry spread:** mayo with fresh sage leaves pressed in
+*The sage leaves on the outside crisp in the press and show when you cut it. The sweet orange bell works with the jelly.*
+
 Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 
 ---
