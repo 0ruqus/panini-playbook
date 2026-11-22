@@ -710,7 +710,7 @@ Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in th
 *Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
 
 **Ham + Swiss, Slider-Style** (Ham & pork) · 🌶 Mild
-Texas toast or Hawaiian bread · Swiss + half Gruyère · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
+Texas toast or Hawaiian bread · Swiss + half Gruyère · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
 *Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
 
 **Sage Cali Chicken** (Chicken) · 🌶 Mild
