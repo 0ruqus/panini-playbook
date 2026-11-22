@@ -269,7 +269,9 @@ dialog.plan::backdrop{background:rgba(0,0,0,.55)}
 .xmap thead th:not(:first-child){text-transform:none;letter-spacing:0;font:700 .8rem/1.2 var(--body);color:var(--fg)}
 .pick{white-space:nowrap;flex:none}
 .xitem .have{font:600 .72rem var(--mono);color:var(--basil)}
-@media (max-width:560px){.xmap table{min-width:calc(118px + var(--cols) * 62px)}.xmap thead th:first-child,.xmap tbody th,.xmap tfoot th{width:118px}}
+dialog.plan{overflow-x:hidden}
+.plan .pb > *{min-width:0}
+@media (max-width:560px){.xmap table{min-width:calc(112px + var(--cols) * 56px)}.xmap thead th:first-child,.xmap tbody th,.xmap tfoot th{width:112px}.xmap tfoot td strong{font-size:.8rem;white-space:nowrap}.xmap tfoot td small{display:none}.xmap th,.xmap td{padding:7px 4px}.xmap thead th:not(:first-child){font-size:.72rem;overflow-wrap:normal;word-break:normal;hyphens:auto}}
 
 @media (max-width:560px){
   dialog.plan{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;border:0;margin:0}
@@ -791,7 +793,7 @@ function renderPlan(){
     const cnt={};sel.forEach(o=>ingsOf(o.r).forEach(n=>(cnt[n]=cnt[n]||[]).push(o.r[0])));
     const shared=Object.keys(cnt).filter(n=>cnt[n].length>1).sort((a,b)=>cnt[b].length-cnt[a].length);
     const own=sel.map(o=>ingsOf(o.r));
-    h+=`<section><h3>Crossover</h3><p class="sub">Which ingredients your picks share, and how much of each sandwich overlaps with the others. Tap an ingredient to see every panini that uses it.</p>${shared.length?`<div class="xmap" style="--cols:${sel.length}"><table><thead><tr><th scope="col">Ingredient</th>${sel.map((o,i)=>`<th scope="col" data-fam="${esc(o.r[1])}"><span class="num">${i+1}</span>${esc(o.r[0])}</th>`).join("")}</tr></thead><tbody>${shared.map(n=>`<tr><th scope="row">${ingBtn(n,cnt[n].length)}</th>${sel.map((o,i)=>own[i].includes(n)?`<td class="y" aria-label="yes">●</td>`:`<td class="n" aria-label="no">·</td>`).join("")}</tr>`).join("")}</tbody><tfoot><tr><th scope="row">Shared</th>${sel.map((o,i)=>{const sh=own[i].filter(n=>cnt[n].length>1).length;return `<td><strong>${sh} of ${own[i].length}</strong><small>ingredients</small></td>`}).join("")}</tr></tfoot></table></div>`:`<p class="empty-note">No shared ingredients yet. Pick sandwiches that share a cheese, spread or protein to save on prep.</p>`}</section>`;
+    h+=`<section><h3>Crossover</h3><p class="sub">Which ingredients your picks share, and how much of each sandwich overlaps with the others. Tap an ingredient to see every panini that uses it.</p>${shared.length?`<div class="xmap" style="--cols:${sel.length}"><table><thead><tr><th scope="col">Ingredient</th>${sel.map((o,i)=>`<th scope="col" data-fam="${esc(o.r[1])}"><span class="num">${i+1}</span>${esc(o.r[0])}</th>`).join("")}</tr></thead><tbody>${shared.map(n=>`<tr><th scope="row">${ingBtn(n,cnt[n].length)}</th>${sel.map((o,i)=>own[i].includes(n)?`<td class="y" aria-label="yes">●</td>`:`<td class="n" aria-label="no">·</td>`).join("")}</tr>`).join("")}</tbody><tfoot><tr><th scope="row">Shared</th>${sel.map((o,i)=>{const sh=own[i].filter(n=>cnt[n].length>1).length;return `<td title="${sh} of ${own[i].length} ingredients shared"><strong>${sh} of ${own[i].length}</strong><small>ingredients</small></td>`}).join("")}</tr></tfoot></table></div>`:`<p class="empty-note">No shared ingredients yet. Pick sandwiches that share a cheese, spread or protein to save on prep.</p>`}</section>`;
     // what else you could make from the same shopping list
     const have=new Set(Object.keys(cnt));
     const near=POOL.filter(o=>!picks.includes(o.r[0])).map(o=>{const ii=ingsOf(o.r);const got=ii.filter(n=>have.has(n));return {o,ii,got,miss:ii.filter(n=>!have.has(n))}}).filter(x=>x.ii.length>=3&&x.got.length>=2&&x.miss.length<=2).sort((a,b)=>a.miss.length-b.miss.length||b.got.length-a.got.length).slice(0,8);
