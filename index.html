@@ -201,6 +201,59 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 .tabs{overflow-x:auto;scrollbar-width:none}
 .panel > .facts + section.first{border-top:0}
 @media (max-width:560px){.tabs{gap:0}.tab{padding:12px 8px 13px;font-size:.88rem;gap:5px;white-space:nowrap}.tab .n{padding:2px 5px;font-size:.66rem}}
+
+/* cook night planner */
+.card footer.pickrow{all:unset;display:flex;justify-content:flex-end}
+.pick{font:600 .78rem/1 var(--body);padding:7px 10px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.pick:hover{border-color:var(--basil);color:var(--basil)}
+.pick[aria-pressed="true"]{border:1.5px solid var(--basil);background:var(--basil);color:var(--basil-ink)}
+.pick:disabled{opacity:.45;cursor:not-allowed}
+.card.picked{border-color:var(--basil);box-shadow:0 0 0 1px var(--basil)}
+.planbtn{justify-self:start;font:700 .85rem/1 var(--body);padding:9px 14px;border-radius:8px;border:1.5px solid var(--basil);background:var(--surface);color:var(--basil);cursor:pointer}
+.tray{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:20;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 32px);padding:10px 12px;border:2px solid var(--char);border-radius:12px;background:var(--surface);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.tray[hidden]{display:none}
+.tray .tn{font:600 .85rem/1.3 var(--body);min-width:0}
+.tray .tn small{display:block;font:500 .72rem/1.3 var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.tray button{font:700 .85rem/1 var(--body);padding:9px 14px;border-radius:8px;border:1.5px solid var(--basil);cursor:pointer}
+.tray .go{background:var(--basil);color:var(--basil-ink)}
+.tray .clr{background:transparent;color:var(--muted);border-color:var(--line)}
+body.has-tray footer{padding-bottom:120px}
+dialog.plan{width:min(920px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:0;border:2px solid var(--char);border-radius:12px;background:var(--bg);color:var(--fg)}
+dialog.plan::backdrop{background:rgba(0,0,0,.55)}
+.plan .ph{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:var(--bg);border-bottom:1px solid var(--line)}
+.plan .ph h2{font-size:1.5rem}
+.plan .x{font:700 1.3rem/1 var(--body);width:40px;height:40px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;flex:none}
+.plan .pb{padding:4px 18px 24px;display:grid;gap:22px}
+.plan h3{font-size:1.15rem;margin-bottom:8px}
+.plan .sub{font-size:.88rem;color:var(--muted);margin:-4px 0 10px}
+.picks{display:flex;flex-wrap:wrap;gap:8px}
+.picks span{display:inline-flex;align-items:center;gap:6px;font:600 .85rem/1 var(--body);padding:7px 8px 7px 12px;border-radius:999px;border:1.5px solid var(--fc,var(--basil));background:var(--surface)}
+.picks button{font:700 .9rem/1 var(--body);border:0;background:none;color:var(--muted);cursor:pointer;padding:0 4px}
+.ing{display:inline-flex;align-items:center;gap:5px;font:600 .8rem/1.2 var(--body);padding:6px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;margin:0 6px 6px 0;text-align:left}
+.ing:hover,.ing[aria-pressed="true"]{border-color:var(--mustard)}
+.ing[aria-pressed="true"]{background:color-mix(in srgb,var(--mustard) 18%,var(--surface))}
+.ing b{font:500 .7rem var(--mono);color:var(--muted)}
+.ptable{display:grid;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.ptable > div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:10px 14px;border-top:1px solid var(--line)}
+.ptable > div:first-child{border-top:0}
+.ptable dt,.ptable .k{font:500 .7rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ptable .v{min-width:0}
+.who{font:500 .72rem var(--mono);color:var(--muted)}
+.prep{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.builds{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.xref{display:grid;gap:10px}
+.xref .search{max-width:420px}
+.xlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.xitem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--fc);border-radius:8px;background:var(--surface);min-width:0}
+.xitem div{min-width:0}
+.xitem strong{display:block;font-size:.92rem;line-height:1.25}
+.xitem small{font:500 .7rem var(--mono);color:var(--muted)}
+.empty-note{color:var(--muted);font-size:.9rem}
+@media (max-width:560px){
+  dialog.plan{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;border:0;margin:0}
+  .ptable > div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .tray{left:16px;right:16px;transform:none;max-width:none}
+}
 </style>
 
 <div class="wrap">
@@ -469,6 +522,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
     <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
     <div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div>
     <p class="count" id="count" aria-live="polite"></p>
+    <button class="planbtn" type="button" data-plan>Cook night planner: pick 3–4, or look up an ingredient</button>
   </div>
   <div class="grid" id="grid"></div>
 </section>
@@ -486,7 +540,7 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 <section aria-labelledby="kitchen" class="first">
   <p class="eyebrow">Never made yet</p>
   <h2 id="kitchen">Test Kitchen</h2>
-  <p class="lede">Ideas to try. Make one, and if it's a keeper it moves up into the recipes.</p>
+  <p class="lede">Ideas to try. Make one, and if it's a keeper it moves up into the recipes. Tap <strong>+ Cook night</strong> on any card to plan it alongside recipes.</p>
   <div class="grid" id="kgrid"></div>
   <p class="note"><strong>Also on the future menu list:</strong> shawarma, waffle rolls and waffle cookies.</p>
 </section>
@@ -494,6 +548,16 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 
 <footer>Compiled 10 Nov 2026 from the house PANINI recipe collection · Instagram <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></footer>
 </div>
+
+<div class="tray" id="tray" hidden role="region" aria-label="Cook night picks">
+  <div class="tn"><span id="trayN"></span><small id="trayNames"></small></div>
+  <button class="go" type="button" data-plan>Plan it</button>
+  <button class="clr" type="button" id="trayClear">Clear</button>
+</div>
+<dialog class="plan" id="plan" aria-labelledby="planTitle">
+  <div class="ph"><h2 id="planTitle">Cook night</h2><button class="x" type="button" id="planClose" aria-label="Close">×</button></div>
+  <div class="pb" id="planBody"></div>
+</dialog>
 
 <script>
 // [name, family, bread, melt, fill, spread, add, fry, tip]
@@ -609,10 +673,11 @@ function draw(){
   grid.innerHTML=rows.length?rows.map(r=>{
     return cardHTML(r,"")}).join("")
     :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
+  if(window.__pp)syncPicks();
 }
 function cardHTML(r,cls){
     const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}</article>`}
+    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}<footer class="pickrow"><button class="pick" type="button" data-pick="${esc(r[0])}" aria-pressed="false">+ Cook night</button></footer></article>`}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
@@ -634,6 +699,110 @@ document.addEventListener("click",e=>{
 });
 if(location.hash==="#recipes")showTab("recipes",false);
 if(location.hash==="#test-kitchen"||location.hash==="#kitchen")showTab("kitchen",false);
+
+// Cook night planner: pick up to 4 cards, see shared ingredients, shopping list, prep and press plan.
+// Ingredients are matched against a curated list so "caramelized onions" and "PBR beer-caramelized onions" line up.
+const ING=[
+ ["Cheese","Havarti",/havarti/i],["Cheese","Swiss",/swiss/i],["Cheese","Gruyère",/gruy/i],["Cheese","Provolone",/provolone/i],
+ ["Cheese","Mozzarella",/mozzarella/i],["Cheese","Brie",/\bbrie\b/i],["Cheese","Gouda",/gouda/i],["Cheese","Cheddar",/cheddar/i],
+ ["Cheese","Muenster",/muenster/i],["Cheese","Pepper jack",/pepper jack/i],["Cheese","Monterey Jack",/monterey jack/i],["Cheese","American",/\bamerican\b/i],
+ ["Cheese","Feta",/feta/i],["Cheese","Parmesan",/parmesan/i],["Cheese","Blue cheese",/blue cheese/i],["Cheese","Fontina",/fontina/i],
+ ["Cheese","Cotija",/cotija/i],["Cheese","Cream cheese",/cream cheese/i],["Cheese","Laughing Cow",/laughing cow/i],["Cheese","Ricotta",/ricotta/i],
+ ["Cheese","Oaxaca",/oaxaca/i],["Cheese","Queso fresco",/queso fresco/i],["Cheese","Emmental",/emmental/i],
+ ["Protein","Turkey",/turkey/i],["Protein","Ham",/\bham\b/i],["Protein","Bacon",/bacon/i],["Protein","Prosciutto",/prosciutto/i],
+ ["Protein","Roast beef",/roast beef/i],["Protein","Steak",/steak|ribeye|bulgogi/i],["Protein","Ground beef",/ground beef|patt(y|ies)/i],["Protein","Italian beef",/italian beef/i],
+ ["Protein","Chicken",/chicken/i],["Protein","Pepperoni",/pepperoni/i],["Protein","Salami",/salami/i],["Protein","Capocollo",/capocollo/i],
+ ["Protein","Italian sausage",/italian sausage/i],["Protein","Bratwurst",/brat(wurst)?\b/i],["Protein","Pork",/\bpork\b/i],["Protein","Tuna",/tuna/i],
+ ["Protein","Smoked salmon",/salmon/i],["Protein","Egg",/\begg\b|scrambled/i],["Protein","Chorizo",/chorizo/i],["Protein","Spam",/spam\b/i],
+ ["Produce","Caramelized onions",/carameli[sz]ed onion|onion marmalade/i],["Produce","Red onion",/red onion/i],["Produce","Grilled or sautéed onions",/(saut[ée]ed|grilled|white) onion/i],["Produce","Green onion",/green onion|spring onion/i],
+ ["Produce","Jalapeño",/jalape(ñ|n)o(?!\s+(jelly|brown))/i],["Produce","Serrano",/serr?ano/i],["Produce","Habanero",/habanero/i],["Produce","Banana peppers",/banana pepper/i],
+ ["Produce","Roasted red peppers",/roasted red( and yellow)? pepper/i],["Produce","Bell pepper",/bell pepper|peppers and onions|grilled peppers|onions and peppers/i],
+ ["Produce","Mushrooms",/mushroom/i],["Produce","Spinach",/spinach/i],["Produce","Arugula",/arugula/i],["Produce","Avocado",/avocado|guacamole/i],
+ ["Produce","Tomato",/tomato(?! paste)/i],["Produce","Cucumber",/cucumber/i],["Produce","Lettuce",/lettuce|cabbage/i],["Produce","Apple",/\bapple(?! jalape| butter| spice)/i],["Produce","Pear",/\bpear\b/i],
+ ["Produce","Pineapple",/pineapple(?! habanero)/i],["Produce","Strawberries",/strawberr/i],["Produce","Basil",/basil/i],["Produce","Cilantro",/cilantro/i],
+ ["Produce","Sage",/\bsage\b/i],["Produce","Pickles",/pickle(?!d)/i],["Produce","Kimchi",/kimchi/i],["Produce","Sauerkraut",/kraut/i],["Produce","Coleslaw",/coleslaw/i],
+ ["Produce","Giardiniera",/giardiniera/i],["Produce","Corn",/\bcorn\b/i],
+ ["Spread","Apple jalapeño jelly",/jalape(ñ|n)o jelly|pepper jelly/i],["Spread","Honey",/(?<!hot )\bhoney\b(?! dijon| mustard)/i],["Spread","Hot honey",/hot honey/i],
+ ["Spread","Spicy brown mustard",/spicy (brown )?mustard|jalape(ñ|n)o brown mustard/i],["Spread","Dijon",/dijon/i],["Spread","Pesto",/pesto/i],
+ ["Spread","Marinara",/marinara|tomato paste|vodka sauce/i],["Spread","Chipotle aioli",/chipotle (aioli|mayo)/i],["Spread","Garlic mayo",/garlic (mayo|aioli)/i],
+ ["Spread","Sriracha",/sriracha/i],["Spread","Gochujang",/gochujang/i],["Spread","Buffalo sauce",/buffalo/i],["Spread","Ranch",/ranch/i],
+ ["Spread","Cranberry",/cranberry/i],["Spread","Fig",/\bfig\b/i],["Spread","Raspberry",/raspberr/i],["Spread","BBQ sauce",/bbq/i],
+ ["Spread","Pineapple habanero sauce",/pineapple habanero/i],["Spread","Chimichurri",/chimichurri/i],["Spread","Cowboy caviar",/cowboy caviar/i],
+ ["Spread","Nutella",/nutella/i],["Spread","Chocolate & marshmallow",/chocolate|marshmallow/i],["Spread","Peanut butter",/peanut butter/i],["Spread","Lemon curd",/lemon curd/i],["Spread","IPA jam",/ipa jam/i],
+ ["Spread","Balsamic",/balsamic/i],["Spread","Italian dressing",/italian dressing/i]];
+const GROUPS=["Protein","Cheese","Produce","Spread"],MAXP=4;
+const POOL=[...R.map(r=>({r,k:"Recipe"})),...T.map(r=>({r,k:"Test Kitchen"}))];
+const BYN=Object.fromEntries(POOL.map(o=>[o.r[0],o]));
+const ingCache=new Map();
+function ingsOf(r){if(ingCache.has(r[0]))return ingCache.get(r[0]);const t=r.slice(2,8).join(" · ");const out=ING.filter(i=>i[2].test(t)).map(i=>i[1]);ingCache.set(r[0],out);return out}
+const ALLING=ING.map(i=>i[1]).filter(n=>POOL.some(o=>ingsOf(o.r).includes(n)));
+let picks=[];try{picks=JSON.parse(localStorage.getItem("pp-picks")||"[]").filter(n=>BYN[n]).slice(0,MAXP)}catch(_){}
+let xing="";
+const plan=document.getElementById("plan"),planBody=document.getElementById("planBody"),tray=document.getElementById("tray");
+function savePicks(){try{localStorage.setItem("pp-picks",JSON.stringify(picks))}catch(_){}}
+function syncPicks(){
+  document.querySelectorAll("[data-pick]").forEach(b=>{const on=picks.includes(b.dataset.pick);b.setAttribute("aria-pressed",String(on));b.textContent=on?"✓ In cook night":"+ Cook night";b.disabled=!on&&picks.length>=MAXP;b.title=b.disabled?"Cook night holds 4. Remove one first.":"";const c=b.closest(".card");if(c)c.classList.toggle("picked",on)});
+  tray.hidden=!picks.length;document.body.classList.toggle("has-tray",!!picks.length);
+  document.getElementById("trayN").textContent=`${picks.length} of ${MAXP} picked`+(picks.length<3?" · pick 3–4":"");
+  document.getElementById("trayNames").textContent=picks.join(" · ");
+  if(plan.open)renderPlan();
+}
+function togglePick(n){if(picks.includes(n))picks=picks.filter(x=>x!==n);else if(picks.length<MAXP)picks.push(n);savePicks();syncPicks()}
+const short=n=>n.length>22?n.slice(0,20)+"…":n;
+function ingBtn(n,count){return `<button class="ing" type="button" data-ing="${esc(n)}" aria-pressed="${n===xing}">${esc(n)}${count?` <b>×${count}</b>`:""}</button>`}
+function prepOf(r){
+  const out=[];const t=[r[3],r[4],r[5],r[6]].join(", ");
+  for(const k in LINK){if(t.includes(k))out.push({txt:`Make ahead: ${k}`,link:LINK[k]})}
+  const re=/\b(rub-roasted|roasted|grilled|sautéed|caramelized|crisped|air-fry(?:er)?|air-fried|blackened|seared|simmered|fried|smash(?:ed)?|pulled|scrambled|shredded|chopped|marinated|pounded|toasted)\b[^,;:()·]*/gi;
+  let m;while((m=re.exec(t))){let p=m[0].trim().replace(/\s+(then|so|and then)\b.*$/i,"");if(p.split(" ").length>1)out.push({txt:p[0].toUpperCase()+p.slice(1)})}
+  if(/bacon/i.test(t)&&!out.some(o=>/bacon/i.test(o.txt)))out.push({txt:"Cook the bacon crisp"});
+  return out}
+function renderPlan(){
+  const sel=picks.map(n=>BYN[n]).filter(Boolean);
+  let h="";
+  if(sel.length){
+    h+=`<section><div class="picks">${sel.map(o=>`<span data-fam="${esc(o.r[1])}" style="border-color:var(--fc)">${esc(o.r[0])}<button type="button" data-unpick="${esc(o.r[0])}" aria-label="Remove ${esc(o.r[0])}">×</button></span>`).join("")}</div>${sel.length<3?`<p class="sub" style="margin-top:10px">Pick ${3-sel.length} or more from the Recipes or Test Kitchen cards for a full night.</p>`:""}</section>`;
+    // shared
+    const cnt={};sel.forEach(o=>ingsOf(o.r).forEach(n=>(cnt[n]=cnt[n]||[]).push(o.r[0])));
+    const shared=Object.keys(cnt).filter(n=>cnt[n].length>1).sort((a,b)=>cnt[b].length-cnt[a].length);
+    h+=`<section><h3>Crossover</h3><p class="sub">Ingredients that show up in more than one of your picks. Buy once, prep once. Tap one to see every panini that uses it.</p>${shared.length?shared.map(n=>ingBtn(n,cnt[n].length)).join(""):`<p class="empty-note">No shared ingredients yet. Pick sandwiches that share a cheese, spread or protein to save on prep.</p>`}</section>`;
+    // shopping list
+    h+=`<section><h3>Shopping list</h3><div class="ptable">${GROUPS.map(g=>{const items=Object.keys(cnt).filter(n=>ING.find(i=>i[1]===n)[0]===g);if(!items.length)return "";return `<div><span class="k">${g==="Spread"?"Spreads & sauces":g}</span><span class="v">${items.map(n=>`${ingBtn(n)}<span class="who">${cnt[n].map(short).join(", ")}</span><br>`).join("")}</span></div>`}).join("")}<div><span class="k">Bread</span><span class="v">${sel.map(o=>`${esc(o.r[2]||"Your choice (sourdough is the house default)")} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div></div></section>`;
+    // prep
+    const seen=new Set(),prep=[];sel.forEach(o=>prepOf(o.r).forEach(p=>{const key=p.txt.toLowerCase().replace(/pbr beer-/,"");const ex=prep.find(x=>x.key===key);if(ex)ex.who.push(o.r[0]);else prep.push({...p,key,who:[o.r[0]]})}));
+    h+=`<section><h3>Prep ahead</h3><p class="sub">Cook these before you start pressing. Shared items are done once.</p>${prep.length?`<ol class="prep">${prep.map(p=>`<li>${p.link?`<a href="#${p.link}" data-open="${p.link}">${esc(p.txt)}</a>`:esc(p.txt)} <span class="who">${p.who.map(short).join(", ")}</span></li>`).join("")}</ol>`:`<p class="empty-note">Nothing to cook ahead. Build and press.</p>`}</section>`;
+    // press plan
+    const fry={};sel.forEach(o=>{const f=o.r[7]||"Mayo (house default)";(fry[f]=fry[f]||[]).push(o.r[0])});
+    const order=[...sel].sort((a,b)=>(a.r[1]==="Dessert")-(b.r[1]==="Dessert"));
+    const adds=sel.filter(o=>o.r[6]);
+    h+=`<section><h3>At the press</h3><div class="ptable"><div><span class="k">Fry spread</span><span class="v">${Object.entries(fry).map(([f,w])=>`${esc(f)} <span class="who">${w.map(short).join(", ")}</span>`).join("<br>")}</span></div><div><span class="k">Press order</span><span class="v">${order.map((o,i)=>`${i+1}. ${esc(o.r[0])}`).join("<br>")}${sel.some(o=>o.r[1]==="Dessert")?`<br><span class="who">Desserts go last so sugar doesn't burn on the press.</span>`:""}</span></div>${adds.length?`<div><span class="k">After the press</span><span class="v">${adds.map(o=>`${esc(o.r[6])} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div>`:""}</div></section>`;
+    h+=`<section><h3>The builds</h3><div class="builds">${sel.map(o=>cardHTML(o.r,o.k==="Test Kitchen"?" idea":"")).join("")}</div></section>`;
+  }else{
+    h+=`<section><p class="sub" style="margin-top:12px">Tap <strong>+ Cook night</strong> on 3–4 cards in Recipes or Test Kitchen to see their crossover ingredients, one shopping list, prep and press order. You can also look up an ingredient below.</p></section>`;
+  }
+  // cross-reference
+  const hits=xing?POOL.filter(o=>ingsOf(o.r).includes(xing)):[];
+  h+=`<section class="xref"><h3>Cross-reference an ingredient</h3><p class="sub">Every panini that uses it, from Recipes and Test Kitchen.</p>
+    <input class="search" id="xq" list="xopts" placeholder="Try caramelized onions, apple jalapeño jelly, brie…" value="${esc(xing)}" autocomplete="off">
+    <datalist id="xopts">${ALLING.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
+    ${xing?`<p class="count">${hits.length} panini${hits.length===1?"":"s"} with ${esc(xing)}</p><div class="xlist">${hits.map(o=>{const on=picks.includes(o.r[0]);return `<div class="xitem" data-fam="${esc(o.r[1])}"><div><strong>${esc(o.r[0])}</strong><small>${esc(o.r[1])} · ${o.k}${HEAT[o.r[0]]?" · "+PEP[HEAT[o.r[0]]]:""}</small></div><button class="pick" type="button" data-pick="${esc(o.r[0])}" aria-pressed="${on}" ${!on&&picks.length>=MAXP?"disabled":""}>${on?"✓ In":"+ Add"}</button></div>`}).join("")}</div>`:`<div>${ALLING.map(n=>ingBtn(n,POOL.filter(o=>ingsOf(o.r).includes(n)).length)).join("")}</div>`}
+  </section>`;
+  const y=planBody.parentElement.scrollTop;planBody.innerHTML=h;planBody.parentElement.scrollTop=y;
+  planBody.querySelectorAll(".pick[data-pick]").forEach(b=>{const on=picks.includes(b.dataset.pick);b.textContent=on?"✓ In":"+ Add"});
+  const xq=document.getElementById("xq");xq.addEventListener("change",()=>{const v=ALLING.find(n=>n.toLowerCase()===xq.value.trim().toLowerCase());xing=v||"";renderPlan();if(v)document.getElementById("xq").focus()});
+}
+function openPlan(focusX){renderPlan();if(!plan.open)plan.showModal();if(focusX){const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start"})}}
+document.addEventListener("click",e=>{
+  const pb=e.target.closest("[data-pick]");if(pb){togglePick(pb.dataset.pick);return}
+  const up=e.target.closest("[data-unpick]");if(up){togglePick(up.dataset.unpick);return}
+  if(e.target.closest("[data-plan]")){openPlan(false);return}
+  const ib=e.target.closest("[data-ing]");if(ib){xing=xing===ib.dataset.ing?"":ib.dataset.ing;renderPlan();const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start",behavior:"smooth"});return}
+  if(e.target.closest("#plan a[data-open]"))plan.close();
+});
+document.getElementById("planClose").addEventListener("click",()=>plan.close());
+plan.addEventListener("click",e=>{if(e.target===plan)plan.close()});
+document.getElementById("trayClear").addEventListener("click",()=>{picks=[];savePicks();syncPicks()});
+window.__pp=true;syncPicks();
 
 // Names: tap one to use it as the tagline
 const names=document.getElementById("names"),tag=document.getElementById("tagline");
