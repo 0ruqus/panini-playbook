@@ -48,7 +48,7 @@ Every sandwich here is built in the same seven layers:
 | Level | Where it comes from |
 |---|---|
 | **Mild** | Pepper jack, Laughing Cow hot, hot honey, spicy brown mustard, apple jalapeño jelly |
-| **Medium** | Jalapeños (fresh or pickled), chipotles in adobo, chipotle aioli, sriracha, gochujang, gochugaru tuna, Frank's RedHot |
+| **Medium** | Jalapeños (fresh or pickled), chipotles in adobo, chipotle aioli, sriracha, Valentina, gochujang, gochugaru tuna, Frank's RedHot |
 | **Hot** | Anything with serrano or habanero: roasted pineapple habanero sauce, Havarti habanero, giardiniera (made with serranos), fresh serrano or habanero. Plus Nashville hot oil and peri peri sauce |
 
 **House rule:** pepper jack makes a card Mild, and any serrano or habanero makes it Hot. Hot wins when a card has both.
@@ -589,15 +589,15 @@ Store-bought versions work well for most of them.
 
 ## Test Kitchen
 
-Never made yet. Make one, and if it's a keeper it moves up into the recipes.
+Ideas to try. Cards marked *Cooked* have been made once, with notes on what worked. If one's a keeper it moves up into the recipes.
 
 **Brat & Kraut** (Ham & pork) · 🌶 Mild
 Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeezed dry · Spicy brown mustard · **Fry spread:** butter
 *Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
 
 **Beer Cheese Brat** (Ham & pork) · 🌶 Mild
-Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise, PBR beer-caramelized onions · Beaver spicy brown mustard · *Add:* dill pickle chips · **Fry spread:** butter
-*Split the brat flat so it presses evenly. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
+Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise (or hot dogs, air fried and split), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
+*Cooked Nov 2026: swapped in hot dogs, air fried, with Kewpie. It works as the quick weeknight version. Split the brat flat so it presses evenly. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
 
 **Birria Melt** (Beef) · 🌶 Mild
 Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · **Fry spread:** fat skimmed from the consommé
@@ -705,17 +705,21 @@ White bread · Peanut butter, crushed potato chips · Jam · **Fry spread:** but
 Bolillo · Oaxaca + cotija · Tortilla chips tossed in warm salsa verde, scrambled egg, shredded chicken (optional) · *Add:* crema, pickled red onion, cilantro, avocado
 *Toss the chips in the salsa right before building so they soften without turning to mush. Everything cold and creamy goes on after the press.*
 
-**Chicken Parm** (Chicken)
-Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Marinara simmered down thick, between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
-*Keep the sauce between the cheeses, not against the bread, so it doesn't leak. Serve warm marinara on the side for dipping. Swaps: vodka sauce for marinara, or a thin layer of pesto under the sauce.*
+**Chicken Parm** (Chicken) · 🌶 Mild
+Sourdough or Italian loaf · Provolone + pepper jack, grilled right on the press before assembly · Chicken cutlet, grilled onions · Sriracha · *Add:* fresh basil (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
+*Cooked Nov 2026: the wet marinara version took forever to press, so this is the dry build that worked. Grill the provolone and pepper jack on the press first so the cheese is already melted and crisp, then build with the chicken, grilled onions and a line of sriracha. For classic parm flavor, simmer marinara down thick ahead of time and serve it warm on the side for dipping instead of inside.*
 
 **Ham + Swiss, Slider-Style** (Ham & pork) · 🌶 Mild
-Texas toast or Hawaiian bread · Swiss against both slices + brie in the middle (or swap brie for Gruyère) · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
-*An amped-up take on the Ham + Swiss card, with party ham slider flavors. Slice the brie cold so it cuts cleanly; the rind can stay on. Brie with ham and honey Dijon is a classic French pairing. Cook the bacon crisp first, and fold the thick ham slices loosely so they heat through. Other directions: dill pickles for a Cuban lean, or a thin layer of raspberry or fig jam.*
+Texas toast or Hawaiian bread · Swiss and Muenster (brie or Gruyère work too) · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard on one half, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
+*Cooked Nov 2026: made with Swiss and Muenster, and the brown mustard on one half only. An amped-up take on the Ham + Swiss card, with party ham slider flavors. Slice the brie cold so it cuts cleanly; the rind can stay on. Brie with ham and honey Dijon is a classic French pairing. Cook the bacon crisp first, and fold the thick ham slices loosely so they heat through. Other directions: dill pickles for a Cuban lean, or a thin layer of raspberry or fig jam.*
 
 **Sage Cali Chicken** (Chicken) · 🌶 Mild
 Sourdough · Monterey pepper jack · Roasted chicken seasoned with sage and Cali rub, grilled orange bell pepper, caramelized onion · Apple jalapeño jelly, or garlic Dijon aioli for savory · *Add:* baby arugula · **Fry spread:** mayo with fresh sage leaves pressed in
 *The sage leaves on the outside crisp in the press and show when you cut it. The sweet orange bell works with the jelly.*
+
+**Chicken Bacon Valentina** (Chicken) · 🌶 Mild
+Sourdough · Provolone + pepper jack · Chicken, bacon · Valentina hot sauce
+*Cooked Nov 2026: chicken, provolone, pepper jack and bacon with Valentina. Valentina is a vinegary Mexican hot sauce with more flavor than burn. Drizzle it on the chicken, not the bread, so it doesn't soak through.*
 
 Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 

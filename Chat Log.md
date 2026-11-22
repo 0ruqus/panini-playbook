@@ -67,3 +67,12 @@
 - 2026-11-22: Added a **Cook night planner**. Every card has "+ Cook night" (up to 4 picks, remembered on the device); a tray opens the plan with crossover ingredients, a grouped shopping list, prep-ahead steps (house spreads link to their recipes), fry spreads, press order and after-press adds. It also cross-references any ingredient (caramelized onions, apple jalapeño jelly, brie…) against every Recipe and Test Kitchen card, with Add buttons.
 - 2026-11-22: Cook night Crossover is now a map: shared ingredients down the side, the picked sandwiches across the top (numbered), a dot where each uses it, and "X of Y ingredients shared" per sandwich. New "Already mostly stocked" list ranks other paninis by how many of their ingredients are already on the shopping list (e.g. 4 of 5, need brie), with Add buttons.
 - 2026-11-22: Cook night shopping list now has a "have it" box on every item (bread included). Checked items fade, drop out of the "N to buy" count, and are left off the new "Copy to-buy list" button. On-hand marks are remembered on the device; Reset clears them.
+
+## 2026-11-22 · Cook night notes
+- Logged the first cook night on the Test Kitchen cards ("Cooked Nov 2026" notes).
+- Chicken Parm rebuilt as the dry version that worked: provolone + pepper jack grilled on the press first, chicken, grilled onions, sriracha. Wet marinara took too long; it's now a dipping-sauce option. Tagged Mild.
+- Ham + Swiss, Slider-Style: Swiss + Muenster, brown mustard on one half.
+- Beer Cheese Brat: hot dogs (air fried) with Kewpie as the quick swap.
+- New card: Chicken Bacon Valentina (provolone, pepper jack, bacon, Valentina). Mild. Valentina added to the Medium ladder.
+- Planner prep now puts onions first ("Start first"), since the grilled onions weren't ready for the first sandwich.
+- Test Kitchen intro no longer says "Never made yet". 35 Test Kitchen ideas.
