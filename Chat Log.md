@@ -118,3 +118,8 @@
 
 ## 2026-11-23 · Renamed Italian card
 - The card named "Italian" (salami, pepperoni, ham, Greek dressing) is now **The Roman**. The Italian family name stays as is.
+
+## 2026-11-23 · Marinara goes in after the press
+- Meatball Marinara is now **Meatballin**: meatballs and mozzarella pressed dry, then lots of warm marinara spooned in after the press.
+- Grilled Pineapple, Ham & Bacon and Pineapple Jalapeño Mushroom now use a thin layer of tomato paste inside, with marinara after the press optional.
+- The "Wet ingredients go in after the press" rule now names marinara.

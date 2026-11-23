@@ -62,7 +62,7 @@ Recipe and Test Kitchen cards carry a heat tag after the name: 🌶 Mild, 🌶�
 ## Press technique
 
 **Wet ingredients go in after the press**
-Avocado, tomato, lettuce, kimchi and other wet ingredients turn soggy and steam the bread if you press them. Add them after cooking:
+Avocado, tomato, lettuce, kimchi, marinara and other wet ingredients turn soggy and steam the bread if you press them. Add them after cooking:
 1. Put cheese right against the bread on **both** the top and bottom slices, with the hot fillings in between.
 2. Press until the cheese melts.
 3. Lift the top slice, opening just **below its layer of melted cheese** so the gooey cheese stays stuck to the bread.
@@ -136,7 +136,8 @@ Sourdough · Smoked gouda + Muenster · Ham
 Mozzarella (+ Parmesan) · Grilled sliced ham · Pineapple · Tomato paste as the sauce
 
 **Grilled Pineapple, Ham & Bacon**
-Parmesan · Grilled pineapple, ham, bacon · Marinara
+Parmesan · Grilled pineapple, ham, bacon · Tomato paste, spread thin · *Add:* marinara after the press (optional)
+*Marinara is too wet to press. Use a thin layer of tomato paste inside, or spoon marinara in after the press.*
 
 **Jam n' Ham** · 🌶 Mild
 Ham · Spicy jam · Cheese of choice
@@ -310,8 +311,9 @@ Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:
 
 ### Italian & cured meats
 
-**Meatball Marinara**
-French roll · Mozzarella · Meatballs · Marinara
+**Meatballin**
+French roll · Mozzarella · Meatballs · *Add:* lots of warm marinara, spooned in after the press
+*Press just the meatballs and cheese, then open it and spoon in plenty of warm marinara. Pressed with the sauce inside, it leaks and turns soggy.*
 
 **The Roman**
 Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing
@@ -376,7 +378,8 @@ Rustic sourdough · Brie + cream cheese spread · [PBR beer-caramelized onions](
 *Note: make the onions ahead. They keep about a week in the fridge.*
 
 **Pineapple Jalapeño Mushroom** · 🌶🌶 Medium
-Mozzarella · Pineapple, jalapeño, mushrooms · Marinara
+Mozzarella · Pineapple, jalapeño, mushrooms · Tomato paste, spread thin · *Add:* marinara after the press (optional)
+*Marinara is too wet to press. Use a thin layer of tomato paste inside, or spoon marinara in after the press.*
 
 ### Sweet & savory fruit
 
