@@ -352,10 +352,10 @@ Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ra
 Rustic baguette · Mozzarella · Basil, tomato · Balsamic vinegar
 
 **Veggie**
-Sourdough · Feta + mozzarella · Fresh spinach, artichoke hearts, Sicilian-spiced tomatoes, red onion · Yogurt · *Add:* avocado, banana peppers
+Sourdough · Feta + mozzarella · Artichoke hearts, Sicilian-spiced tomatoes, red onion · Yogurt · *Add:* fresh spinach, avocado, banana peppers
 
 **Veggie Two** · 🌶🌶 Medium
-Roll · Havarti + Laughing Cow · Roasted red peppers, cucumber, grilled white onion, avocado, lettuce · Chipotle mayo
+Roll · Havarti + Laughing Cow · Roasted red peppers, cucumber, grilled white onion · Chipotle mayo · *Add:* avocado, lettuce
 
 **Asiago-Style Mushroom** · 🌶 Mild
 Texas toast · Medium white cheddar · Sautéed mushrooms, spring onion · Chili flake butter
