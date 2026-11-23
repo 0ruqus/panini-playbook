@@ -316,7 +316,7 @@ French roll · Mozzarella · Meatballs · Marinara
 **Italian**
 Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing
 
-**Hot Honey** · 🌶🌶 Medium
+**Gabagool Honey** · 🌶🌶 Medium
 French bread · Mozzarella + Laughing Cow garlic · Capocollo, Genoa salami, pepperoni, roasted jalapeño · Honey · *Add:* Italian sausage · **Fry spread:** butter
 
 **Pep Jalapeño Honey** · 🌶🌶 Medium

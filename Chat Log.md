@@ -112,3 +112,6 @@
 
 ## 2026-11-23 · Search spellings
 - "Hot Honey" (capocollo, Genoa salami, pepperoni) seemed missing: a search for "capi" found nothing because the card says capocollo. Search now also matches common spellings: capicola/capicollo/gabagool/coppa, genova, jalapeno, gruyere, siracha, munster, proscuitto.
+
+## 2026-11-23 · Renamed Hot Honey
+- "Hot Honey" (capocollo, Genoa salami, pepperoni, roasted jalapeño, honey) is now **Gabagool Honey**.
