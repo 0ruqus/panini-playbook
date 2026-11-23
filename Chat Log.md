@@ -189,3 +189,7 @@
 
 ## 2026-11-23 · No more "cheese of choice"
 - Jam n' Ham now uses Havarti (Swiss as the alternative); Turkey Cranberry Jalapeño now uses brie (Havarti as the alternative). Those were the only two.
+
+## 2026-11-23 · Cook Night tab + count by search
+- The recipe count now sits on the search label line: "Search ingredients or names | 86 of 86 recipes" (just "Search | …" on phones).
+- The "Cook night planner" button is gone. The planner is now its own **Cook Night** tab (4th tab, badge shows how many are picked, link #cook-night). "Plan it" on the picks tray opens the tab; the tray hides while you're on it. On phones the tabs read Playbook · Recipes · Kitchen · Cook Night so all four fit.

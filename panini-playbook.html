@@ -110,6 +110,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .chip[data-fam="All"][aria-pressed="true"]::before{background:var(--bg)}
 .chip .n{font:500 .72rem var(--mono);opacity:.75;margin-left:4px}
 .count{font:500 .8rem var(--mono);color:var(--muted)}
+.srow{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0}
+.srow .sep{color:var(--line);font:500 .9rem/1 var(--mono)}
+.srow .count{font-size:.72rem;letter-spacing:.06em}
+@media (max-width:560px){.srow .lg{display:none}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
 .card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--fc);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
 .card header{all:unset;display:flex;justify-content:space-between;gap:8px;align-items:start}
@@ -231,7 +235,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 .tabs{overflow-x:auto;scrollbar-width:none}
 .panel > .facts + section.first{border-top:0}
-@media (max-width:560px){.tabs{gap:0}.tab{padding:12px 8px 13px;font-size:.88rem;gap:5px;white-space:nowrap}.tab .n{padding:2px 5px;font-size:.66rem}}
+@media (max-width:560px){.tab .lg{display:none}.tabs{gap:0}.tab{padding:12px 6px 13px;font-size:.84rem;gap:4px;white-space:nowrap}.tab .n{padding:2px 5px;font-size:.66rem}}
 
 /* cook night planner */
 .card footer.pickrow{all:unset;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
@@ -281,6 +285,8 @@ dialog.plan::backdrop{background:rgba(0,0,0,.55)}
 .plan .ph h2{font-size:1.5rem}
 .plan .x{font:700 1.3rem/1 var(--body);width:40px;height:40px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;flex:none}
 .plan .pb{padding:4px 18px 24px;display:grid;gap:22px}
+.pageplan .pb{padding:0}
+body.on-plan .tray{display:none}
 .plan section{display:block;padding:0;border:0}
 .plan section + section{border-top:1px solid var(--line);padding-top:18px}
 .plan .ptable .v .ing{margin-bottom:4px}
@@ -364,9 +370,10 @@ dialog.plan{overflow-x:hidden}
 </header>
 
 <nav class="tabs" role="tablist" aria-label="Sections">
-  <button class="tab" role="tab" id="t-guide" aria-controls="tab-guide" aria-selected="true" data-tab="guide">The Playbook</button>
+  <button class="tab" role="tab" id="t-guide" aria-controls="tab-guide" aria-selected="true" data-tab="guide"><span class="lg">The </span>Playbook</button>
   <button class="tab" role="tab" id="t-recipes" aria-controls="tab-recipes" aria-selected="false" data-tab="recipes">Recipes <span class="n" id="tabCount"></span></button>
-  <button class="tab" role="tab" id="t-kitchen" aria-controls="tab-kitchen" aria-selected="false" data-tab="kitchen">Test Kitchen <span class="n" id="tkTab"></span></button>
+  <button class="tab" role="tab" id="t-kitchen" aria-controls="tab-kitchen" aria-selected="false" data-tab="kitchen"><span class="lg">Test </span>Kitchen <span class="n" id="tkTab"></span></button>
+  <button class="tab" role="tab" id="t-plan" aria-controls="tab-plan" aria-selected="false" data-tab="plan">Cook Night <span class="n" id="planTab" hidden></span></button>
 </nav>
 
 <div class="panel" id="tab-guide" role="tabpanel" aria-labelledby="t-guide">
@@ -616,11 +623,9 @@ dialog.plan{overflow-x:hidden}
   <p class="eyebrow">The collection</p>
   <h2 id="recipes">Recipes</h2>
   <div class="controls">
-    <label class="eyebrow" for="q">Search ingredients or names</label>
+    <p class="srow"><label class="eyebrow" for="q">Search<span class="lg"> ingredients or names</span></label><span class="sep" aria-hidden="true">|</span><span class="count" id="count" aria-live="polite"></span></p>
     <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
     <div class="active" id="active"></div>
-    <p class="count" id="count" aria-live="polite"></p>
-    <button class="planbtn" type="button" data-plan>Cook night planner: pick 3–4, or look up an ingredient</button>
   </div>
   <details class="filters" id="filters" open>
     <summary><span class="eyebrow">Filter by the house formula</span><span class="tog"></span></summary>
@@ -654,6 +659,15 @@ dialog.plan{overflow-x:hidden}
 </section>
 </div>
 
+<div class="panel" id="tab-plan" role="tabpanel" aria-labelledby="t-plan" hidden>
+<section aria-labelledby="plantitle" class="first">
+  <p class="eyebrow">Plan a night</p>
+  <h2 id="plantitle">Cook Night</h2>
+  <p class="lede">Tap <strong>+ Cook night</strong> on 3–4 cards in Recipes or Test Kitchen. This tab builds the shared ingredients, one shopping list, prep and press order. You can also look up any ingredient.</p>
+  <div class="plan pageplan"><div class="pb" id="planBody"></div></div>
+</section>
+</div>
+
 <footer>Compiled 10 Nov 2026 from the house PANINI recipe collection · Instagram <a href="https://www.instagram.com/sweet_cheezus_crust/" target="_blank" rel="noopener">@Sweet_Cheezus_Crust</a></footer>
 </div>
 
@@ -665,10 +679,6 @@ dialog.plan{overflow-x:hidden}
 <dialog class="plan rd" id="rateDlg" aria-labelledby="rdTitle">
   <div class="ph"><h2 id="rdTitle">Rate it</h2><button class="x" type="button" id="rdClose" aria-label="Close">×</button></div>
   <div class="pb" id="rdBody"></div>
-</dialog>
-<dialog class="plan" id="plan" aria-labelledby="planTitle">
-  <div class="ph"><h2 id="planTitle">Cook night</h2><button class="x" type="button" id="planClose" aria-label="Close">×</button></div>
-  <div class="pb" id="planBody"></div>
 </dialog>
 
 <script>
@@ -848,9 +858,11 @@ document.getElementById("tabCount").textContent=R.length;
 document.getElementById("tkTab").textContent=T.length;
 function showTab(t,scroll){
   tabBtns.forEach(b=>{const on=b.dataset.tab===t;b.setAttribute("aria-selected",String(on));document.getElementById("tab-"+b.dataset.tab).hidden=!on});
+  document.body.classList.toggle("on-plan",t==="plan");
+  if(t==="plan"&&window.renderPlan)renderPlan();
   if(scroll){const nav=document.querySelector(".tabs");const y=nav.getBoundingClientRect().top+scrollY-1;if(scrollY>y)scrollTo(0,y)}
 }
-document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",{recipes:"#recipes",kitchen:"#test-kitchen"}[b.dataset.tab]||location.pathname+location.search)}catch(_){}});
+document.querySelector(".tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;showTab(b.dataset.tab,true);try{history.replaceState(null,"",{recipes:"#recipes",kitchen:"#test-kitchen",plan:"#cook-night"}[b.dataset.tab]||location.pathname+location.search)}catch(_){}});
 document.addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g){e.preventDefault();showTab(g.dataset.goto,false);(document.getElementById(g.dataset.scroll||"")||document.querySelector(".tabs")).scrollIntoView({behavior:"smooth"});return}
   const a=e.target.closest("a[data-open]");if(a){e.preventDefault();showTab("guide",false);const d=document.getElementById(a.dataset.open);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}}
@@ -899,13 +911,14 @@ let picks=[];try{picks=JSON.parse(localStorage.getItem("pp-picks")||"[]").filter
 let xing="";
 let have=new Set();try{have=new Set(JSON.parse(localStorage.getItem("pp-have")||"[]"))}catch(_){}
 function saveHave(){try{localStorage.setItem("pp-have",JSON.stringify([...have]))}catch(_){}}
-const plan=document.getElementById("plan"),planBody=document.getElementById("planBody"),tray=document.getElementById("tray");
+const planPanel=document.getElementById("tab-plan"),plan={get open(){return !planPanel.hidden}},planBody=document.getElementById("planBody"),tray=document.getElementById("tray");
 function savePicks(){try{localStorage.setItem("pp-picks",JSON.stringify(picks))}catch(_){}}
 function syncPicks(){
   document.querySelectorAll("[data-pick]").forEach(b=>{const on=picks.includes(b.dataset.pick);b.setAttribute("aria-pressed",String(on));b.textContent=on?"✓ In cook night":"+ Cook night";b.disabled=!on&&picks.length>=MAXP;b.title=b.disabled?"Cook night holds 4. Remove one first.":"";const c=b.closest(".card");if(c)c.classList.toggle("picked",on)});
   tray.hidden=!picks.length;document.body.classList.toggle("has-tray",!!picks.length);
   document.getElementById("trayN").textContent=`${picks.length} of ${MAXP} picked`+(picks.length<3?" · pick 3–4":"");
   document.getElementById("trayNames").textContent=picks.join(" · ");
+  const pt=document.getElementById("planTab");pt.hidden=!picks.length;pt.textContent=picks.length;
   if(plan.open)renderPlan();
 }
 function togglePick(n){if(picks.includes(n))picks=picks.filter(x=>x!==n);else if(picks.length<MAXP)picks.push(n);savePicks();syncPicks()}
@@ -973,7 +986,7 @@ function renderPlan(){
   planBody.querySelectorAll(".pick[data-pick]").forEach(b=>{const on=picks.includes(b.dataset.pick);b.textContent=on?"✓ In":"+ Add"});
   const xq=document.getElementById("xq");xq.addEventListener("change",()=>{const v=ALLING.find(n=>n.toLowerCase()===xq.value.trim().toLowerCase());xing=v||"";renderPlan();if(v)document.getElementById("xq").focus()});
 }
-function openPlan(focusX){renderPlan();if(!plan.open)plan.showModal();if(focusX){const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start"})}}
+function openPlan(focusX){showTab("plan",true);try{history.replaceState(null,"","#cook-night")}catch(_){}renderPlan();if(focusX){const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start"})}}
 document.addEventListener("click",e=>{
   const hv=e.target.closest("[data-have]");if(hv){const k=hv.dataset.have,to=hv.dataset.to;if(to==="got")have.add(k);else if(to==="need")have.delete(k);else have.has(k)?have.delete(k):have.add(k);saveHave();renderPlan();return}
   if(e.target.closest("#resetHave")){have=new Set();saveHave();renderPlan();return}
@@ -982,10 +995,7 @@ document.addEventListener("click",e=>{
   const up=e.target.closest("[data-unpick]");if(up){togglePick(up.dataset.unpick);return}
   if(e.target.closest("[data-plan]")){openPlan(false);return}
   const ib=e.target.closest("[data-ing]");if(ib){xing=xing===ib.dataset.ing?"":ib.dataset.ing;renderPlan();const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start",behavior:"smooth"});return}
-  if(e.target.closest("#plan a[data-open]"))plan.close();
 });
-document.getElementById("planClose").addEventListener("click",()=>plan.close());
-plan.addEventListener("click",e=>{if(e.target===plan)plan.close()});
 document.getElementById("trayClear").addEventListener("click",()=>{picks=[];savePicks();syncPicks()});
 window.__pp=true;syncPicks();
 
@@ -1035,4 +1045,5 @@ function pick(n){tag.textContent=n;names.querySelectorAll("button").forEach(b=>b
 names.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const n=nameOf(b);pick(n);try{localStorage.setItem("pp-tag2",n)}catch(_){}});
 let saved="Cheezus Saves";try{saved=localStorage.getItem("pp-tag2")||saved}catch(_){}
 pick(saved);
+if(location.hash==="#cook-night")openPlan(false);
 </script>
