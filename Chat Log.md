@@ -82,3 +82,7 @@
 - New card: Sriracha Chicken Melt, made with the leftover parm chicken (provolone + pepper jack grilled on the press first, grilled onions, sriracha). Mild.
 - Beer Cheese Brat: hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp; brat is now the alternate.
 - Tomato paste is its own ingredient in the planner. 36 Test Kitchen ideas.
+
+## 2026-11-22 · Cook night keepers moved to Recipes
+- Moved the five sandwiches made today from Test Kitchen into Recipes: Ham + Swiss, Slider-Style and Beer Cheese Brat (Ham & pork); Chicken Parm, Sriracha Chicken Melt and Chicken Bacon Valentina (Chicken). Notes now read "First made Nov 2026".
+- Counts: 91 recipes, 31 Test Kitchen ideas. README and _Claude Index updated.
