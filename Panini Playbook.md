@@ -139,7 +139,8 @@ Mozzarella + Parmesan · Grilled sliced ham, grilled pineapple, bacon (optional)
 *Grill the ham and pineapple first so the pineapple caramelizes. Bacon is optional. Marinara is too wet to press, so it goes on the side for dipping; a thin layer of tomato paste inside gives the tomato flavor.*
 
 **Jam n' Ham** · 🌶 Mild
-Ham · Spicy jam · Cheese of choice
+Havarti · Ham · Spicy jam
+*Creamy Havarti cools the spicy jam. Swiss works too.*
 
 **Cuban**
 Roast pork · Sliced ham · Swiss · Yellow mustard · Pickles
@@ -188,7 +189,8 @@ Sourdough · Spreadable brie + provolone · Turkey, basil, strawberries · *Add:
 Mozzarella top and bottom · Turkey, red onion · Pesto · *Add:* tomato
 
 **Turkey Cranberry Jalapeño** · 🌶🌶 Medium
-Turkey · Cranberry · Jalapeño · Cheese of choice
+Brie · Turkey, jalapeño · Cranberry
+*Brie is the classic with turkey and cranberry, and it softens the jalapeño. Havarti works too.*
 
 **Peppered Turkey Serrano** · 🌶🌶🌶 Hot
 Sourdough · Havarti · Cracked black pepper deli turkey, prosciutto crisped in the press first · Serrano cream cheese aioli (roasted serrano, garlic and lime blended into mayo, then stirred into softened cream cheese) · *Add:* baby arugula, tomato

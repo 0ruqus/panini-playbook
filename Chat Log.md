@@ -186,3 +186,6 @@
 
 ## 2026-11-23 · Merged Hawaiian + Grilled Pineapple, Ham & Bacon
 - One card, **Hawaiian**: mozzarella + Parmesan · grilled ham, grilled pineapple, optional bacon · tomato paste spread thin · warm marinara to dip (optional). Count 87 → 86.
+
+## 2026-11-23 · No more "cheese of choice"
+- Jam n' Ham now uses Havarti (Swiss as the alternative); Turkey Cranberry Jalapeño now uses brie (Havarti as the alternative). Those were the only two.
