@@ -152,8 +152,8 @@ Rye · Gruyère · Orange-braised shredded pork, dill pickles · Orange-mustard 
 *Note: the full pork, kraut and orange sauce recipe is in the High Protein note.*
 
 **Kielbasa & Kraut** · 🌶 Mild
-Pretzel roll, sourdough or rye · Sharp cheddar + pepper jack · Kielbasa, bratwurst or hot dogs split lengthwise and crisped, sauerkraut squeezed dry, PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
-*The audible is the sausage: kielbasa is smoky and holds its shape, a beer-simmered brat is meatier, and hot dogs cut lengthwise into 4 strips each and air fried get crisp edges (first made Nov 2026 with two dogs). Squeeze the kraut very dry so it presses like a Reuben. For a Reuben-style version, use rye with Swiss and Muenster. Ty skips the kraut and brown mustard, so make his with Kewpie and no kraut.*
+Pretzel roll, sourdough or rye · Sharp cheddar + pepper jack · Kielbasa, bratwurst or hot dogs split lengthwise and crisped, PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* sauerkraut squeezed dry, dill pickle chips · **Fry spread:** butter
+*The audible is the sausage: kielbasa is smoky and holds its shape, a beer-simmered brat is meatier, and hot dogs cut lengthwise into 4 strips each and air fried get crisp edges (first made Nov 2026 with two dogs). Squeeze the kraut dry and add it after the press so the bread stays crisp. For a Reuben-style version, use rye with Swiss and Muenster. Ty skips the kraut and brown mustard, so make his with Kewpie and no kraut.*
 *Score:* ★★★★★ (Dan loved it) · Ty 👎 (didn't like the brown mustard)
 
 ### Turkey
@@ -289,7 +289,7 @@ Texas toast or rustic baguette · Provolone · Roast beef, white or red onion ·
 Flatbread · Fontina · Roast beef · Onion jam / marmalade · *Add:* baby arugula, fig aioli
 
 **Pastrami One ("Pirate Pastrami")**
-Marble rye · Baby Swiss + Laughing Cow · Pastrami, sauerkraut · German mustard + Thousand Island
+Marble rye · Baby Swiss + Laughing Cow · Pastrami · German mustard + Thousand Island · *Add:* sauerkraut
 
 **Bulgogi ("Cow")**
 No cheese · Bulgogi beef, red onion, carrots *(see [Bulgogi marinade](#bulgogi-marinade))*

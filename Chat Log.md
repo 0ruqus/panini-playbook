@@ -180,3 +180,6 @@
 
 ## 2026-11-23 · Fewer filter rows
 - Removed the 06 After the press (Add), 06 On the side (Dip) and 07 Outside (Fry spread) filter rows. The panel now has Structure, Glue, Main event, Signature and Kick. Cards still show their Add, Dip and Fry lines.
+
+## 2026-11-23 · Sauerkraut is an Add
+- Sauerkraut moved from Fill to Add on Kielbasa & Kraut (tip now: squeeze it dry and add after the press) and Pirate Pastrami. Red cabbage kraut on the Cuban Reuben was already an Add.
