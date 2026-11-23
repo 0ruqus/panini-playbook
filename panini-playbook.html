@@ -194,11 +194,9 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .filters>summary .tog{font:500 .72rem var(--mono);color:var(--muted)}
 .filters>summary .tog::before{content:"Hide ▴"}
 .filters:not([open])>summary .tog::before{content:"Show ▾"}
-.fbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row dense;border-top:1px solid var(--line)}
-.fgroup{border-bottom:1px solid var(--line);min-width:0}
-.fgroup:nth-child(odd):not([open]){border-right:1px solid var(--line)}
-.fgroup[open]{grid-column:1/-1;border-right:0;background:color-mix(in srgb,var(--gc,var(--basil)) 5%,transparent)}
-.fgroup:last-child,.fgroup:nth-last-child(2):nth-child(odd):not([open]){border-bottom:0}
+.fbody{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:8px;border-top:1px solid var(--line)}
+.fgroup{border:1px solid var(--line);border-radius:8px;min-width:0;background:var(--bg)}
+.fgroup[open]{border-color:color-mix(in srgb,var(--gc,var(--basil)) 45%,var(--line));background:color-mix(in srgb,var(--gc,var(--basil)) 5%,var(--bg))}
 .fl{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;list-style:none;min-width:0}
 .fl::-webkit-details-marker{display:none}
 .fl::marker{content:""}
@@ -210,7 +208,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .fgroup[open]>.fl::after{transform:rotate(180deg)}
 .fl:hover .eyebrow{text-decoration:underline;text-underline-offset:3px}
 .fgroup>.chips{padding:0 16px 14px}
-.frow .chip,.filters .chips .chip{background:var(--bg)}
+.frow .chip,.filters .chips .chip{background:var(--surface)}
 .frow .chip[aria-pressed="true"],.filters .chips .chip[aria-pressed="true"]{background:var(--fc)}
 .chip[data-any]{--fc:var(--fg)}
 .chip[data-any][aria-pressed="true"]{color:var(--bg)}
@@ -221,9 +219,7 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .apill b{font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
 .apill.clr{border-style:dashed;background:none;color:var(--muted)}
 @media (max-width:760px){
-  .fbody{grid-template-columns:minmax(0,1fr)}
-  .fgroup:nth-child(odd):not([open]){border-right:0}
-  .fgroup:nth-last-child(2):nth-child(odd):not([open]){border-bottom:1px solid var(--line)}
+  .fbody{padding:6px}
   .fl{padding:11px 12px;gap:8px}
   .filters .fgroup>.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 12px 12px}
   .filters .chips::-webkit-scrollbar{display:none}

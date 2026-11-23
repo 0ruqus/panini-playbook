@@ -171,3 +171,6 @@
 ## 2026-11-23 · Collapsible filter rows
 - Each house-formula filter row now opens and closes on its own. Closed rows show one line: eyebrow, layer name, and the current pick ("Any", or the chosen chip as a colored pill) with a ▾. All start closed; which rows you leave open is remembered on the device (pp-fopen).
 - Desktop: closed rows sit two per line and an open row spans the full width. Phone: one per line, chips scroll sideways.
+
+## 2026-11-23 · Filter rows: stop the jumping
+- Opening or closing a row made the two-column layout reflow, so rows moved under the finger and the next tap hit a different row. Rows are now one column on every screen, each its own rounded box: opening one only pushes the rows below it down, and the row you tapped stays put.
