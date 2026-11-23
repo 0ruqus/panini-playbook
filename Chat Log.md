@@ -131,3 +131,6 @@
 
 ## 2026-11-23 · Veggie cards: fresh greens after the press
 - Veggie: fresh spinach moved from Fill to Add (with avocado, banana peppers). Veggie Two: avocado and lettuce moved from Fill to Add. Renames suggested, waiting on a pick.
+
+## 2026-11-23 · Renamed Veggie cards
+- Veggie is now **Mediterranean Melt**; Veggie Two is now **Chipotle Garden**.

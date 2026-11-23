@@ -351,10 +351,10 @@ Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ra
 **Caprese**
 Rustic baguette · Mozzarella · Basil, tomato · Balsamic vinegar
 
-**Veggie**
+**Mediterranean Melt**
 Sourdough · Feta + mozzarella · Artichoke hearts, Sicilian-spiced tomatoes, red onion · Yogurt · *Add:* fresh spinach, avocado, banana peppers
 
-**Veggie Two** · 🌶🌶 Medium
+**Chipotle Garden** · 🌶🌶 Medium
 Roll · Havarti + Laughing Cow · Roasted red peppers, cucumber, grilled white onion · Chipotle mayo · *Add:* avocado, lettuce
 
 **Asiago-Style Mushroom** · 🌶 Mild
