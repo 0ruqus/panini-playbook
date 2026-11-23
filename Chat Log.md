@@ -183,3 +183,6 @@
 
 ## 2026-11-23 · Sauerkraut is an Add
 - Sauerkraut moved from Fill to Add on Kielbasa & Kraut (tip now: squeeze it dry and add after the press) and Pirate Pastrami. Red cabbage kraut on the Cuban Reuben was already an Add.
+
+## 2026-11-23 · Merged Hawaiian + Grilled Pineapple, Ham & Bacon
+- One card, **Hawaiian**: mozzarella + Parmesan · grilled ham, grilled pineapple, optional bacon · tomato paste spread thin · warm marinara to dip (optional). Count 87 → 86.

@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-87 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+86 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -135,11 +135,8 @@ Texas toast or Hawaiian bread · Swiss and Muenster (brie or Gruyère work too) 
 Sourdough · Smoked gouda + Muenster · Ham
 
 **Hawaiian**
-Mozzarella (+ Parmesan) · Grilled sliced ham · Pineapple · Tomato paste as the sauce
-
-**Grilled Pineapple, Ham & Bacon**
-Parmesan · Grilled pineapple, ham, bacon · Tomato paste, spread thin · *Dip:* warm marinara (optional)
-*Marinara is too wet to press, so it goes on the side for dipping. A thin layer of tomato paste inside gives the tomato flavor.*
+Mozzarella + Parmesan · Grilled sliced ham, grilled pineapple, bacon (optional) · Tomato paste, spread thin · *Dip:* warm marinara (optional)
+*Grill the ham and pineapple first so the pineapple caramelizes. Bacon is optional. Marinara is too wet to press, so it goes on the side for dipping; a thin layer of tomato paste inside gives the tomato flavor.*
 
 **Jam n' Ham** · 🌶 Mild
 Ham · Spicy jam · Cheese of choice
