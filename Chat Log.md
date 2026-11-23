@@ -86,3 +86,9 @@
 ## 2026-11-22 · Cook night keepers moved to Recipes
 - Moved the five sandwiches made today from Test Kitchen into Recipes: Ham + Swiss, Slider-Style and Beer Cheese Brat (Ham & pork); Chicken Parm, Sriracha Chicken Melt and Chicken Bacon Valentina (Chicken). Notes now read "First made Nov 2026".
 - Counts: 91 recipes, 31 Test Kitchen ideas. README and _Claude Index updated.
+
+## 2026-11-22 · Scores, notes and household preferences
+- Every card has a ☆ Rate it button: Dan's 1–5 stars, optional reactions for Ty and Cole (👍 😐 👎, filled in by Dan only), and a note. Saved per device; "Copy all scores" exports them so Claude can bake them into SCORE0.
+- Household preferences (PREFS): Ty no brown mustard, no sauerkraut; Cole no sriracha. Matching cards show a red * (hover or tap for details). The Cook night planner has a Heads up list for preferences and past thumbs-down.
+- Seeded Beer Cheese Brat: 5 stars, Ty 👎, note about the brown mustard.
+- Added a local "panini" server (port 8771) to •PERSONAL/.claude/launch.json for testing.

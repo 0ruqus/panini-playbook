@@ -194,7 +194,29 @@ h2[id],details[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 @media (max-width:560px){.tabs{gap:0}.tab{padding:12px 8px 13px;font-size:.88rem;gap:5px;white-space:nowrap}.tab .n{padding:2px 5px;font-size:.66rem}}
 
 /* cook night planner */
-.card footer.pickrow{all:unset;display:flex;justify-content:flex-end}
+.card footer.pickrow{all:unset;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.card h3 .pref{font:800 1.25rem/1 var(--body);color:var(--c-beef);background:none;border:0;padding:0 3px;margin-left:2px;cursor:pointer;vertical-align:top}
+.card .prefpop{display:none;margin:0;font-size:.82rem;padding:6px 9px;border-radius:6px;background:var(--stripe);border-left:3px solid var(--c-beef)}
+.card .prefpop.on,.card header:has(.pref:hover)+.prefpop{display:block}
+.card .mynote{margin:0;font-size:.88rem;border-left:3px solid var(--basil);padding-left:9px}
+.rate{font:600 .78rem/1.2 var(--body);padding:6px 10px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);cursor:pointer;text-align:left}
+.rate:hover{border-color:var(--fg);color:var(--fg)}
+.rate.has{border-style:solid;color:var(--fg)}
+.rate .st{letter-spacing:.06em}
+.rate .rx{white-space:nowrap}
+dialog.plan.rd{width:min(460px,calc(100% - 32px));height:auto}
+.rd .who-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rd .who-row > b{min-width:52px}
+.rd .stars button{font-size:1.9rem;line-height:1;background:none;border:0;padding:2px;cursor:pointer;color:var(--muted)}
+.rd .stars button.on{color:var(--fg)}
+.rd .rxb{font:600 .85rem/1 var(--body);padding:8px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.rd .rxb[aria-pressed="true"]{border-color:var(--basil);background:var(--basil);color:var(--basil-ink)}
+.rd textarea{width:100%;min-height:90px;font:inherit;font-size:16px;padding:10px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);box-sizing:border-box}
+.rd .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.rd .save{font:700 .9rem/1 var(--body);padding:10px 16px;border-radius:8px;border:1.5px solid var(--basil);background:var(--basil);color:var(--basil-ink);cursor:pointer}
+.rd .pfl{margin:0;font-size:.85rem;padding:8px 10px;border-radius:6px;background:var(--stripe);border-left:3px solid var(--c-beef)}
+.heads{margin:0;padding:10px 12px;border-radius:8px;background:var(--stripe);border-left:3px solid var(--c-beef);font-size:.9rem}
+.heads li{margin:2px 0}
 .pick{font:600 .78rem/1 var(--body);padding:7px 10px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);cursor:pointer}
 .pick:hover{border-color:var(--basil);color:var(--basil)}
 .pick[aria-pressed="true"]{border:1.5px solid var(--basil);background:var(--basil);color:var(--basil-ink)}
@@ -279,6 +301,7 @@ dialog.plan{overflow-x:hidden}
 
 @media (max-width:560px){
   dialog.plan{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;border:0;margin:0}
+  dialog.plan.rd{width:100%;height:auto;max-height:92dvh;margin:auto 0 0;border-radius:14px 14px 0 0;border-top:2px solid var(--char)}
   .ptable > div{grid-template-columns:minmax(0,1fr);gap:2px}
   .tray{left:16px;right:16px;transform:none;max-width:none}
 }
@@ -582,6 +605,10 @@ dialog.plan{overflow-x:hidden}
   <button class="go" type="button" data-plan>Plan it</button>
   <button class="clr" type="button" id="trayClear">Clear</button>
 </div>
+<dialog class="plan rd" id="rateDlg" aria-labelledby="rdTitle">
+  <div class="ph"><h2 id="rdTitle">Rate it</h2><button class="x" type="button" id="rdClose" aria-label="Close">×</button></div>
+  <div class="pb" id="rdBody"></div>
+</dialog>
 <dialog class="plan" id="plan" aria-labelledby="planTitle">
   <div class="ph"><h2 id="planTitle">Cook night</h2><button class="x" type="button" id="planClose" aria-label="Close">×</button></div>
   <div class="pb" id="planBody"></div>
@@ -687,6 +714,16 @@ const T=[["Brat & Kraut", "Ham & pork", "Rye", "Swiss, Muenster", "Grilled bratw
 // Heat layer: Mild / Medium / Hot. Recipes not listed have no heat.
 const HEAT={"Ham + Havarti, Pineapple Habanero": "Hot", "Jam n' Ham": "Mild", "Turkey Swiss, Ancho Chili Jam": "Mild", "Turkey Swiss + Bacon": "Mild", "Turkey Gouda Bacon": "Medium", "Club Modified": "Mild", "Turkey Cranberry Jalapeño": "Medium", "Peppered Turkey Serrano": "Hot", "Sriracha Chicken Melt": "Mild", "Chicken Bacon Valentina": "Mild", "Chicken Panini": "Medium", "Buffalo Bacon Ranch": "Medium", "Buffalo Apple Chicken": "Mild", "Fajita": "Mild", "Kimchi": "Mild", "Peri Peri, Fried": "Hot", "Peri Peri, Air-Fryer": "Mild", "Praise Cheesus": "Mild", "South Western": "Medium", "Costco Chipotle Chicken": "Medium", "Jalapeño Popper Chicken": "Medium", "Roast Beef + Provolone": "Medium", "Roast Beef": "Mild", "Italian Beef": "Hot", "Hot Honey": "Medium", "Honey Pepperoni": "Medium", "Jalapeño Honey Pizza-Style": "Medium", "Giardiniera Sausage": "Hot", "Korean Spicy Tuna": "Medium", "Buffalo Tuna Melt": "Medium", "Veggie Two": "Medium", "Asiago-Style Mushroom": "Mild", "Jalapeño Pear": "Medium", "Pineapple Jalapeño Mushroom": "Medium", "Brat & Kraut": "Mild", "Birria Melt": "Mild", "Bulgogi Cheesesteak": "Medium", "Banh Mi Pork": "Medium", "Nashville Hot Chicken": "Hot", "Gochujang Turkey": "Medium", "Elote Street Corn": "Medium", "Pimento Cheese & Pepper Jelly": "Mild", "Mac & Cheese Melt": "Mild", "Pineapple Habanero Pulled Pork": "Hot", "Cowboy Caviar Steak": "Mild", "Chorizo Egg": "Mild", "Chilaquiles": "Mild", "Sage Cali Chicken": "Mild", "Ham + Swiss, Slider-Style": "Mild", "Beer Cheese Brat": "Mild"};
 const HL=["Any heat","Mild","Medium","Hot"],PEP={Mild:"🌶",Medium:"🌶🌶",Hot:"🌶🌶🌶"};
+// Household: who Dan logs reactions for, and what each person skips. Cards that use a skipped ingredient get a * with the details.
+const HOUSE=["Ty","Cole"];
+const PREFS=[["Ty","brown mustard",/brown mustard/i],["Ty","sauerkraut",/kraut/i],["Cole","sriracha",/sriracha/i]];
+// Saved scores: s = Dan's stars (1-5), r = family reactions (up / ok / down), n = note. Scores set on a device are kept there and override these.
+const SCORE0={"Beer Cheese Brat":{s:5,r:{Ty:"down"},n:"I loved it. Ty didn't like the brown mustard."}};
+const RX={up:["👍","Liked it"],ok:["😐","It was okay"],down:["👎","Didn't like it"]};
+let myScores={};try{myScores=JSON.parse(localStorage.getItem("pp-scores")||"{}")||{}}catch(_){}
+const scoreOf=n=>{const v=myScores[n]||SCORE0[n];return v&&(v.s||v.n||(v.r&&Object.keys(v.r).length))?v:null};
+function prefsOf(r){const t=[r[2],r[3],r[4],r[5],r[6],r[7]].join(" ");return PREFS.filter(p=>p[2].test(t)).map(p=>`${p[0]}: no ${p[1]}`)}
+const stars=k=>"★".repeat(k)+"☆".repeat(5-k);
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
 const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
 let fam="All",q="",heat="Any heat";
@@ -709,8 +746,9 @@ function draw(){
   if(window.__pp)syncPicks();
 }
 function cardHTML(r,cls){
+    const pf=prefsOf(r),sc=scoreOf(r[0]);
     const L=[["Bread",r[2]],["Melt",r[3]],["Fill",r[4]],["Spread",r[5]],["Add",r[6]],["Fry",r[7]]].filter(x=>x[1]);
-    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header><dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}<footer class="pickrow"><button class="pick" type="button" data-pick="${esc(r[0])}" aria-pressed="false">+ Cook night</button></footer></article>`}
+    return `<article class="card${cls}" data-fam="${esc(r[1])}"><header><h3>${esc(r[0])}${pf.length?`<button class="pref" type="button" aria-expanded="false" title="${esc(pf.join(" · "))}" aria-label="Food preferences: ${esc(pf.join(", "))}">*</button>`:""}</h3><span class="tags">${HEAT[r[0]]?`<span class="heat" data-h="${HEAT[r[0]]}" title="Heat: ${HEAT[r[0]]}">${PEP[HEAT[r[0]]]} ${HEAT[r[0]]}</span>`:""}<span class="tag">${esc(r[1])}</span></span></header>${pf.length?`<p class="prefpop">${pf.map(esc).join(" · ")}</p>`:""}<dl>${L.map(([k,v])=>`<dt>${k}</dt><dd>${k==="Spread"||k==="Add"||k==="Fill"?linkify(v):esc(v)}</dd>`).join("")}</dl>${r[8]?`<p class="tip">${linkify(r[8])}</p>`:""}${sc&&sc.n?`<p class="mynote">${esc(sc.n)}</p>`:""}<footer class="pickrow"><button class="rate${sc?" has":""}" type="button" data-rate="${esc(r[0])}" aria-label="${sc?"Edit score":"Rate"}: ${esc(r[0])}">${sc?`${sc.s?`<span class="st" aria-label="${sc.s} of 5">${stars(sc.s)}</span>`:"Rated"}${Object.entries(sc.r||{}).map(([w,v])=>` <span class="rx">${w} ${RX[v][0]}</span>`).join("")}`:"☆ Rate it"}</button><button class="pick" type="button" data-pick="${esc(r[0])}" aria-pressed="false">+ Cook night</button></footer></article>`}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
@@ -802,6 +840,8 @@ function renderPlan(){
   let h="";
   if(sel.length){
     h+=`<section><div class="picks">${sel.map((o,i)=>`<span data-fam="${esc(o.r[1])}" style="border-color:var(--fc)"><b class="who">${i+1}</b> ${esc(o.r[0])}<button type="button" data-unpick="${esc(o.r[0])}" aria-label="Remove ${esc(o.r[0])}">×</button></span>`).join("")}</div>${sel.length<3?`<p class="sub" style="margin-top:10px">Pick ${3-sel.length} or more from the Recipes or Test Kitchen cards for a full night.</p>`:""}</section>`;
+    const heads=[];sel.forEach(o=>{prefsOf(o.r).forEach(p=>heads.push(`<strong>${esc(short(o.r[0]))}</strong> · ${esc(p)}`));const v=scoreOf(o.r[0]);if(v)Object.entries(v.r||{}).filter(([w,k])=>k==="down").forEach(([w])=>heads.push(`<strong>${esc(short(o.r[0]))}</strong> · ${w} didn't like it last time`))});
+    if(heads.length)h+=`<section><h3>Heads up</h3><ul class="heads">${heads.map(x=>`<li>${x}</li>`).join("")}</ul></section>`;
     // shared
     const cnt={};sel.forEach(o=>ingsOf(o.r).forEach(n=>(cnt[n]=cnt[n]||[]).push(o.r[0])));
     const shared=Object.keys(cnt).filter(n=>cnt[n].length>1).sort((a,b)=>cnt[b].length-cnt[a].length);
@@ -857,6 +897,32 @@ document.getElementById("planClose").addEventListener("click",()=>plan.close());
 plan.addEventListener("click",e=>{if(e.target===plan)plan.close()});
 document.getElementById("trayClear").addEventListener("click",()=>{picks=[];savePicks();syncPicks()});
 window.__pp=true;syncPicks();
+
+// Rate it: Dan's stars, how Ty and Cole liked it, and a note. Saved on this device.
+const rateDlg=document.getElementById("rateDlg"),rdBody=document.getElementById("rdBody");let rdName="",rdS=0,rdR={};
+function rdDraw(){const r=BYN[rdName]?.r;const pf=r?prefsOf(r):[];
+  rdBody.innerHTML=`<section style="display:block;padding:0;border:0"><p class="sub" style="margin:0 0 4px">Your score</p><div class="stars" role="group" aria-label="Your score">${[1,2,3,4,5].map(k=>`<button type="button" data-star="${k}" class="${k<=rdS?"on":""}" aria-pressed="${k===rdS}" aria-label="${k} star${k>1?"s":""}">${k<=rdS?"★":"☆"}</button>`).join("")}</div></section>
+  <section style="display:block;padding:0;border:0"><p class="sub" style="margin:0 0 8px">How did everyone else like it? Optional, and only you fill this in.</p><div style="display:grid;gap:8px">${HOUSE.map(w=>`<div class="who-row"><b>${w}</b>${Object.entries(RX).map(([k,[e,l]])=>`<button type="button" class="rxb" data-rx="${w}|${k}" aria-pressed="${rdR[w]===k}" title="${l}" aria-label="${w}: ${l}">${e}</button>`).join("")}</div>`).join("")}</div></section>
+  ${pf.length?`<p class="pfl"><strong>*</strong> ${pf.map(esc).join(" · ")}</p>`:""}
+  <section style="display:block;padding:0;border:0"><label class="sub" for="rdNote" style="display:block;margin:0 0 6px">Note</label><textarea id="rdNote" placeholder="What worked, what to change next time">${esc((scoreOf(rdName)||{}).n||"")}</textarea></section>
+  <div class="acts"><button type="button" class="save" id="rdSave">Save</button>${scoreOf(rdName)?`<button type="button" class="mini" id="rdClear">Clear score</button>`:""}<span style="flex:1"></span><button type="button" class="mini" id="rdCopy">Copy all scores</button></div>
+  <p class="sub" style="margin:0;font-size:.8rem">Scores are saved on this device. Use Copy all scores to back them up, or paste them to Claude to save them into the playbook.</p>`}
+function openRate(n){rdName=n;const v=scoreOf(n)||{};rdS=v.s||0;rdR={...(v.r||{})};document.getElementById("rdTitle").textContent=n;rdDraw();if(!rateDlg.open)rateDlg.showModal()}
+function saveScores(){try{localStorage.setItem("pp-scores",JSON.stringify(myScores))}catch(_){}}
+function redrawCards(){draw();document.getElementById("kgrid").innerHTML=T.map(r=>cardHTML(r," idea")).join("");syncPicks();if(plan.open)renderPlan()}
+rateDlg.addEventListener("click",e=>{
+  if(e.target===rateDlg||e.target.closest("#rdClose")){rateDlg.close();return}
+  const keepNote=()=>{const t=document.getElementById("rdNote");return t?t.value:""};
+  const st=e.target.closest("[data-star]");if(st){const k=+st.dataset.star;rdS=rdS===k?0:k;const n=keepNote();rdDraw();document.getElementById("rdNote").value=n;return}
+  const rx=e.target.closest("[data-rx]");if(rx){const [w,k]=rx.dataset.rx.split("|");rdR[w]===k?delete rdR[w]:rdR[w]=k;const n=keepNote();rdDraw();document.getElementById("rdNote").value=n;return}
+  if(e.target.closest("#rdSave")){myScores[rdName]={s:rdS,r:rdR,n:keepNote().trim()};saveScores();rateDlg.close();redrawCards();return}
+  if(e.target.closest("#rdClear")){myScores[rdName]={s:0,r:{},n:""};saveScores();rateDlg.close();redrawCards();return}
+  const cp=e.target.closest("#rdCopy");if(cp){const all={};POOL.forEach(o=>{const v=scoreOf(o.r[0]);if(v)all[o.r[0]]=v});const txt="Panini scores\n"+Object.entries(all).map(([n,v])=>`- ${n}: ${v.s?v.s+"/5":"no stars"}${Object.entries(v.r||{}).map(([w,k])=>`, ${w} ${RX[k][1].toLowerCase()}`).join("")}${v.n?` · "${v.n}"`:""}`).join("\n")+"\n\n"+JSON.stringify(all);const done=()=>{cp.textContent="Copied";setTimeout(()=>{if(cp.isConnected)cp.textContent="Copy all scores"},1500)};try{navigator.clipboard.writeText(txt).then(done,()=>prompt("Copy your scores:",txt))}catch(_){prompt("Copy your scores:",txt)}}
+});
+document.addEventListener("click",e=>{
+  const rb=e.target.closest("[data-rate]");if(rb){openRate(rb.dataset.rate);return}
+  const pb=e.target.closest(".pref");if(pb){const pop=pb.closest(".card").querySelector(".prefpop");const on=pop.classList.toggle("on");pb.setAttribute("aria-expanded",String(on))}
+});
 
 // Names: tap one to use it as the tagline
 const names=document.getElementById("names"),tag=document.getElementById("tagline");

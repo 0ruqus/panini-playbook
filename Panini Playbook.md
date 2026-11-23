@@ -110,6 +110,10 @@ This applies to every recipe below. Anything in the **Add** line, and any tomato
 
 Each card lists **Bread · Melt · Fill · Spread · Add**. The fry spread is mayonnaise unless noted.
 
+**At home:** Ty skips brown mustard and sauerkraut. Cole skips sriracha. On the page, cards that use one of these get a red \* you can tap for the details, and the Cook night planner lists them under Heads up.
+
+**Scores:** tap ☆ Rate it on any card to give it 1–5 stars, mark how Ty and Cole liked it, and add a note. Only you score; scores save on your device.
+
 ### Ham & pork
 
 **Ham + Havarti with Pineapple Habanero** · 🌶🌶🌶 Hot
@@ -147,6 +151,7 @@ Rye · Gruyère · Orange-braised shredded pork, dill pickles · Orange-mustard 
 **Beer Cheese Brat** · 🌶 Mild
 Pretzel roll or sourdough · Sharp cheddar + pepper jack · Hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp (or a beer-simmered bratwurst, split), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
 *First made Nov 2026 with two hot dogs, each cut lengthwise into 4 strips and air fried. The air fryer crisps the edges, and the flat strips press evenly. Kewpie works in place of the mustard. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
+*Score:* ★★★★★ (Dan loved it) · Ty 👎 (didn't like the brown mustard)
 
 ### Turkey
 
