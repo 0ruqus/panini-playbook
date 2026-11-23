@@ -174,3 +174,6 @@
 
 ## 2026-11-23 · Filter rows: stop the jumping
 - Opening or closing a row made the two-column layout reflow, so rows moved under the finger and the next tap hit a different row. Rows are now one column on every screen, each its own rounded box: opening one only pushes the rows below it down, and the row you tapped stays put.
+
+## 2026-11-23 · Recipes intro removed
+- Removed the "Each card lists the layers…" paragraph above the Recipes search (the filter panel and house formula already cover it).
