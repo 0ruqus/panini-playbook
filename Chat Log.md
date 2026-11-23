@@ -143,3 +143,6 @@
 
 ## 2026-11-23 · Merged the two Roast Beef cards
 - Roast Beef + Provolone and Roast Beef were nearly identical, so they're one card, **Roast Beef + Provolone**: Texas toast or rustic baguette · Provolone · roast beef, white or red onion, cucumber · chipotle mayo, or spicy mustard and mayo · lettuce after the press. 🌶🌶 Medium (mild with the mustard). Count 88 → 87.
+
+## 2026-11-23 · Two more to Test Kitchen
+- Peri Peri, Fried and Homemade Chicken Salad moved from Recipes to Test Kitchen (builds unchanged). Peri Peri, Air-Fryer stays in Recipes. Counts: 85 recipes, 35 Test Kitchen ideas.

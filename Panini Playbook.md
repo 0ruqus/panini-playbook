@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-87 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+85 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -232,9 +232,6 @@ Ciabatta · Pepper jack + Laughing Cow hot (or cotija) · Grilled seasoned chick
 **Kimchi** · 🌶 Mild
 French rye · Emmental · Blackened chicken, banana peppers
 
-**Peri Peri, fried** · 🌶🌶🌶 Hot
-Flatbread dipped in egg and panko · American · Blackened chicken, banana peppers · Garlic mayo · *Add:* peri peri sauce *(see [Peri Peri sauce](#peri-peri-sauce))*
-
 **Peri Peri, air-fryer version** · 🌶 Mild
 Pepper jack · Peri peri seasoned air-fryer chicken, jalapeños · *Add:* coleslaw
 
@@ -281,10 +278,6 @@ Sourdough · Provolone + pepper jack, grilled right on the press before assembly
 **Chicken Bacon Valentina** · 🌶 Mild
 Sourdough · Provolone + pepper jack · Chicken, bacon · Valentina hot sauce
 *First made Nov 2026: chicken, provolone, pepper jack and bacon with Valentina. Valentina is a vinegary Mexican hot sauce with more flavor than burn. Drizzle it on the chicken, not the bread, so it doesn't soak through.*
-
-**Homemade Chicken Salad**
-Chicken, mayo, celery, grapes, salt and pepper
-*Served cold. No press needed.*
 
 ### Beef
 
@@ -737,6 +730,13 @@ Sourdough · Monterey pepper jack · Roasted chicken seasoned with sage and Cali
 Also on the future menu list: shawarma, waffle rolls and waffle cookies.
 
 ---
+
+**Peri Peri, Fried** (Chicken) · 🌶🌶🌶 Hot
+Flatbread dipped in egg and panko · American · Blackened chicken, banana peppers · Garlic mayo · *Add:* peri peri sauce *(see [Peri Peri sauce](#peri-peri-sauce))*
+
+**Homemade Chicken Salad** (Chicken)
+Chicken, mayo, celery, grapes, salt and pepper
+*Served cold. No press needed.*
 
 ## Names for the menu
 Pun-heavy names for a grilled-cheese or panini brand:
