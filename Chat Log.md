@@ -76,3 +76,9 @@
 - New card: Chicken Bacon Valentina (provolone, pepper jack, bacon, Valentina). Mild. Valentina added to the Medium ladder.
 - Planner prep now puts onions first ("Start first"), since the grilled onions weren't ready for the first sandwich.
 - Test Kitchen intro no longer says "Never made yet". 35 Test Kitchen ideas.
+
+## 2026-11-22 · Cook night corrections
+- Chicken Parm back to the full build, with tomato paste in place of marinara (the marinara was too wet and slow; tomato paste is the house move now). No heat tag.
+- New card: Sriracha Chicken Melt, made with the leftover parm chicken (provolone + pepper jack grilled on the press first, grilled onions, sriracha). Mild.
+- Beer Cheese Brat: hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp; brat is now the alternate.
+- Tomato paste is its own ingredient in the planner. 36 Test Kitchen ideas.

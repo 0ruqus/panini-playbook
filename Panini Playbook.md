@@ -596,8 +596,8 @@ Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeez
 *Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
 
 **Beer Cheese Brat** (Ham & pork) · 🌶 Mild
-Pretzel roll or sourdough · Sharp cheddar + pepper jack · Bratwurst simmered in beer then grilled and split lengthwise (or air-fried split hot dogs), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
-*Cooked Nov 2026: swapped in hot dogs, air fried, with Kewpie. It works as the quick weeknight version. Split the brat flat so it presses evenly. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
+Pretzel roll or sourdough · Sharp cheddar + pepper jack · Hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp (or a beer-simmered bratwurst, split), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
+*Cooked Nov 2026: made with two hot dogs, each cut lengthwise into 4 strips and air fried. The air fryer crisps the edges, and the flat strips press evenly. Kewpie works in place of the mustard. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
 
 **Birria Melt** (Beef) · 🌶 Mild
 Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · **Fry spread:** fat skimmed from the consommé
@@ -705,9 +705,13 @@ White bread · Peanut butter, crushed potato chips · Jam · **Fry spread:** but
 Bolillo · Oaxaca + cotija · Tortilla chips tossed in warm salsa verde, scrambled egg, shredded chicken (optional) · *Add:* crema, pickled red onion, cilantro, avocado
 *Toss the chips in the salsa right before building so they soften without turning to mush. Everything cold and creamy goes on after the press.*
 
-**Chicken Parm** (Chicken) · 🌶 Mild
-Sourdough or Italian loaf · Provolone + pepper jack, grilled right on the press before assembly · Chicken cutlet, grilled onions · Sriracha · *Add:* fresh basil (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
-*Cooked Nov 2026: the wet marinara version took forever to press, so this is the dry build that worked. Grill the provolone and pepper jack on the press first so the cheese is already melted and crisp, then build with the chicken, grilled onions and a line of sriracha. For classic parm flavor, simmer marinara down thick ahead of time and serve it warm on the side for dipping instead of inside.*
+**Chicken Parm** (Chicken)
+Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Tomato paste, spread thin between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
+*Cooked Nov 2026: the marinara this card first called for was too wet and took forever to press. Tomato paste is the fix: thick, concentrated tomato flavor, and it doesn't leak. Keep it between the cheeses, not against the bread. Warm marinara on the side for dipping is optional. Make an extra cutlet: the leftover chicken goes into the Sriracha Chicken Melt.*
+
+**Sriracha Chicken Melt** (Chicken) · 🌶 Mild
+Sourdough · Provolone + pepper jack, grilled right on the press before assembly · Leftover Chicken Parm cutlet, grilled onions · Sriracha
+*Cooked Nov 2026: made right after the Chicken Parm with its leftover chicken. Grill the provolone and pepper jack on the press first so the cheese is already melted and crisp, then build with the chicken, grilled onions and a line of sriracha.*
 
 **Ham + Swiss, Slider-Style** (Ham & pork) · 🌶 Mild
 Texas toast or Hawaiian bread · Swiss and Muenster (brie or Gruyère work too) · Thick-sliced deli ham, bacon, PBR beer-caramelized onions · Beaver spicy brown mustard on one half, or honey Dijon for sweet with no heat · *Add:* thin grilled apple or pear (optional) · **Fry spread:** melted butter with Dijon, Worcestershire, poppy seeds and dried onion
