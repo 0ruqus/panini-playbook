@@ -151,9 +151,9 @@ Roast pork · Sliced ham · Swiss · Yellow mustard · Pickles
 Rye · Gruyère · Orange-braised shredded pork, dill pickles · Orange-mustard sauce · *Add:* red cabbage kraut · **Fry spread:** butter
 *Note: the full pork, kraut and orange sauce recipe is in the High Protein note.*
 
-**Beer Cheese Brat** · 🌶 Mild
-Pretzel roll, sourdough or rye · Sharp cheddar + pepper jack · Hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp (or a beer-simmered bratwurst split lengthwise), PBR beer-caramelized onions, sauerkraut squeezed dry (optional) · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
-*Call the audible: hot dogs or brats. Hot dogs (first made Nov 2026, two dogs, 4 strips each) press flat and the air fryer crisps the edges; a split brat is meatier. For the Reuben-style version, add kraut squeezed very dry and swap to rye with Swiss and Muenster. Ty skips the kraut and brown mustard, so make his with Kewpie.*
+**Kielbasa & Kraut** · 🌶 Mild
+Pretzel roll, sourdough or rye · Sharp cheddar + pepper jack · Kielbasa, bratwurst or hot dogs split lengthwise and crisped, sauerkraut squeezed dry, PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
+*The audible is the sausage: kielbasa is smoky and holds its shape, a beer-simmered brat is meatier, and hot dogs cut lengthwise into 4 strips each and air fried get crisp edges (first made Nov 2026 with two dogs). Squeeze the kraut very dry so it presses like a Reuben. For a Reuben-style version, use rye with Swiss and Muenster. Ty skips the kraut and brown mustard, so make his with Kewpie and no kraut.*
 *Score:* ★★★★★ (Dan loved it) · Ty 👎 (didn't like the brown mustard)
 
 ### Turkey

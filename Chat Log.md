@@ -163,3 +163,7 @@
 - Apple Cranberry and Elvis moved from Test Kitchen to Recipes (Apple Cranberry lost its "Not chosen yet" bread and "Ideas in progress" tip; bread now defaults).
 - Brat & Kraut merged into **Beer Cheese Brat**, with an audible: hot dogs (air-fried strips) or a split beer-simmered brat; optional dry sauerkraut, and rye with Swiss + Muenster for the Reuben-style version. Ty's kraut/mustard note is in the tip; the card now shows Ty's * for sauerkraut. Score kept.
 - Counts: 87 recipes, 32 Test Kitchen ideas. Name change for the merged card suggested, waiting on a pick.
+
+## 2026-11-23 · Beer Cheese Brat → Kielbasa & Kraut
+- Renamed to **Kielbasa & Kraut**. The audible is the sausage: kielbasa, beer-simmered bratwurst or air-fried hot dog strips. Kraut (squeezed dry) is now part of the build; Ty's version is Kewpie, no kraut. Planner prep says "Split and crisp the sausage: kielbasa, brat or hot dogs, your call"; Kielbasa added to the ingredient list. Search finds it by beer cheese brat, hot dog, weiner, polish.
+- Scores and cook-night picks saved on a device under the old name move to the new name automatically (RENAMED map in the page).
