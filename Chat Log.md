@@ -134,3 +134,9 @@
 
 ## 2026-11-23 · Renamed Veggie cards
 - Veggie is now **Mediterranean Melt**; Veggie Two is now **Chipotle Garden**.
+
+## 2026-11-23 · Blueberry Brie + Raspberry moved to Test Kitchen
+- Both were bare names in the PANINI ideas list ("Blueberry / Brie", "Raspberry"), so they moved from Recipes to Test Kitchen with full builds:
+  - **Blueberry Brie** (Fruit): Sourdough · Brie · smashed blueberries, optional prosciutto · honey with cracked pepper · arugula after · butter.
+  - **Raspberry Chipotle Turkey** (Turkey, 🌶🌶 Medium): Sourdough · Brie or Havarti · smoked turkey, fresh raspberries · raspberry jam with chipotle in adobo.
+- Counts: 88 recipes, 33 Test Kitchen ideas (page, Markdown, README, _Claude Index).

@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-90 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+88 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -398,12 +398,6 @@ Sourdough or walnut bread · Gorgonzola crumbles + cream cheese · Thin-sliced a
 **Balsamic Blueberry**
 White bread · Mozzarella, Monterey Jack or Swiss + Laughing Cow · Fresh spinach · [Blueberry balsamic reduction](#blueberry-balsamic-reduction) · **Fry spread:** butter
 
-**Blueberry Brie**
-Brie · Blueberries
-
-**Raspberry**
-Raspberry jam with a mild cheese. A simple sweet option.
-
 ### Dessert
 *Cook these last: they leak hard. Use butter on the outside.*
 
@@ -663,6 +657,14 @@ Sourdough · Sharp cheddar · Cold leftover mac and cheese, bacon · *Add:* hot 
 **Apple Cranberry** (Fruit)
 Not chosen yet · Brie · Apple, bacon · Cranberry jam
 *From the Ideas in progress list in the notes.*
+
+**Blueberry Brie** (Fruit)
+Sourdough · Brie · Blueberries, lightly smashed; prosciutto (optional) · Honey with cracked black pepper · *Add:* baby arugula · **Fry spread:** butter
+*Smash the berries just enough to break the skins so they don't roll out. From the PANINI ideas list, where it was only a name.*
+
+**Raspberry Chipotle Turkey** (Turkey) · 🌶🌶 Medium
+Sourdough · Brie or Havarti · Smoked turkey, fresh raspberries · Raspberry jam stirred with a little chipotle in adobo
+*Start with a teaspoon of adobo per few spoons of jam and taste. From the PANINI ideas list, where it was only "Raspberry".*
 
 **Apple Pie** (Dessert)
 Cinnamon raisin bread · Cream cheese · Apple pie filling · Caramel · **Fry spread:** butter with cinnamon sugar
