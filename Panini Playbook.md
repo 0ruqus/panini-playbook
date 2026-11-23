@@ -238,7 +238,7 @@ Pepper jack · Peri peri seasoned air-fryer chicken, jalapeños · *Add:* colesl
 **Praise Cheesus** · 🌶 Mild
 Circle bread · Havarti + Swiss + pepper jack · Blackened chicken, banana peppers · Garlic aioli
 
-**Club Kick**
+**Club Kick** · 🌶 Mild
 Monterey Jack · Spiced air-fryer chicken, bacon · *Add:* avocado, tomato
 
 **Spinach Artichoke Chicken**
