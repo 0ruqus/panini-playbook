@@ -40,7 +40,7 @@ Every sandwich here is built in the same seven layers:
 | **Fill** | The main event | Turkey, ham, roast beef, chicken, vegetables, fruit |
 | **Spread** | The flavor signature, usually sweet, savory or tangy | Jams, aiolis, pesto, mustards, glazes |
 | **Heat** | Optional kick. Pick a level (mild, medium or hot). It can ride in the melt, fill, spread or add | Pepper jack, jalapeños, chipotle, sriracha, habanero |
-| **Add** | Wet and fresh items, added **after** pressing | Avocado, tomato, lettuce, kimchi, banana peppers, arugula |
+| **Add** | Cold, fresh items, added **after** pressing. Warm sauces go on the side as a **Dip** | Avocado, tomato, lettuce, cucumber, spinach, kimchi, arugula |
 | **Fry spread** | What goes on the *outside* of the bread | **Mayonnaise** (default), garlic mayo, butter |
 
 **Heat levels**
@@ -159,16 +159,16 @@ Pretzel roll or sourdough · Sharp cheddar + pepper jack · Hot dogs cut lengthw
 ### Turkey
 
 **Turkey + Swiss with Pesto**
-Texas toast · Swiss · Smoked turkey leg, cucumber · Classic pesto
+Texas toast · Swiss · Smoked turkey leg · Classic pesto · *Add:* cucumber
 
 **Turkey + Havarti with Lingonberry**
 Texas toast · Havarti · Smoked turkey leg · Swedish lingonberry sauce
 
 **Turkey Swiss with Ancho Chili Jam** · 🌶 Mild
-Roll · Swiss + cream cheese + Laughing Cow · Turkey, red onion, lettuce · Ancho chili jam
+Roll · Swiss + cream cheese + Laughing Cow · Turkey, red onion · Ancho chili jam · *Add:* lettuce
 
 **Turkey Swiss + Bacon** · 🌶 Mild
-Sourdough · Swiss + cream cheese + Laughing Cow · Turkey, bacon, cucumber, lettuce, avocado, red onion, tomato · Spicy mustard + lemon mayo
+Sourdough · Swiss + cream cheese + Laughing Cow · Turkey, bacon, red onion · Spicy mustard + lemon mayo · *Add:* cucumber, lettuce, avocado, tomato
 
 **Turkey Gouda Bacon** · 🌶🌶 Medium
 French roll · Smoked gouda · Smoked turkey, bacon · Chipotle mayo + roasted tomato hazelnut pesto · *Add:* tomato
@@ -188,7 +188,7 @@ Sourdough · Spreadable brie + provolone · Turkey, basil, strawberries · *Add:
 *Note: choose a sweeter turkey. A salsa-seasoned turkey fought the strawberries.*
 
 **Pesto Turkey ("Gobble Gobble")**
-Mozzarella top and bottom · Turkey, tomato, red onion · Pesto
+Mozzarella top and bottom · Turkey, red onion · Pesto · *Add:* tomato
 
 **Turkey Cranberry Jalapeño** · 🌶🌶 Medium
 Turkey · Cranberry · Jalapeño · Cheese of choice
@@ -206,7 +206,7 @@ Havarti + Laughing Cow · Cracked black pepper turkey, bacon · Spinach artichok
 ### Chicken
 
 **Chicken Panini** · 🌶🌶 Medium
-Provolone · Chicken thigh roasted with a rub, grilled onion, roasted yellow and red pepper, tomato · [Chipotle aioli](#chipotle-aioli)
+Provolone · Chicken thigh roasted with a rub, grilled onion, roasted yellow and red pepper · [Chipotle aioli](#chipotle-aioli) · *Add:* tomato
 
 **BBQ Chicken**
 Sourdough · Mozzarella + smoked gouda · Roasted chicken, cilantro · BBQ sauce
@@ -238,8 +238,8 @@ Pepper jack · Peri peri seasoned air-fryer chicken, jalapeños · *Add:* colesl
 **Praise Cheesus** · 🌶 Mild
 Circle bread · Havarti + Swiss + pepper jack · Blackened chicken, banana peppers · Garlic aioli
 
-**Club-ish**
-Monterey Jack · Air-fryer chicken, bacon, avocado, tomato
+**Club Kick**
+Monterey Jack · Spiced air-fryer chicken, bacon · *Add:* avocado, tomato
 
 **Spinach Artichoke Chicken**
 Brie · Air-fryer chicken · Spinach artichoke dip
@@ -282,7 +282,7 @@ Sourdough · Provolone + pepper jack · Chicken, bacon · Valentina hot sauce
 ### Beef
 
 **Roast Beef + Provolone** · 🌶🌶 Medium
-Texas toast or rustic baguette · Provolone · Roast beef, white or red onion, cucumber · Chipotle mayo, or spicy mustard + mayo · *Add:* lettuce
+Texas toast or rustic baguette · Provolone · Roast beef, white or red onion · Chipotle mayo, or spicy mustard + mayo · *Add:* cucumber, lettuce
 *Two ways: chipotle mayo on Texas toast for a little kick, or spicy mustard and mayo on a rustic baguette for mild. Good cold too.*
 
 **Roast Beef & Onion Marmalade**
@@ -309,7 +309,7 @@ French roll · Mozzarella · Meatballs · *Add:* a few spoons of warm marinara o
 *Press just the meatballs and cheese, then open it and spoon a little marinara over the meatballs. Serve the rest warm on the side for dipping. Pressed with the sauce inside, it leaks and turns soggy.*
 
 **The Roman**
-Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing
+Sourdough · Provolone · Salami, pepperoni, ham, red onion · Greek dressing · *Add:* tomato
 
 **Gabagool Honey** · 🌶🌶 Medium
 French bread · Mozzarella + Laughing Cow garlic · Capocollo, Genoa salami, pepperoni, roasted jalapeño · Honey · *Add:* Italian sausage · **Fry spread:** butter
@@ -319,7 +319,7 @@ Sourdough · Mozzarella · Pepperoni, red onion, jalapeño · Honey + tomato pas
 *A pizza melt. Skip the pepperoni and onion for the simpler jalapeño-only version.*
 
 **Peppered Salami Melt**
-Sourdough at 400°F · American · Peppered salami, tomatoes
+Sourdough at 400°F · American · Peppered salami · *Add:* tomatoes
 
 **Giardiniera Sausage** · 🌶🌶🌶 Hot
 Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:* [giardiniera](#giardiniera)
@@ -328,7 +328,7 @@ Hoagie roll · Provolone · Grilled Italian sausage, peppers and onions · *Add:
 ### Fish
 
 **Tuna Melt**
-Roll · Havarti + Laughing Cow · Tuna salad, tomato, lettuce · German mustard + Thousand Island
+Roll · Havarti + Laughing Cow · Tuna salad · German mustard + Thousand Island · *Add:* tomato, lettuce
 
 **Korean Spicy Tuna** · 🌶🌶 Medium
 Sourdough or Texas toast · Cream cheese + mozzarella · Korean canned hot pepper (gochugaru) tuna, drained, mixed with cream cheese, sliced green onions and sriracha · Sriracha mayo · *Add:* kimchi, sliced cucumber
@@ -352,7 +352,7 @@ Roll · Havarti + Laughing Cow · Roasted red peppers, cucumber, grilled white o
 Texas toast · Medium white cheddar · Sautéed mushrooms, spring onion · Chili flake butter
 
 **Springer (Dill & Spring Onion)**
-Sourdough · Cheddar + mozzarella + gouda · Dill, tomato, spring onion · Japanese mayo
+Sourdough · Cheddar + mozzarella + gouda · Dill, spring onion · Japanese mayo · *Add:* tomato
 
 **Pesto Tomato**
 Mozzarella (5 slices, top and bottom) · Tomato · Pesto
@@ -387,7 +387,7 @@ Sourdough or walnut bread · Gorgonzola crumbles + cream cheese · Thin-sliced a
 *Made from the house gorgonzola appetizer. Crumbles don't glue like sliced cheese, so spread cream cheese on both slices and press the gorgonzola into it. The cream cheese also softens the blue-cheese bite. Toast the walnuts in a dry pan first.*
 
 **Balsamic Blueberry**
-White bread · Mozzarella, Monterey Jack or Swiss + Laughing Cow · Fresh spinach · [Blueberry balsamic reduction](#blueberry-balsamic-reduction) · **Fry spread:** butter
+White bread · Mozzarella, Monterey Jack or Swiss + Laughing Cow · [Blueberry balsamic reduction](#blueberry-balsamic-reduction) · *Add:* fresh spinach · **Fry spread:** butter
 
 ### Dessert
 *Cook these last: they leak hard. Use butter on the outside.*
@@ -427,10 +427,10 @@ Short builds for when you don't need a full card.
 | Family | Builds |
 |---|---|
 | **HOG** (pork) | Jam n' Ham · Cuban · Hawaiian |
-| **BOK BOK** (chicken) | Club-ish · Spinach Artichoke · Peri Peri · Breakfast |
+| **BOK BOK** (chicken) | Club Kick · Spinach Artichoke · Peri Peri · Sunrise Schmear |
 | **GOBBLE GOBBLE** (turkey) | Pesto Turkey with red onion and tomato |
 | **COW** (beef) | Bulgogi (no cheese, red onion, carrots) |
-| **SUGAR** (sweet) | Banana Nutella · Blueberry Brie · Raspberry |
+| **SUGAR** (sweet) | Banana Nutella · Blueberry Lemon · Honey Banana |
 
 **More combos to try**
 - Turkey, pesto and mozzarella on Parmesan-crusted bread with onion

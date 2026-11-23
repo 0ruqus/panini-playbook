@@ -146,3 +146,8 @@
 
 ## 2026-11-23 · Two more to Test Kitchen
 - Peri Peri, Fried and Homemade Chicken Salad moved from Recipes to Test Kitchen (builds unchanged). Peri Peri, Air-Fryer stays in Recipes. Counts: 85 recipes, 35 Test Kitchen ideas.
+
+## 2026-11-23 · Fresh items moved to Add across all cards
+- Reviewed every Recipe and Test Kitchen card. Avocado, fresh tomato, lettuce, cucumber and fresh spinach moved from Fill to Add on 12 cards: Turkey + Swiss Pesto, Turkey Swiss Ancho Chili Jam, Turkey Swiss + Bacon, Pesto Turkey, Chicken Panini, Club Kick, Roast Beef + Provolone, The Roman, Peppered Salami Melt, Tuna Melt, Springer (Dill & Spring Onion), Balsamic Blueberry.
+- Left pressed on purpose: Caprese and Pesto Tomato (tomato is the sandwich), Hot Brown (the baked tomato slice is part of the classic), sun-dried and Sicilian-spiced tomatoes, pickles, banana peppers, cilantro.
+- Club-ish is now **Club Kick** (spiced air-fryer chicken). Quick builds table updated for renamed/moved cards (Club Kick, Sunrise Schmear; Sugar row now Banana Nutella · Blueberry Lemon · Honey Banana). Markdown formula table: Add is cold and fresh, warm sauces are a Dip.
