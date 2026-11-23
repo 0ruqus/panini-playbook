@@ -154,3 +154,7 @@
 
 ## 2026-11-23 · Club Kick heat
 - Club Kick now has a 🌶 Mild heat badge.
+
+## 2026-11-23 · Club Modified renamed; pepper jack check
+- Club Modified is now **Blackened IPA Turkey** (also in the PBR onions note).
+- Checked every card with pepper jack: all 13 already carry a heat badge (11 Mild, 2 Hot), so none needed adding.

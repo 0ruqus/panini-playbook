@@ -173,7 +173,7 @@ Sourdough · Swiss + cream cheese + Laughing Cow · Turkey, bacon, red onion · 
 **Turkey Gouda Bacon** · 🌶🌶 Medium
 French roll · Smoked gouda · Smoked turkey, bacon · Chipotle mayo + roasted tomato hazelnut pesto · *Add:* tomato
 
-**Club Modified** · 🌶 Mild
+**Blackened IPA Turkey** · 🌶 Mild
 Sourdough · Pepper jack · Blackened turkey, caramelized onion, prosciutto · IPA jam · *Add:* tomato, avocado
 *Note: the prosciutto was too subtle here and can be skipped.*
 
@@ -543,7 +543,7 @@ Marinate thin-sliced beef, then sear it hot before building the sandwich.
 3. Add PBR a splash at a time, letting each splash cook off and scraping up the brown bits.
 4. Keep going for another 20–30 minutes, until the onions are deep brown and jammy.
 
-The house version uses no sugar. For sweeter, darker onions, stir in the brown sugar before the first splash of beer. Use it on the Fig & Caramelized Onion panini, or anywhere a card calls for caramelized onions: French Onion, Club Modified, Buffalo Apple Chicken. It keeps about a week in the fridge.
+The house version uses no sugar. For sweeter, darker onions, stir in the brown sugar before the first splash of beer. Use it on the Fig & Caramelized Onion panini, or anywhere a card calls for caramelized onions: French Onion, Blackened IPA Turkey, Buffalo Apple Chicken. It keeps about a week in the fridge.
 
 ### Chimichurri
 *A standard version, not from the notes.*
