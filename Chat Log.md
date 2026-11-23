@@ -123,3 +123,8 @@
 - Meatball Marinara is now **Meatballin**: meatballs and mozzarella pressed dry, then lots of warm marinara spooned in after the press.
 - Grilled Pineapple, Ham & Bacon and Pineapple Jalapeño Mushroom now use a thin layer of tomato paste inside, with marinara after the press optional.
 - The "Wet ingredients go in after the press" rule now names marinara.
+
+## 2026-11-23 · Renames + dips on the side
+- Breakfast is now **Sunrise Schmear** (cheddar + American, green onion cream cheese schmear, sausage or bacon). Springer (Fettuccine) is now **Alfredo Carb Loader**.
+- New optional **Dip** line on cards for warm or wet sauces served on the side: Meatballin (plus a few spoons inside), Chicken Parm, both pineapple cards (marinara), Italian Beef (au jus), Thanksgiving Mashup (gravy), Alfredo Carb Loader (Alfredo), Buffalo Tuna Melt and Buffalo Bacon Ranch (ranch), and in Test Kitchen Birria (consommé) and Monte Cristo (raspberry jam). Add is now for cold, fresh things inside.
+- Filter panel has a new row, 06 · On the side (Has a dip, Marinara, Ranch, Gravy & au jus). The planner shows a "Dips on the side" group in the shopping list when a sauce is only a dip, a "Warm the … for dipping" prep step, and a Dips row at the press. The house formula and wet-ingredients rule now say warm sauces go on the side.

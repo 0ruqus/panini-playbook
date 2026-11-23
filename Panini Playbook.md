@@ -62,7 +62,7 @@ Recipe and Test Kitchen cards carry a heat tag after the name: 🌶 Mild, 🌶�
 ## Press technique
 
 **Wet ingredients go in after the press**
-Avocado, tomato, lettuce, kimchi, marinara and other wet ingredients turn soggy and steam the bread if you press them. Add them after cooking:
+Avocado, tomato, lettuce, kimchi and other wet ingredients turn soggy and steam the bread if you press them. Add them after cooking. Warm sauces like marinara, gravy and au jus go on the side as a dip instead:
 1. Put cheese right against the bread on **both** the top and bottom slices, with the hot fillings in between.
 2. Press until the cheese melts.
 3. Lift the top slice, opening just **below its layer of melted cheese** so the gooey cheese stays stuck to the bread.
@@ -108,7 +108,9 @@ This applies to every recipe below. Anything in the **Add** line, and any tomato
 
 ## Recipes
 
-Each card lists **Bread · Melt · Fill · Spread · Add**. The fry spread is mayonnaise unless noted.
+Each card lists **Bread · Melt · Fill · Spread · Add**, plus a **Dip** when there is one. The fry spread is mayonnaise unless noted.
+
+**Dips:** warm or wet sauces (marinara, gravy, au jus, consommé, Alfredo, ranch) go on the side for dipping instead of inside the press, where they leak and steam the bread. *Add* is for cold, fresh things that go inside after pressing.
 
 **At home:** Ty skips brown mustard and sauerkraut. Cole skips sriracha. On the page, cards that use one of these get a red \* you can tap for the details, and the Cook night planner lists them under Heads up.
 
@@ -136,8 +138,8 @@ Sourdough · Smoked gouda + Muenster · Ham
 Mozzarella (+ Parmesan) · Grilled sliced ham · Pineapple · Tomato paste as the sauce
 
 **Grilled Pineapple, Ham & Bacon**
-Parmesan · Grilled pineapple, ham, bacon · Tomato paste, spread thin · *Add:* marinara after the press (optional)
-*Marinara is too wet to press. Use a thin layer of tomato paste inside, or spoon marinara in after the press.*
+Parmesan · Grilled pineapple, ham, bacon · Tomato paste, spread thin · *Dip:* warm marinara (optional)
+*Marinara is too wet to press, so it goes on the side for dipping. A thin layer of tomato paste inside gives the tomato flavor.*
 
 **Jam n' Ham** · 🌶 Mild
 Ham · Spicy jam · Cheese of choice
@@ -210,7 +212,7 @@ Provolone · Chicken thigh roasted with a rub, grilled onion, roasted yellow and
 Sourdough · Mozzarella + smoked gouda · Roasted chicken, cilantro · BBQ sauce
 
 **Buffalo Bacon Ranch** · 🌶🌶 Medium
-Sourdough · Mozzarella · Roasted chicken, crisp bacon, sweet red onion, cilantro · Buffalo sauce mixed with cream cheese + garlic ranch
+Sourdough · Mozzarella · Roasted chicken, crisp bacon, sweet red onion, cilantro · Buffalo sauce mixed with cream cheese + garlic ranch · *Dip:* extra garlic ranch
 
 **Buffalo Apple Chicken** · 🌶 Mild
 Rustic sourdough · Pepper jack + brie · Deli buffalo chicken, caramelized onions · Cranberry spice jam · *Add:* sliced grilled apples
@@ -269,8 +271,8 @@ Cream cheese + sharp cheddar · Shredded or air-fryer chicken, jalapeños (fresh
 *Spread the cream cheese on both slices and lay the cheddar over it, so it glues like a popper filling.*
 
 **Chicken Parm**
-Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Tomato paste, spread thin between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
-*First made Nov 2026: the marinara this card first called for was too wet and took forever to press. Tomato paste is the fix: thick, concentrated tomato flavor, and it doesn't leak. Keep it between the cheeses, not against the bread. Warm marinara on the side for dipping is optional. Make an extra cutlet: the leftover chicken goes into the Sriracha Chicken Melt.*
+Sourdough or Italian loaf · Provolone against the bread, fresh mozzarella in the middle · Thin panko-Parmesan chicken cutlet, crisped in the air fryer first · Tomato paste, spread thin between the cheese layers · *Add:* fresh basil; hot honey or Calabrian chili (optional) · *Dip:* warm marinara (optional) · **Fry spread:** garlic mayo pressed with grated Parmesan
+*First made Nov 2026: the marinara this card first called for was too wet and took forever to press. Tomato paste is the fix: thick, concentrated tomato flavor, and it doesn't leak. Keep it between the cheeses, not against the bread. Make an extra cutlet: the leftover chicken goes into the Sriracha Chicken Melt.*
 
 **Sriracha Chicken Melt** · 🌶 Mild
 Sourdough · Provolone + pepper jack, grilled right on the press before assembly · Leftover Chicken Parm cutlet, grilled onions · Sriracha
@@ -302,8 +304,8 @@ Marble rye · Baby Swiss + Laughing Cow · Pastrami, sauerkraut · German mustar
 No cheese · Bulgogi beef, red onion, carrots *(see [Bulgogi marinade](#bulgogi-marinade))*
 
 **Italian Beef** · 🌶🌶🌶 Hot
-Hoagie roll (or semolina bread) · Provolone or mozzarella · Thin-sliced [Crock Pot Italian beef](#crock-pot-italian-beef) · *Add:* [giardiniera](#giardiniera), pepperoncini
-*Note: dip the finished sandwich in the au jus from the crock pot. [Chimichurri](#chimichurri) also works as the spread.*
+Hoagie roll (or semolina bread) · Provolone or mozzarella · Thin-sliced [Crock Pot Italian beef](#crock-pot-italian-beef) · *Add:* [giardiniera](#giardiniera), pepperoncini · *Dip:* au jus from the crock pot
+*[Chimichurri](#chimichurri) also works as the spread.*
 
 **Chimichurri Steak**
 Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:* [chimichurri](#chimichurri)
@@ -312,8 +314,8 @@ Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:
 ### Italian & cured meats
 
 **Meatballin**
-French roll · Mozzarella · Meatballs · *Add:* lots of warm marinara, spooned in after the press
-*Press just the meatballs and cheese, then open it and spoon in plenty of warm marinara. Pressed with the sauce inside, it leaks and turns soggy.*
+French roll · Mozzarella · Meatballs · *Add:* a few spoons of warm marinara over the meatballs · *Dip:* warm marinara, plenty
+*Press just the meatballs and cheese, then open it and spoon a little marinara over the meatballs. Serve the rest warm on the side for dipping. Pressed with the sauce inside, it leaks and turns soggy.*
 
 **The Roman**
 Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing
@@ -342,7 +344,7 @@ Sourdough or Texas toast · Cream cheese + mozzarella · Korean canned hot peppe
 *Drain the oil from the can first, or the sandwich goes greasy. Mash the tuna with a spoonful of cream cheese, the green onions and a squeeze of sriracha. Cream cheese on both slices is the glue, so you can open it after pressing to add the kimchi and cucumber.*
 
 **Buffalo Tuna Melt** · 🌶🌶 Medium
-Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ranch, diced celery and carrot · *Serve with:* ranch for dipping · **Fry spread:** butter
+Thick white, rye or sourdough · Mozzarella · Tuna mixed with buffalo sauce, ranch, diced celery and carrot · *Dip:* ranch · **Fry spread:** butter
 
 ### Vegetarian
 
@@ -378,8 +380,8 @@ Rustic sourdough · Brie + cream cheese spread · [PBR beer-caramelized onions](
 *Note: make the onions ahead. They keep about a week in the fridge.*
 
 **Pineapple Jalapeño Mushroom** · 🌶🌶 Medium
-Mozzarella · Pineapple, jalapeño, mushrooms · Tomato paste, spread thin · *Add:* marinara after the press (optional)
-*Marinara is too wet to press. Use a thin layer of tomato paste inside, or spoon marinara in after the press.*
+Mozzarella · Pineapple, jalapeño, mushrooms · Tomato paste, spread thin · *Dip:* warm marinara (optional)
+*Marinara is too wet to press, so it goes on the side for dipping. A thin layer of tomato paste inside gives the tomato flavor.*
 
 ### Sweet & savory fruit
 
@@ -422,13 +424,14 @@ French bread · 4 slices Gruyère + 4 clumps brie (≈ 2 oz) · 4–5 cremini mu
 *Optional adds:* sliced grilled apples, Swiss, dry-grilled onions, thin-sliced potatoes, spicy jalapeño brown mustard
 
 **Thanksgiving Mashup**
-Rustic sourdough · Red wax gouda · Cracked black pepper turkey, mashed potatoes, green beans, stuffing, onion crisps · Cranberry jam · *Serve with:* gravy for dipping
+Rustic sourdough · Red wax gouda · Cracked black pepper turkey, mashed potatoes, green beans, stuffing, onion crisps · Cranberry jam · *Dip:* warm gravy
 
-**Springer (Fettuccine)**
-Focaccia · Parmesan + mozzarella + American · Fettuccine · Garlic mayo · *Serve with:* white sauce for dipping
+**Alfredo Carb Loader**
+Focaccia · Parmesan + mozzarella + American · Fettuccine · Garlic mayo · *Dip:* warm Alfredo or white sauce
 
-**Breakfast**
-Scrambled eggs, sausage · American
+**Sunrise Schmear**
+Cheddar + American · Scrambled eggs, sausage (or swap in bacon) · Green onion cream cheese schmear
+*Schmear the cream cheese on the inside of both slices so it melts into the eggs.*
 
 ---
 
@@ -622,8 +625,8 @@ Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeez
 *Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
 
 **Birria Melt** (Beef) · 🌶 Mild
-Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · **Fry spread:** fat skimmed from the consommé
-*Brush the outside with the red fat off the top of the consommé instead of mayo, and serve a cup of consommé for dipping.*
+Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · *Dip:* a cup of warm consommé · **Fry spread:** fat skimmed from the consommé
+*Brush the outside with the red fat off the top of the consommé instead of mayo.*
 
 **Fry Sauce Patty Melt** (Beef)
 Texas toast · American + Swiss · Two thin smash patties, PBR beer-caramelized onions · Fry sauce · **Fry spread:** butter
@@ -710,7 +713,7 @@ Round sesame loaf or focaccia · Provolone · Genoa salami, ham, mortadella · *
 Bolillo or sourdough · Pepper jack · Scrambled egg, chorizo · Salsa verde
 
 **Monte Cristo** (Ham & pork)
-Bread dipped in egg · Swiss · Ham, turkey · *Add:* powdered sugar, raspberry jam for dipping · **Fry spread:** butter
+Bread dipped in egg · Swiss · Ham, turkey · *Add:* powdered sugar · *Dip:* raspberry jam · **Fry spread:** butter
 *Dip the bread in egg like the fried Peri Peri.*
 
 **Elvis** (Dessert)
