@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-88 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+87 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -289,10 +289,8 @@ Chicken, mayo, celery, grapes, salt and pepper
 ### Beef
 
 **Roast Beef + Provolone** · 🌶🌶 Medium
-Texas toast · Provolone · Roast beef, white onion, cucumber · Chipotle mayo
-
-**Roast Beef (cold or pressed)** · 🌶 Mild
-Rustic baguette · Provolone · Roast beef, red onion, cucumber, lettuce · Spicy mustard + mayo
+Texas toast or rustic baguette · Provolone · Roast beef, white or red onion, cucumber · Chipotle mayo, or spicy mustard + mayo · *Add:* lettuce
+*Two ways: chipotle mayo on Texas toast for a little kick, or spicy mustard and mayo on a rustic baguette for mild. Good cold too.*
 
 **Roast Beef & Onion Marmalade**
 Flatbread · Fontina · Roast beef · Onion jam / marmalade · *Add:* baby arugula, fig aioli

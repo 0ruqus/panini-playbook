@@ -140,3 +140,6 @@
   - **Blueberry Brie** (Fruit): Sourdough · Brie · smashed blueberries, optional prosciutto · honey with cracked pepper · arugula after · butter.
   - **Raspberry Chipotle Turkey** (Turkey, 🌶🌶 Medium): Sourdough · Brie or Havarti · smoked turkey, fresh raspberries · raspberry jam with chipotle in adobo.
 - Counts: 88 recipes, 33 Test Kitchen ideas (page, Markdown, README, _Claude Index).
+
+## 2026-11-23 · Merged the two Roast Beef cards
+- Roast Beef + Provolone and Roast Beef were nearly identical, so they're one card, **Roast Beef + Provolone**: Texas toast or rustic baguette · Provolone · roast beef, white or red onion, cucumber · chipotle mayo, or spicy mustard and mayo · lettuce after the press. 🌶🌶 Medium (mild with the mustard). Count 88 → 87.
