@@ -158,3 +158,8 @@
 ## 2026-11-23 · Club Modified renamed; pepper jack check
 - Club Modified is now **Blackened IPA Turkey** (also in the PBR onions note).
 - Checked every card with pepper jack: all 13 already carry a heat badge (11 Mild, 2 Hot), so none needed adding.
+
+## 2026-11-23 · Recipes reshuffle + brat merge
+- Apple Cranberry and Elvis moved from Test Kitchen to Recipes (Apple Cranberry lost its "Not chosen yet" bread and "Ideas in progress" tip; bread now defaults).
+- Brat & Kraut merged into **Beer Cheese Brat**, with an audible: hot dogs (air-fried strips) or a split beer-simmered brat; optional dry sauerkraut, and rye with Swiss + Muenster for the Reuben-style version. Ty's kraut/mustard note is in the tip; the card now shows Ty's * for sauerkraut. Score kept.
+- Counts: 87 recipes, 32 Test Kitchen ideas. Name change for the merged card suggested, waiting on a pick.

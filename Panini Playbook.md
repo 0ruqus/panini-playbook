@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-85 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+87 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -152,8 +152,8 @@ Rye · Gruyère · Orange-braised shredded pork, dill pickles · Orange-mustard 
 *Note: the full pork, kraut and orange sauce recipe is in the High Protein note.*
 
 **Beer Cheese Brat** · 🌶 Mild
-Pretzel roll or sourdough · Sharp cheddar + pepper jack · Hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp (or a beer-simmered bratwurst, split), PBR beer-caramelized onions · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
-*First made Nov 2026 with two hot dogs, each cut lengthwise into 4 strips and air fried. The air fryer crisps the edges, and the flat strips press evenly. Kewpie works in place of the mustard. A cheesy cousin of the Brat & Kraut idea: no kraut, all melt.*
+Pretzel roll, sourdough or rye · Sharp cheddar + pepper jack · Hot dogs cut lengthwise into 4 strips each and air fried until the edges crisp (or a beer-simmered bratwurst split lengthwise), PBR beer-caramelized onions, sauerkraut squeezed dry (optional) · Beaver spicy brown mustard or Kewpie mayo · *Add:* dill pickle chips · **Fry spread:** butter
+*Call the audible: hot dogs or brats. Hot dogs (first made Nov 2026, two dogs, 4 strips each) press flat and the air fryer crisps the edges; a split brat is meatier. For the Reuben-style version, add kraut squeezed very dry and swap to rye with Swiss and Muenster. Ty skips the kraut and brown mustard, so make his with Kewpie.*
 *Score:* ★★★★★ (Dan loved it) · Ty 👎 (didn't like the brown mustard)
 
 ### Turkey
@@ -389,6 +389,9 @@ Sourdough or walnut bread · Gorgonzola crumbles + cream cheese · Thin-sliced a
 **Balsamic Blueberry**
 White bread · Mozzarella, Monterey Jack or Swiss + Laughing Cow · [Blueberry balsamic reduction](#blueberry-balsamic-reduction) · *Add:* fresh spinach · **Fry spread:** butter
 
+**Apple Cranberry**
+Brie · Apple, bacon · Cranberry jam
+
 ### Dessert
 *Cook these last: they leak hard. Use butter on the outside.*
 
@@ -398,6 +401,9 @@ White bread · 3 tsp coffee mascarpone + 3 tsp butter · 1 banana, 1 tsp honey, 
 
 **Banana Nutella**
 Banana · Nutella · Butter outside
+
+**Elvis**
+White bread · Peanut butter, banana, bacon · Honey drizzle · **Fry spread:** butter
 
 **Blueberry Lemon**
 Rustic sourdough · Spreadable brie · Blueberries · [Lemon curd](#lemon-curd) · *Add:* prosciutto (optional) · **Fry spread:** butter
@@ -605,10 +611,6 @@ Store-bought versions work well for most of them.
 
 Never made yet. Make one, and if it's a keeper it moves up into the recipes.
 
-**Brat & Kraut** (Ham & pork) · 🌶 Mild
-Rye · Swiss + Muenster · Grilled bratwurst split lengthwise, sauerkraut squeezed dry · Spicy brown mustard · **Fry spread:** butter
-*Squeeze the kraut very dry and it can be pressed like a Reuben. Optional: PBR beer-caramelized onions.*
-
 **Birria Melt** (Beef) · 🌶 Mild
 Sourdough · Oaxaca or Monterey Jack · Shredded birria beef, diced white onion, cilantro · *Add:* lime · *Dip:* a cup of warm consommé · **Fry spread:** fat skimmed from the consommé
 *Brush the outside with the red fat off the top of the consommé instead of mayo.*
@@ -644,10 +646,6 @@ Texas toast · Pimento cheese (sharp cheddar, cream cheese, pimentos) · Bacon (
 **Mac & Cheese Melt** (Big builds) · 🌶 Mild
 Sourdough · Sharp cheddar · Cold leftover mac and cheese, bacon · *Add:* hot honey drizzle · **Fry spread:** butter
 *Use mac that's cold and firm so it slices. A good test bed for Choochi's sauces.*
-
-**Apple Cranberry** (Fruit)
-Not chosen yet · Brie · Apple, bacon · Cranberry jam
-*From the Ideas in progress list in the notes.*
 
 **Blueberry Brie** (Fruit)
 Sourdough · Brie · Blueberries, lightly smashed; prosciutto (optional) · Honey with cracked black pepper · *Add:* baby arugula · **Fry spread:** butter
@@ -708,9 +706,6 @@ Bolillo or sourdough · Pepper jack · Scrambled egg, chorizo · Salsa verde
 **Monte Cristo** (Ham & pork)
 Bread dipped in egg · Swiss · Ham, turkey · *Add:* powdered sugar · *Dip:* raspberry jam · **Fry spread:** butter
 *Dip the bread in egg like the fried Peri Peri.*
-
-**Elvis** (Dessert)
-White bread · Peanut butter, banana, bacon · Honey drizzle · **Fry spread:** butter
 
 **Cookie Butter Apple** (Dessert)
 Brioche · Cream cheese · Thin apple slices · Biscoff cookie butter · **Fry spread:** butter
