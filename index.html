@@ -639,9 +639,6 @@ dialog.plan{overflow-x:hidden}
     <details class="fgroup" data-k="family" style="--gc:var(--fg)"><summary class="fl"><span class="eyebrow">03 · Main event</span><small>Family</small><span class="fsel"></span></summary><div class="chips" id="chips" role="group" aria-label="Filter by family"></div></details>
     <details class="fgroup" data-k="spread" style="--gc:var(--c-ham)"><summary class="fl"><span class="eyebrow">04 · Signature</span><small>Spread</small><span class="fsel"></span></summary><div class="chips frow" data-g="spread" role="group" aria-label="Filter by spread" style="--fc:var(--c-ham)"></div></details>
     <details class="fgroup" data-k="heat" style="--gc:var(--c-beef)"><summary class="fl"><span class="eyebrow">05 · Kick</span><small>Heat</small><span class="fsel"></span></summary><div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div></details>
-    <details class="fgroup" data-k="add" style="--gc:var(--basil)"><summary class="fl"><span class="eyebrow">06 · After the press</span><small>Add</small><span class="fsel"></span></summary><div class="chips frow" data-g="add" role="group" aria-label="Filter by what goes in after pressing" style="--fc:var(--basil)"></div></details>
-    <details class="fgroup" data-k="dip" style="--gc:var(--c-fish)"><summary class="fl"><span class="eyebrow">06 · On the side</span><small>Dip</small><span class="fsel"></span></summary><div class="chips frow" data-g="dip" role="group" aria-label="Filter by dipping sauce" style="--fc:var(--c-fish)"></div></details>
-    <details class="fgroup" data-k="fry" style="--gc:var(--c-big)"><summary class="fl"><span class="eyebrow">07 · Outside</span><small>Fry spread</small><span class="fsel"></span></summary><div class="chips frow" data-g="fry" role="group" aria-label="Filter by fry spread" style="--fc:var(--c-big)"></div></details>
     </div>
   </details>
   <div class="grid" id="grid"></div>
@@ -812,9 +809,6 @@ const FG={
  bread:{eb:"Structure",f:2,o:[["Sourdough",/sourdough/i],["Texas toast",/texas toast/i],["Rolls & hoagies",/\broll\b|hoagie/i],["Baguette & French",/baguette|french (bread|roll)/i],["Ciabatta & focaccia",/ciabatta|focaccia/i],["Rye",/\brye\b/i],["White bread",/white|sandwich bread/i],["Flatbread",/flatbread/i]]},
  cheese:{eb:"Glue",f:3,o:CHEESE},
  spread:{eb:"Signature",f:5,o:[["Jam & jelly",/jam\b|jelly|lingonberry|cranberry|apple (butter|spread)/i],["Mayo & aioli",/mayo|aioli/i],["Mustard",/mustard/i],["Pesto",/pesto/i],["Honey & maple",/honey|maple/i],["Hot sauce",/sriracha|buffalo|valentina|habanero|chili flake/i],["Tomato",/marinara|tomato paste/i],["Balsamic",/balsamic/i],["Dips & dressings",/\bdip\b|dressing|ranch|hummus|yogurt|thousand island|bean and onion/i],["Sweet",/nutella|lemon curd/i],["No spread",r=>!r[5]]]},
- add:{eb:"After the press",f:6,o:[["Avocado",/avocado|guac/i],["Tomato",/tomato\b(?! paste)/i],["Greens",/arugula|greens|lettuce/i],["Pickled",/kimchi|kraut|giardiniera|pickle|banana pepper|pepperoncini/i],["For dipping",/dipping/i],["Cured meat",/prosciutto|bacon|sausage/i],["Nothing after",r=>!r[6]]]},
- dip:{eb:"On the side",f:9,o:[["Has a dip",r=>!!r[9]],["Marinara",/marinara/i],["Ranch",/ranch/i],["Gravy & au jus",/gravy|jus|consomm/i],["Alfredo",/alfredo|white sauce/i]]},
- fry:{eb:"Outside",f:7,o:[["Mayo (house default)",r=>!r[7]||/mayo/i.test(r[7])],["Garlic mayo",/garlic mayo/i],["Butter",/butter/i],["Olive oil",/olive oil/i]]}
 };
 const sel={};
 for(const g in FG){const G=FG[g];G.t=new Map(G.o);G.n=new Map(G.o.map(([k])=>[k,R.filter(r=>gTest(g,k,r)).length]));G.list=G.o.map(o=>o[0]).filter(k=>G.n.get(k)>1).sort((a,b)=>G.n.get(b)-G.n.get(a))}

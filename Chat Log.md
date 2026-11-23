@@ -177,3 +177,6 @@
 
 ## 2026-11-23 · Recipes intro removed
 - Removed the "Each card lists the layers…" paragraph above the Recipes search (the filter panel and house formula already cover it).
+
+## 2026-11-23 · Fewer filter rows
+- Removed the 06 After the press (Add), 06 On the side (Dip) and 07 Outside (Fry spread) filter rows. The panel now has Structure, Glue, Main event, Signature and Kick. Cards still show their Add, Dip and Fry lines.
