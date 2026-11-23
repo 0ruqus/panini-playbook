@@ -101,3 +101,8 @@
 
 ## 2026-11-22 · Cheese filter
 - Recipes now have a third filter row, 🧀 Any cheese plus one chip per cheese used in 2+ recipes (Mozzarella 22, Provolone 14, Havarti 12, Brie 12, Laughing Cow 12, Swiss 11, Pepper jack 8, Cream cheese 8, Cheddar 7, Gouda 5, Monterey Jack 4, American 4, Parmesan 3, Feta 3, Gruyère 3, Muenster 2, Blue cheese 2). It matches the Melt line only and combines with family, heat and search. Wraps on desktop, scrolls sideways on phones. Rarer cheeses (fontina, ricotta, cotija…) are still findable through search.
+
+## 2026-11-22 · House-formula filters
+- Filters moved into a "Filter by the house formula" panel (collapsible, Hide/Show), one row per layer, each with an eyebrow named after the formula: 01 · Structure (Bread), 02 · Glue (Cheese), 03 · Main event (Family), 04 · Signature (Spread), 05 · Kick (Heat), 06 · After the press (Add), 07 · Outside (Fry spread).
+- New rows: Bread (Sourdough, Texas toast, Rolls & hoagies, Baguette & French, Ciabatta & focaccia, Rye, White bread, Flatbread), Spread (No spread, Jam & jelly, Mayo & aioli, Dips & dressings, Mustard, Honey & maple, Tomato, Hot sauce, Pesto, Balsamic, Sweet), Add (Nothing after, Pickled, Avocado, Tomato, Greens, Cured meat, For dipping), Fry spread (Mayo house default, Butter, Garlic mayo). Only options on 2+ recipes get a chip.
+- The sticky search bar now shows the active filters as pills (tap × to remove, or Clear all). On phones each row scrolls sideways.
