@@ -92,3 +92,6 @@
 - Household preferences (PREFS): Ty no brown mustard, no sauerkraut; Cole no sriracha. Matching cards show a red * (hover or tap for details). The Cook night planner has a Heads up list for preferences and past thumbs-down.
 - Seeded Beer Cheese Brat: 5 stars, Ty 👎, note about the brown mustard.
 - Added a local "panini" server (port 8771) to •PERSONAL/.claude/launch.json for testing.
+
+## 2026-11-22 · Shopping list: Need it / Got it
+- Each shopping list row now has a two-way toggle, Need it (the default) or Got it. Got it items fade and leave the to-buy count and copied list. "Reset" is now "All back to Need it". Choices are remembered on the device.
