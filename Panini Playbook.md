@@ -3,7 +3,7 @@
 
 Follow along on Instagram: [@Sweet_Cheezus_Crust](https://www.instagram.com/sweet_cheezus_crust/)
 
-91 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
+90 pressed and cold sandwiches, all built from the same simple formula, plus the house spreads and press technique that make them work. Pick a recipe, or mix parts from the pantry lists and build your own.
 
 ---
 
@@ -319,11 +319,9 @@ Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dre
 **Hot Honey** · 🌶🌶 Medium
 French bread · Mozzarella + Laughing Cow garlic · Capocollo, Genoa salami, pepperoni, roasted jalapeño · Honey · *Add:* Italian sausage · **Fry spread:** butter
 
-**Honey Pepperoni** · 🌶🌶 Medium
+**Pep Jalapeño Honey** · 🌶🌶 Medium
 Sourdough · Mozzarella · Pepperoni, red onion, jalapeño · Honey + tomato paste
-
-**Jalapeño Honey Pizza-Style** · 🌶🌶 Medium
-Mozzarella · Jalapeño · Honey · Tomato paste
+*A pizza melt. Skip the pepperoni and onion for the simpler jalapeño-only version.*
 
 **Peppered Salami Melt**
 Sourdough at 400°F · American · Peppered salami, tomatoes

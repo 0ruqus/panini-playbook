@@ -106,3 +106,6 @@
 - Filters moved into a "Filter by the house formula" panel (collapsible, Hide/Show), one row per layer, each with an eyebrow named after the formula: 01 · Structure (Bread), 02 · Glue (Cheese), 03 · Main event (Family), 04 · Signature (Spread), 05 · Kick (Heat), 06 · After the press (Add), 07 · Outside (Fry spread).
 - New rows: Bread (Sourdough, Texas toast, Rolls & hoagies, Baguette & French, Ciabatta & focaccia, Rye, White bread, Flatbread), Spread (No spread, Jam & jelly, Mayo & aioli, Dips & dressings, Mustard, Honey & maple, Tomato, Hot sauce, Pesto, Balsamic, Sweet), Add (Nothing after, Pickled, Avocado, Tomato, Greens, Cured meat, For dipping), Fry spread (Mayo house default, Butter, Garlic mayo). Only options on 2+ recipes get a chip.
 - The sticky search bar now shows the active filters as pills (tap × to remove, or Clear all). On phones each row scrolls sideways.
+
+## 2026-11-23 · Merged Honey Pepperoni + Jalapeño Honey Pizza-Style
+- The two Italian cards were the same build, so they're now one card, **Pep Jalapeño Honey** (Sourdough · Mozzarella · Pepperoni, red onion, jalapeño · Honey + tomato paste, 🌶🌶 Medium). Its tip says to skip the pepperoni and onion for the jalapeño-only version. Recipe count 91 → 90 (page, Markdown, README, _Claude Index).
