@@ -95,3 +95,6 @@
 
 ## 2026-11-22 · Shopping list: Need it / Got it
 - Each shopping list row now has a two-way toggle, Need it (the default) or Got it. Got it items fade and leave the to-buy count and copied list. "Reset" is now "All back to Need it". Choices are remembered on the device.
+
+## 2026-11-22 · Copy button fix
+- "Copy to-buy list" didn't reach the clipboard (likely blocked inside the Claude page frame, and the prompt() fallback was blocked too). Now both copy buttons (to-buy list and scores) open the text in a selectable box under the button, try two copy methods, say whether it worked, and offer Share… on phones (Notes, Reminders, Messages).

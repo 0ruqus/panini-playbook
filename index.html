@@ -224,6 +224,10 @@ dialog.plan.rd{width:min(460px,calc(100% - 32px));height:auto}
 .rd .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .rd .save{font:700 .9rem/1 var(--body);padding:10px 16px;border-radius:8px;border:1.5px solid var(--basil);background:var(--basil);color:var(--basil-ink);cursor:pointer}
 .rd .pfl{margin:0;font-size:.85rem;padding:8px 10px;border-radius:6px;background:var(--stripe);border-left:3px solid var(--c-beef)}
+.copyout{display:grid;gap:8px;margin:0 0 12px}
+.copyout textarea{width:100%;box-sizing:border-box;font:500 .85rem/1.45 var(--mono);font-size:max(16px,.85rem);padding:10px;border-radius:8px;border:1.5px solid var(--basil);background:var(--surface);color:var(--fg);resize:vertical}
+.copyout .acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.copyout .msg{margin:0;font-size:.82rem}
 .heads{margin:0;padding:10px 12px;border-radius:8px;background:var(--stripe);border-left:3px solid var(--c-beef);font-size:.9rem}
 .heads li{margin:2px 0}
 .pick{font:600 .78rem/1 var(--body);padding:7px 10px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);cursor:pointer}
@@ -900,7 +904,7 @@ function openPlan(focusX){renderPlan();if(!plan.open)plan.showModal();if(focusX)
 document.addEventListener("click",e=>{
   const hv=e.target.closest("[data-have]");if(hv){const k=hv.dataset.have,to=hv.dataset.to;if(to==="got")have.add(k);else if(to==="need")have.delete(k);else have.has(k)?have.delete(k):have.add(k);saveHave();renderPlan();return}
   if(e.target.closest("#resetHave")){have=new Set();saveHave();renderPlan();return}
-  const cb=e.target.closest("#copyBuy");if(cb){const txt="Cook night: "+picks.join(", ")+"\n\n"+(window.__buy||[]).map(i=>"- "+i.label+" ("+i.who.join(", ")+")").join("\n");const done=()=>{cb.textContent="Copied";setTimeout(()=>{if(cb.isConnected)cb.textContent="Copy to-buy list"},1500)};try{navigator.clipboard.writeText(txt).then(done,()=>{prompt("Copy this list:",txt)})}catch(_){prompt("Copy this list:",txt)}return}
+  const cb=e.target.closest("#copyBuy");if(cb){const txt="Cook night: "+picks.join(", ")+"\n\n"+(window.__buy||[]).map(i=>"- "+i.label+" ("+i.who.join(", ")+")").join("\n");copyOut(cb,txt,"Cook night shopping list");return}
   const pb=e.target.closest("[data-pick]");if(pb){togglePick(pb.dataset.pick);return}
   const up=e.target.closest("[data-unpick]");if(up){togglePick(up.dataset.unpick);return}
   if(e.target.closest("[data-plan]")){openPlan(false);return}
@@ -912,6 +916,19 @@ plan.addEventListener("click",e=>{if(e.target===plan)plan.close()});
 document.getElementById("trayClear").addEventListener("click",()=>{picks=[];savePicks();syncPicks()});
 window.__pp=true;syncPicks();
 
+// Copy helper: always shows the text in a box (so it's never lost), selects it, then tries the clipboard. Share opens the phone's share sheet (Notes, Reminders, Messages).
+function copyOut(btn,txt,title){
+  const row=btn.closest(".buybar,.acts")||btn.parentElement;let box=row.nextElementSibling;
+  if(!box||!box.classList.contains("copyout")){box=document.createElement("div");box.className="copyout";row.after(box)}
+  box.innerHTML=`<textarea readonly rows="${Math.min(12,txt.split("\n").length+1)}" aria-label="${title}"></textarea><div class="acts">${navigator.share?`<button type="button" class="mini" data-share>Share…</button>`:""}<button type="button" class="mini" data-hide>Hide</button><span class="sub msg"></span></div>`;
+  const ta=box.querySelector("textarea"),msg=box.querySelector(".msg");ta.value=txt;ta.focus();ta.select();ta.setSelectionRange(0,txt.length);
+  const ok=()=>{msg.textContent="Copied. Paste it into Notes or Reminders.";btn.textContent="Copied ✓"},
+        fail=()=>{msg.textContent="This page can't reach your clipboard. Press and hold the text above to copy it, or use Share.";};
+  let done=false;try{done=document.execCommand("copy")}catch(_){}
+  if(done)ok();
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,()=>{if(!done)fail()});else if(!done)fail();
+  box.onclick=e=>{if(e.target.closest("[data-hide]"))box.remove();if(e.target.closest("[data-share]"))navigator.share({title,text:txt}).catch(()=>{})};
+}
 // Rate it: Dan's stars, how Ty and Cole liked it, and a note. Saved on this device.
 const rateDlg=document.getElementById("rateDlg"),rdBody=document.getElementById("rdBody");let rdName="",rdS=0,rdR={};
 function rdDraw(){const r=BYN[rdName]?.r;const pf=r?prefsOf(r):[];
@@ -931,7 +948,7 @@ rateDlg.addEventListener("click",e=>{
   const rx=e.target.closest("[data-rx]");if(rx){const [w,k]=rx.dataset.rx.split("|");rdR[w]===k?delete rdR[w]:rdR[w]=k;const n=keepNote();rdDraw();document.getElementById("rdNote").value=n;return}
   if(e.target.closest("#rdSave")){myScores[rdName]={s:rdS,r:rdR,n:keepNote().trim()};saveScores();rateDlg.close();redrawCards();return}
   if(e.target.closest("#rdClear")){myScores[rdName]={s:0,r:{},n:""};saveScores();rateDlg.close();redrawCards();return}
-  const cp=e.target.closest("#rdCopy");if(cp){const all={};POOL.forEach(o=>{const v=scoreOf(o.r[0]);if(v)all[o.r[0]]=v});const txt="Panini scores\n"+Object.entries(all).map(([n,v])=>`- ${n}: ${v.s?v.s+"/5":"no stars"}${Object.entries(v.r||{}).map(([w,k])=>`, ${w} ${RX[k][1].toLowerCase()}`).join("")}${v.n?` · "${v.n}"`:""}`).join("\n")+"\n\n"+JSON.stringify(all);const done=()=>{cp.textContent="Copied";setTimeout(()=>{if(cp.isConnected)cp.textContent="Copy all scores"},1500)};try{navigator.clipboard.writeText(txt).then(done,()=>prompt("Copy your scores:",txt))}catch(_){prompt("Copy your scores:",txt)}}
+  const cp=e.target.closest("#rdCopy");if(cp){const all={};POOL.forEach(o=>{const v=scoreOf(o.r[0]);if(v)all[o.r[0]]=v});const txt="Panini scores\n"+Object.entries(all).map(([n,v])=>`- ${n}: ${v.s?v.s+"/5":"no stars"}${Object.entries(v.r||{}).map(([w,k])=>`, ${w} ${RX[k][1].toLowerCase()}`).join("")}${v.n?` · "${v.n}"`:""}`).join("\n")+"\n\n"+JSON.stringify(all);copyOut(cp,txt,"Panini scores")}
 });
 document.addEventListener("click",e=>{
   const rb=e.target.closest("[data-rate]");if(rb){openRate(rb.dataset.rate);return}
