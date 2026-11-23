@@ -817,9 +817,12 @@ act.addEventListener("click",e=>{const b=e.target.closest("[data-clear]");if(!b)
   if(g==="heat"||g==="all")heat="Any heat";
   if(g==="all")for(const k in FG)sel[k]=null;else if(FG[g])sel[g]=null;
   drawChips();drawHeat();drawGroups();draw()});
+// Search aliases: other spellings people type for the same ingredient.
+const ALIAS=[[/capocollo/i,"capicola capicollo capocolla gabagool coppa"],[/prosciutto/i,"proscuitto"],[/genoa/i,"genova"],[/jalape[ñn]o/i,"jalapeno jalapeño"],[/gruy[eè]re/i,"gruyere"],[/sriracha/i,"siracha sirachia"],[/muenster/i,"munster"]];
+const hay=r=>{const t=r.join(" ");return (t+" "+(HEAT[r[0]]||"")+" "+ALIAS.filter(a=>a[0].test(t)).map(a=>a[1]).join(" ")).toLowerCase()};
 function draw(){
   const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
-  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&(heat==="Any heat"||HEAT[r[0]]===heat)&&Object.keys(FG).every(g=>!sel[g]||gTest(g,sel[g],r))&&terms.every(t=>(r.join(" ")+" "+(HEAT[r[0]]||"")).toLowerCase().includes(t)));
+  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&(heat==="Any heat"||HEAT[r[0]]===heat)&&Object.keys(FG).every(g=>!sel[g]||gTest(g,sel[g],r))&&terms.every(t=>hay(r).includes(t)));
   count.textContent=`${rows.length} of ${R.length} recipes`;drawActive();
   grid.innerHTML=rows.length?rows.map(r=>{
     return cardHTML(r,"")}).join("")
@@ -863,7 +866,7 @@ const ING=[
  ["Cheese","Oaxaca",/oaxaca/i],["Cheese","Queso fresco",/queso fresco/i],["Cheese","Emmental",/emmental/i],
  ["Protein","Turkey",/turkey/i],["Protein","Ham",/\bham\b/i],["Protein","Bacon",/bacon/i],["Protein","Prosciutto",/prosciutto/i],
  ["Protein","Roast beef",/roast beef/i],["Protein","Steak",/steak|ribeye|bulgogi/i],["Protein","Ground beef",/ground beef|patt(y|ies)/i],["Protein","Italian beef",/italian beef/i],
- ["Protein","Chicken",/chicken/i],["Protein","Pepperoni",/pepperoni/i],["Protein","Salami",/salami/i],["Protein","Capocollo",/capocollo/i],
+ ["Protein","Chicken",/chicken/i],["Protein","Pepperoni",/pepperoni/i],["Protein","Salami",/salami/i],["Protein","Capocollo",/capocollo|capicola/i],
  ["Protein","Italian sausage",/italian sausage/i],["Protein","Bratwurst",/brat(wurst)?\b/i],["Protein","Hot dogs",/hot dogs?\b/i],["Protein","Pork",/\bpork\b/i],["Protein","Tuna",/tuna/i],
  ["Protein","Smoked salmon",/salmon/i],["Protein","Egg",/\begg\b|scrambled/i],["Protein","Chorizo",/chorizo/i],["Protein","Spam",/spam\b/i],
  ["Produce","Caramelized onions",/carameli[sz]ed onion|onion marmalade/i],["Produce","Red onion",/red onion/i],["Produce","Grilled or sautéed onions",/(saut[ée]ed|grilled|white) onion/i],["Produce","Green onion",/green onion|spring onion/i],

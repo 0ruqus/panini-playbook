@@ -109,3 +109,6 @@
 
 ## 2026-11-23 · Merged Honey Pepperoni + Jalapeño Honey Pizza-Style
 - The two Italian cards were the same build, so they're now one card, **Pep Jalapeño Honey** (Sourdough · Mozzarella · Pepperoni, red onion, jalapeño · Honey + tomato paste, 🌶🌶 Medium). Its tip says to skip the pepperoni and onion for the jalapeño-only version. Recipe count 91 → 90 (page, Markdown, README, _Claude Index).
+
+## 2026-11-23 · Search spellings
+- "Hot Honey" (capocollo, Genoa salami, pepperoni) seemed missing: a search for "capi" found nothing because the card says capocollo. Search now also matches common spellings: capicola/capicollo/gabagool/coppa, genova, jalapeno, gruyere, siracha, munster, proscuitto.
