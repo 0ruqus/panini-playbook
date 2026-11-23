@@ -313,7 +313,7 @@ Ciabatta · Provolone · Thin-sliced grilled steak, roasted red peppers · *Add:
 **Meatball Marinara**
 French roll · Mozzarella · Meatballs · Marinara
 
-**Italian**
+**The Roman**
 Sourdough · Provolone · Salami, pepperoni, ham, red onion, tomato · Greek dressing
 
 **Gabagool Honey** · 🌶🌶 Medium

@@ -115,3 +115,6 @@
 
 ## 2026-11-23 · Renamed Hot Honey
 - "Hot Honey" (capocollo, Genoa salami, pepperoni, roasted jalapeño, honey) is now **Gabagool Honey**.
+
+## 2026-11-23 · Renamed Italian card
+- The card named "Italian" (salami, pepperoni, ham, Greek dressing) is now **The Roman**. The Italian family name stays as is.
