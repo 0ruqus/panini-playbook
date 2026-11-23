@@ -185,6 +185,14 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .card .heat{font:600 .7rem/1 var(--mono);letter-spacing:.04em;color:var(--c-beef);border:1px solid var(--c-beef);border-radius:4px;padding:3px 6px;white-space:nowrap}
 .card .heat[data-h="Hot"]{background:var(--c-beef);color:var(--chip-ink)}
 .heatchips .chip{--fc:var(--c-beef)}
+@media (min-width:761px){.cheesechips{flex-wrap:wrap!important;overflow:visible!important}}
+.cheesechips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px;margin-bottom:-4px;-webkit-overflow-scrolling:touch}
+.cheesechips .chip{--fc:var(--mustard);flex:none;white-space:nowrap}
+.cheesechips .chip[data-c="Any"]{--fc:var(--fg)}
+.cheesechips .chip[data-c="Any"][aria-pressed="true"]{color:var(--bg)}
+.cheesechips .chip[data-c="Any"][aria-pressed="true"]::before{background:var(--bg)}
+.cheesechips .chip[aria-pressed="true"]:not([data-c="Any"]){color:#1d1a10}
+.cheesechips .chip[aria-pressed="true"]:not([data-c="Any"])::before{background:#1d1a10}
 .heatchips .chip[data-h="Any"]{--fc:var(--fg)}
 .heatchips .chip[data-h="Any"][aria-pressed="true"]{color:var(--bg)}
 .heatchips .chip[data-h="Any"][aria-pressed="true"]::before{background:var(--bg)}
@@ -581,6 +589,7 @@ dialog.plan{overflow-x:hidden}
     <input class="search" id="q" type="search" placeholder="Try brie, chipotle, blueberry…" autocomplete="off">
     <div class="chips" id="chips" role="group" aria-label="Filter by family"></div>
     <div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div>
+    <div class="chips cheesechips" id="cheesechips" role="group" aria-label="Filter by cheese"></div>
     <p class="count" id="count" aria-live="polite"></p>
     <button class="planbtn" type="button" data-plan>Cook night planner: pick 3–4, or look up an ingredient</button>
   </div>
@@ -735,7 +744,7 @@ function prefsOf(r){const t=[r[2],r[3],r[4],r[5],r[6],r[7]].join(" ");return PRE
 const stars=k=>"★".repeat(k)+"☆".repeat(5-k);
 const FAM=["All","Ham & pork","Turkey","Chicken","Beef","Italian","Fish","Vegetarian","Fruit","Dessert","Big builds"];
 const LINK={"PBR beer-caramelized onions":"sp-pbr","Giardiniera":"sp-giardiniera","Crock Pot Italian beef":"sp-italianbeef","Chimichurri":"sp-chimi","Chipotle aioli":"sp-chipotle","Roasted pineapple habanero sauce":"sp-pineapple","Lemon curd":"sp-lemon","Cowboy caviar":"sp-cowboy","Blueberry balsamic reduction":"sp-blueberry","Peri peri sauce":"sp-peri"};
-let fam="All",q="",heat="Any heat";
+let fam="All",q="",heat="Any heat",cheese="Any cheese";
 const grid=document.getElementById("grid"),chips=document.getElementById("chips"),count=document.getElementById("count");
 document.querySelectorAll(".factCount").forEach(e=>e.textContent=R.length);
 document.querySelectorAll(".tkCount").forEach(e=>e.textContent=T.length);
@@ -745,13 +754,21 @@ function drawChips(){chips.innerHTML=FAM.map(f=>{const n=f==="All"?R.length:R.fi
 const hc=document.getElementById("heatchips");
 function drawHeat(){hc.innerHTML=HL.map(h=>{const n=h==="Any heat"?R.length:R.filter(r=>HEAT[r[0]]===h).length;return `<button class="chip" type="button" aria-pressed="${h===heat}" data-h="${h==="Any heat"?"Any":h}" data-v="${h}">${h==="Any heat"?h:PEP[h]+" "+h}<span class="n">${n}</span></button>`}).join("")}
 hc.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;heat=b.dataset.v;drawHeat();draw()});
+// Cheese filter: matches the Melt line only. Chips show cheeses used in 2+ recipes, most used first; rarer ones are still searchable.
+const CHEESE=[["Mozzarella",/mozzarella/i],["Provolone",/provolone/i],["Havarti",/havarti/i],["Swiss",/swiss|emmental/i],["Brie",/brie/i],["Laughing Cow",/laughing cow/i],["Cheddar",/cheddar/i],["Pepper jack",/pepper jack/i],["Cream cheese",/cream cheese/i],["Gouda",/gouda/i],["Monterey Jack",/monterey jack/i],["Parmesan",/parmesan/i],["Feta",/feta/i],["American",/american/i],["Gruyère",/gruy[eè]re/i],["Muenster",/muenster/i],["Blue cheese",/blue cheese|gorgonzola/i],["Fontina",/fontina/i],["Ricotta",/ricotta/i]];
+const CRX=Object.fromEntries(CHEESE);
+const hasCheese=(r,c)=>c==="Any cheese"||CRX[c].test(r[3]);
+const CL=["Any cheese",...CHEESE.map(c=>c[0]).filter(c=>R.filter(r=>hasCheese(r,c)).length>1).sort((a,b)=>R.filter(r=>hasCheese(r,b)).length-R.filter(r=>hasCheese(r,a)).length)];
+const cc=document.getElementById("cheesechips");
+function drawCheese(){const x=cc.scrollLeft;cc.innerHTML=CL.map(c=>{const n=R.filter(r=>hasCheese(r,c)).length;return `<button class="chip" type="button" aria-pressed="${c===cheese}" data-c="${c==="Any cheese"?"Any":esc(c)}" data-v="${esc(c)}">${c==="Any cheese"?"🧀 Any cheese":esc(c)}<span class="n">${n}</span></button>`}).join("");cc.scrollLeft=x}
+cc.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;cheese=b.dataset.v;drawCheese();draw()});
 function draw(){
   const terms=q.toLowerCase().split(/\s+/).filter(Boolean);
-  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&(heat==="Any heat"||HEAT[r[0]]===heat)&&terms.every(t=>(r.join(" ")+" "+(HEAT[r[0]]||"")).toLowerCase().includes(t)));
+  const rows=R.filter(r=>(fam==="All"||r[1]===fam)&&(heat==="Any heat"||HEAT[r[0]]===heat)&&hasCheese(r,cheese)&&terms.every(t=>(r.join(" ")+" "+(HEAT[r[0]]||"")).toLowerCase().includes(t)));
   count.textContent=`${rows.length} of ${R.length} recipes`;
   grid.innerHTML=rows.length?rows.map(r=>{
     return cardHTML(r,"")}).join("")
-    :`<p class="empty">No recipes match. Try a different ingredient or pick All.</p>`;
+    :`<p class="empty">No recipes match. Try a different ingredient, or set the filters back to All, Any heat and Any cheese.</p>`;
   if(window.__pp)syncPicks();
 }
 function cardHTML(r,cls){
@@ -761,7 +778,7 @@ function cardHTML(r,cls){
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;fam=b.dataset.f;try{localStorage.setItem("pp-fam",fam)}catch(_){}drawChips();draw()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;draw()});
 try{const s=localStorage.getItem("pp-fam");if(s&&FAM.includes(s))fam=s}catch(_){}
-drawChips();drawHeat();draw();
+drawChips();drawHeat();drawCheese();draw();
 document.getElementById("kgrid").innerHTML=T.map(r=>cardHTML(r," idea")).join("");
 
 // Tabs: The Playbook (default) and Recipes. #recipes in the URL opens Recipes.

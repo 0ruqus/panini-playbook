@@ -98,3 +98,6 @@
 
 ## 2026-11-22 · Copy button fix
 - "Copy to-buy list" didn't reach the clipboard (likely blocked inside the Claude page frame, and the prompt() fallback was blocked too). Now both copy buttons (to-buy list and scores) open the text in a selectable box under the button, try two copy methods, say whether it worked, and offer Share… on phones (Notes, Reminders, Messages).
+
+## 2026-11-22 · Cheese filter
+- Recipes now have a third filter row, 🧀 Any cheese plus one chip per cheese used in 2+ recipes (Mozzarella 22, Provolone 14, Havarti 12, Brie 12, Laughing Cow 12, Swiss 11, Pepper jack 8, Cream cheese 8, Cheddar 7, Gouda 5, Monterey Jack 4, American 4, Parmesan 3, Feta 3, Gruyère 3, Muenster 2, Blue cheese 2). It matches the Melt line only and combines with family, heat and search. Wraps on desktop, scrolls sideways on phones. Rarer cheeses (fontina, ricotta, cotija…) are still findable through search.
