@@ -194,10 +194,22 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .filters>summary .tog{font:500 .72rem var(--mono);color:var(--muted)}
 .filters>summary .tog::before{content:"Hide ▴"}
 .filters:not([open])>summary .tog::before{content:"Show ▾"}
-.fgroup{display:grid;grid-template-columns:180px minmax(0,1fr);gap:8px 16px;align-items:start;padding:12px 16px;border-top:1px solid var(--line)}
-.fl{margin:0;display:grid;gap:4px;padding-top:6px}
-.fl .eyebrow{color:var(--gc,var(--basil))}
-.fl small{font-size:.8rem;color:var(--muted)}
+.fbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row dense;border-top:1px solid var(--line)}
+.fgroup{border-bottom:1px solid var(--line);min-width:0}
+.fgroup:nth-child(odd):not([open]){border-right:1px solid var(--line)}
+.fgroup[open]{grid-column:1/-1;border-right:0;background:color-mix(in srgb,var(--gc,var(--basil)) 5%,transparent)}
+.fgroup:last-child,.fgroup:nth-last-child(2):nth-child(odd):not([open]){border-bottom:0}
+.fl{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;list-style:none;min-width:0}
+.fl::-webkit-details-marker{display:none}
+.fl::marker{content:""}
+.fl .eyebrow{color:var(--gc,var(--basil));white-space:nowrap}
+.fl small{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.fsel{margin-left:auto;font:600 .76rem/1 var(--body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.fsel.on{color:var(--fg);background:color-mix(in srgb,var(--gc,var(--fg)) 16%,transparent);border:1.5px solid var(--gc,var(--line));border-radius:999px;padding:4px 9px}
+.fl::after{content:"▾";font-size:.8rem;color:var(--muted);transition:transform .15s;flex:none}
+.fgroup[open]>.fl::after{transform:rotate(180deg)}
+.fl:hover .eyebrow{text-decoration:underline;text-underline-offset:3px}
+.fgroup>.chips{padding:0 16px 14px}
 .frow .chip,.filters .chips .chip{background:var(--bg)}
 .frow .chip[aria-pressed="true"],.filters .chips .chip[aria-pressed="true"]{background:var(--fc)}
 .chip[data-any]{--fc:var(--fg)}
@@ -209,9 +221,11 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);color:var(--mute
 .apill b{font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
 .apill.clr{border-style:dashed;background:none;color:var(--muted)}
 @media (max-width:760px){
-  .fgroup{grid-template-columns:minmax(0,1fr);gap:8px;padding:10px 12px}
-  .fl{display:flex;gap:8px;align-items:baseline;padding:0}
-  .filters .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-inline:-12px;padding-inline:12px}
+  .fbody{grid-template-columns:minmax(0,1fr)}
+  .fgroup:nth-child(odd):not([open]){border-right:0}
+  .fgroup:nth-last-child(2):nth-child(odd):not([open]){border-bottom:1px solid var(--line)}
+  .fl{padding:11px 12px;gap:8px}
+  .filters .fgroup>.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 12px 12px}
   .filters .chips::-webkit-scrollbar{display:none}
   .filters .chip{flex:none;white-space:nowrap}
 }
@@ -615,14 +629,16 @@ dialog.plan{overflow-x:hidden}
   </div>
   <details class="filters" id="filters" open>
     <summary><span class="eyebrow">Filter by the house formula</span><span class="tog"></span></summary>
-    <div class="fgroup" style="--gc:var(--c-turkey)"><p class="fl"><span class="eyebrow">01 · Structure</span><small>Bread</small></p><div class="chips frow" data-g="bread" role="group" aria-label="Filter by bread" style="--fc:var(--c-turkey)"></div></div>
-    <div class="fgroup" style="--gc:var(--c-chicken)"><p class="fl"><span class="eyebrow">02 · Glue</span><small>Cheese</small></p><div class="chips frow" data-g="cheese" role="group" aria-label="Filter by cheese" style="--fc:var(--c-chicken)"></div></div>
-    <div class="fgroup" style="--gc:var(--fg)"><p class="fl"><span class="eyebrow">03 · Main event</span><small>Family</small></p><div class="chips" id="chips" role="group" aria-label="Filter by family"></div></div>
-    <div class="fgroup" style="--gc:var(--c-ham)"><p class="fl"><span class="eyebrow">04 · Signature</span><small>Spread</small></p><div class="chips frow" data-g="spread" role="group" aria-label="Filter by spread" style="--fc:var(--c-ham)"></div></div>
-    <div class="fgroup" style="--gc:var(--c-beef)"><p class="fl"><span class="eyebrow">05 · Kick</span><small>Heat</small></p><div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div></div>
-    <div class="fgroup" style="--gc:var(--basil)"><p class="fl"><span class="eyebrow">06 · After the press</span><small>Add</small></p><div class="chips frow" data-g="add" role="group" aria-label="Filter by what goes in after pressing" style="--fc:var(--basil)"></div></div>
-    <div class="fgroup" style="--gc:var(--c-fish)"><p class="fl"><span class="eyebrow">06 · On the side</span><small>Dip</small></p><div class="chips frow" data-g="dip" role="group" aria-label="Filter by dipping sauce" style="--fc:var(--c-fish)"></div></div>
-    <div class="fgroup" style="--gc:var(--c-big)"><p class="fl"><span class="eyebrow">07 · Outside</span><small>Fry spread</small></p><div class="chips frow" data-g="fry" role="group" aria-label="Filter by fry spread" style="--fc:var(--c-big)"></div></div>
+    <div class="fbody">
+    <details class="fgroup" data-k="bread" style="--gc:var(--c-turkey)"><summary class="fl"><span class="eyebrow">01 · Structure</span><small>Bread</small><span class="fsel"></span></summary><div class="chips frow" data-g="bread" role="group" aria-label="Filter by bread" style="--fc:var(--c-turkey)"></div></details>
+    <details class="fgroup" data-k="cheese" style="--gc:var(--c-chicken)"><summary class="fl"><span class="eyebrow">02 · Glue</span><small>Cheese</small><span class="fsel"></span></summary><div class="chips frow" data-g="cheese" role="group" aria-label="Filter by cheese" style="--fc:var(--c-chicken)"></div></details>
+    <details class="fgroup" data-k="family" style="--gc:var(--fg)"><summary class="fl"><span class="eyebrow">03 · Main event</span><small>Family</small><span class="fsel"></span></summary><div class="chips" id="chips" role="group" aria-label="Filter by family"></div></details>
+    <details class="fgroup" data-k="spread" style="--gc:var(--c-ham)"><summary class="fl"><span class="eyebrow">04 · Signature</span><small>Spread</small><span class="fsel"></span></summary><div class="chips frow" data-g="spread" role="group" aria-label="Filter by spread" style="--fc:var(--c-ham)"></div></details>
+    <details class="fgroup" data-k="heat" style="--gc:var(--c-beef)"><summary class="fl"><span class="eyebrow">05 · Kick</span><small>Heat</small><span class="fsel"></span></summary><div class="chips heatchips" id="heatchips" role="group" aria-label="Filter by heat"></div></details>
+    <details class="fgroup" data-k="add" style="--gc:var(--basil)"><summary class="fl"><span class="eyebrow">06 · After the press</span><small>Add</small><span class="fsel"></span></summary><div class="chips frow" data-g="add" role="group" aria-label="Filter by what goes in after pressing" style="--fc:var(--basil)"></div></details>
+    <details class="fgroup" data-k="dip" style="--gc:var(--c-fish)"><summary class="fl"><span class="eyebrow">06 · On the side</span><small>Dip</small><span class="fsel"></span></summary><div class="chips frow" data-g="dip" role="group" aria-label="Filter by dipping sauce" style="--fc:var(--c-fish)"></div></details>
+    <details class="fgroup" data-k="fry" style="--gc:var(--c-big)"><summary class="fl"><span class="eyebrow">07 · Outside</span><small>Fry spread</small><span class="fsel"></span></summary><div class="chips frow" data-g="fry" role="group" aria-label="Filter by fry spread" style="--fc:var(--c-big)"></div></details>
+    </div>
   </details>
   <div class="grid" id="grid"></div>
 </section>
@@ -806,7 +822,11 @@ const act=document.getElementById("active");
 function drawActive(){const p=[];if(fam!=="All")p.push(["fam","Main event",fam,`data-fam="${esc(fam)}"`]);
   for(const g in FG)if(sel[g])p.push([g,FG[g].eb,sel[g],`style="--fc:${getComputedStyle(document.querySelector(`.frow[data-g="${g}"]`)).getPropertyValue("--fc")}"`]);
   if(heat!=="Any heat")p.push(["heat","Kick",PEP[heat]+" "+heat,`style="--fc:var(--c-beef)"`]);
-  act.innerHTML=p.map(([g,eb,v,at])=>`<button class="apill" type="button" data-clear="${g}" ${at} aria-label="Remove filter ${esc(eb)}: ${esc(v)}"><b>${esc(eb)}</b>${esc(v)} ×</button>`).join("")+(p.length>1?`<button class="apill clr" type="button" data-clear="all">Clear all</button>`:"")}
+  act.innerHTML=p.map(([g,eb,v,at])=>`<button class="apill" type="button" data-clear="${g}" ${at} aria-label="Remove filter ${esc(eb)}: ${esc(v)}"><b>${esc(eb)}</b>${esc(v)} ×</button>`).join("")+(p.length>1?`<button class="apill clr" type="button" data-clear="all">Clear all</button>`:"");drawSel()}
+function drawSel(){const v={family:fam==="All"?"":fam,heat:heat==="Any heat"?"":PEP[heat]+" "+heat};for(const g in FG)v[g]=sel[g]||"";
+  document.querySelectorAll(".fgroup").forEach(d=>{const t=v[d.dataset.k]||"",el=d.querySelector(".fsel");el.textContent=t||"Any";el.classList.toggle("on",!!t)})}
+let fopen=[];try{fopen=JSON.parse(localStorage.getItem("pp-fopen")||"[]")}catch(_){}
+document.querySelectorAll(".fgroup").forEach(d=>{d.open=fopen.includes(d.dataset.k);d.addEventListener("toggle",()=>{fopen=[...document.querySelectorAll(".fgroup[open]")].map(x=>x.dataset.k);try{localStorage.setItem("pp-fopen",JSON.stringify(fopen))}catch(_){}})});
 act.addEventListener("click",e=>{const b=e.target.closest("[data-clear]");if(!b)return;const g=b.dataset.clear;
   if(g==="fam"||g==="all"){fam="All";try{localStorage.setItem("pp-fam",fam)}catch(_){}}
   if(g==="heat"||g==="all")heat="Any heat";

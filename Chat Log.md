@@ -167,3 +167,7 @@
 ## 2026-11-23 · Beer Cheese Brat → Kielbasa & Kraut
 - Renamed to **Kielbasa & Kraut**. The audible is the sausage: kielbasa, beer-simmered bratwurst or air-fried hot dog strips. Kraut (squeezed dry) is now part of the build; Ty's version is Kewpie, no kraut. Planner prep says "Split and crisp the sausage: kielbasa, brat or hot dogs, your call"; Kielbasa added to the ingredient list. Search finds it by beer cheese brat, hot dog, weiner, polish.
 - Scores and cook-night picks saved on a device under the old name move to the new name automatically (RENAMED map in the page).
+
+## 2026-11-23 · Collapsible filter rows
+- Each house-formula filter row now opens and closes on its own. Closed rows show one line: eyebrow, layer name, and the current pick ("Any", or the chosen chip as a colored pill) with a ▾. All start closed; which rows you leave open is remembered on the device (pp-fopen).
+- Desktop: closed rows sit two per line and an open row spans the full width. Phone: one per line, chips scroll sideways.
