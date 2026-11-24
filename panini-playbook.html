@@ -310,6 +310,16 @@ body.on-plan .tray{display:none}
 .builds{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .xref{display:grid;gap:10px}
 .xref .search{max-width:420px}
+.xbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px;background:var(--surface)}
+.xbar .ing{margin:0}
+.xbar .ing::after{content:"×";font-weight:700;color:var(--muted);margin-left:2px}
+.xbar .sp{flex:1}
+.xgroups{display:grid;gap:6px}
+.xg .xpills{padding:0 16px 10px}
+.xtier{margin:14px 0 6px;font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.xtier b{color:var(--fg)}
+.xitem .need{color:var(--fg)}
+.xmore>summary{cursor:pointer;color:var(--muted);font-size:.88rem;margin-top:10px}
 .xlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
 .xitem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--fc);border-radius:8px;background:var(--surface);min-width:0}
 .xitem div{min-width:0}
@@ -822,9 +832,9 @@ function drawActive(){const p=[];if(fam!=="All")p.push(["fam","Main event",fam,`
   if(heat!=="Any heat")p.push(["heat","Kick",PEP[heat]+" "+heat,`style="--fc:var(--c-beef)"`]);
   act.innerHTML=p.map(([g,eb,v,at])=>`<button class="apill" type="button" data-clear="${g}" ${at} aria-label="Remove filter ${esc(eb)}: ${esc(v)}"><b>${esc(eb)}</b>${esc(v)} ×</button>`).join("")+(p.length>1?`<button class="apill clr" type="button" data-clear="all">Clear all</button>`:"");drawSel()}
 function drawSel(){const v={family:fam==="All"?"":fam,heat:heat==="Any heat"?"":PEP[heat]+" "+heat};for(const g in FG)v[g]=sel[g]||"";
-  document.querySelectorAll(".fgroup").forEach(d=>{const t=v[d.dataset.k]||"",el=d.querySelector(".fsel");el.textContent=t||"Any";el.classList.toggle("on",!!t)})}
+  document.querySelectorAll(".filters .fgroup").forEach(d=>{const t=v[d.dataset.k]||"",el=d.querySelector(".fsel");el.textContent=t||"Any";el.classList.toggle("on",!!t)})}
 let fopen=[];try{fopen=JSON.parse(localStorage.getItem("pp-fopen")||"[]")}catch(_){}
-document.querySelectorAll(".fgroup").forEach(d=>{d.open=fopen.includes(d.dataset.k);d.addEventListener("toggle",()=>{fopen=[...document.querySelectorAll(".fgroup[open]")].map(x=>x.dataset.k);try{localStorage.setItem("pp-fopen",JSON.stringify(fopen))}catch(_){}})});
+document.querySelectorAll(".filters .fgroup").forEach(d=>{d.open=fopen.includes(d.dataset.k);d.addEventListener("toggle",()=>{fopen=[...document.querySelectorAll(".filters .fgroup[open]")].map(x=>x.dataset.k);try{localStorage.setItem("pp-fopen",JSON.stringify(fopen))}catch(_){}})});
 act.addEventListener("click",e=>{const b=e.target.closest("[data-clear]");if(!b)return;const g=b.dataset.clear;
   if(g==="fam"||g==="all"){fam="All";try{localStorage.setItem("pp-fam",fam)}catch(_){}}
   if(g==="heat"||g==="all")heat="Any heat";
@@ -908,7 +918,11 @@ const ingCache=new Map();
 function ingsOf(r){if(ingCache.has(r[0]))return ingCache.get(r[0]);const t=[...r.slice(2,8),r[9]||""].join(" · ");const out=ING.filter(i=>i[2].test(t)).map(i=>i[1]);ingCache.set(r[0],out);return out}
 const ALLING=ING.map(i=>i[1]).filter(n=>POOL.some(o=>ingsOf(o.r).includes(n)));
 let picks=[];try{picks=JSON.parse(localStorage.getItem("pp-picks")||"[]").filter(n=>BYN[n]).slice(0,MAXP)}catch(_){}
-let xing="";
+let xsel=new Set(),xopen=new Set();try{xsel=new Set(JSON.parse(localStorage.getItem("pp-xsel")||"[]").filter(n=>ALLING.includes(n)));xopen=new Set(JSON.parse(localStorage.getItem("pp-xopen")||"[]"))}catch(_){}
+function saveX(){try{localStorage.setItem("pp-xsel",JSON.stringify([...xsel]));localStorage.setItem("pp-xopen",JSON.stringify([...xopen]))}catch(_){}}
+// Pantry groups follow the house formula layers used by the filters and the formula strip.
+const XG=[["Cheese","02 · Glue","Cheese","var(--c-chicken)"],["Protein","03 · Main event","Proteins","var(--fg)"],["Spread","04 · Signature","Spreads & sauces","var(--c-ham)"],["Produce","06 · Add","Veg, fruit & toppings","var(--basil)"]];
+const INGCNT=Object.fromEntries(ALLING.map(n=>[n,POOL.filter(o=>ingsOf(o.r).includes(n)).length]));
 let have=new Set();try{have=new Set(JSON.parse(localStorage.getItem("pp-have")||"[]"))}catch(_){}
 function saveHave(){try{localStorage.setItem("pp-have",JSON.stringify([...have]))}catch(_){}}
 const planPanel=document.getElementById("tab-plan"),plan={get open(){return !planPanel.hidden}},planBody=document.getElementById("planBody"),tray=document.getElementById("tray");
@@ -923,7 +937,7 @@ function syncPicks(){
 }
 function togglePick(n){if(picks.includes(n))picks=picks.filter(x=>x!==n);else if(picks.length<MAXP)picks.push(n);savePicks();syncPicks()}
 const short=n=>n.length>22?n.slice(0,20)+"…":n;
-function ingBtn(n,count){return `<button class="ing" type="button" data-ing="${esc(n)}" aria-pressed="${n===xing}">${esc(n)}${count?` <b>×${count}</b>`:""}</button>`}
+function ingBtn(n,count){return `<button class="ing" type="button" data-ing="${esc(n)}" aria-pressed="${xsel.has(n)}">${esc(n)}${count?` <b>×${count}</b>`:""}</button>`}
 function prepOf(r){
   const out=[];const t=[r[3],r[4],r[5],r[6]].join(", ");
   const COOK=/\b(rub-roasted|roasted|grilled|saut[ée]ed|carameli[sz]ed|crisped|air-fry(?:er)?|air-fried|blackened|seared|simmered|fried|smash(?:ed)?|pulled|scrambled|shredded|chopped|marinated|pounded|toasted|crisp)\b/i;
@@ -973,18 +987,31 @@ function renderPlan(){
     h+=`<section><h3>At the press</h3><div class="ptable"><div><span class="k">Fry spread</span><span class="v">${Object.entries(fry).map(([f,w])=>`${esc(f)} <span class="who">${w.map(short).join(", ")}</span>`).join("<br>")}</span></div><div><span class="k">Press order</span><span class="v">${order.map((o,i)=>`${i+1}. ${esc(o.r[0])}`).join("<br>")}${sel.some(o=>o.r[1]==="Dessert")?`<br><span class="who">Desserts go last so sugar doesn't burn on the press.</span>`:""}</span></div>${adds.length?`<div><span class="k">After the press</span><span class="v">${adds.map(o=>`${esc(o.r[6])} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div>`:""}${dips.length?`<div><span class="k">Dips on the side</span><span class="v">${dips.map(o=>`${esc(o.r[9])} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div>`:""}</div></section>`;
     h+=`<section><h3>The builds</h3><div class="builds">${sel.map(o=>cardHTML(o.r,o.k==="Test Kitchen"?" idea":"")).join("")}</div></section>`;
   }else{
-    h+=`<section><p class="sub" style="margin-top:12px">Tap <strong>+ Cook night</strong> on 3–4 cards in Recipes or Test Kitchen to see their crossover ingredients, one shopping list, prep and press order. You can also look up an ingredient below.</p></section>`;
+    h+=`<section><p class="sub" style="margin-top:12px">Tap <strong>+ Cook night</strong> on 3–4 cards in Recipes or Test Kitchen to see their crossover ingredients, one shopping list, prep and press order. Or skip the picks: tap what you have below to see which paninis you can already make.</p></section>`;
   }
-  // cross-reference
-  const hits=xing?POOL.filter(o=>ingsOf(o.r).includes(xing)):[];
-  h+=`<section class="xref"><h3>Cross-reference an ingredient</h3><p class="sub">Every panini that uses it, from Recipes and Test Kitchen.</p>
-    <input class="search" id="xq" list="xopts" placeholder="Try caramelized onions, apple jalapeño jelly, brie…" value="${esc(xing)}" autocomplete="off">
-    <datalist id="xopts">${ALLING.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
-    ${xing?`<p class="count">${hits.length} panini${hits.length===1?"":"s"} with ${esc(xing)}</p><div class="xlist">${hits.map(o=>{const on=picks.includes(o.r[0]);return `<div class="xitem" data-fam="${esc(o.r[1])}"><div><strong>${esc(o.r[0])}</strong><small>${esc(o.r[1])} · ${o.k}${HEAT[o.r[0]]?" · "+PEP[HEAT[o.r[0]]]:""}</small></div><button class="pick" type="button" data-pick="${esc(o.r[0])}" aria-pressed="${on}" ${!on&&picks.length>=MAXP?"disabled":""}>${on?"✓ In":"+ Add"}</button></div>`}).join("")}</div>`:`<div>${ALLING.map(n=>ingBtn(n,POOL.filter(o=>ingsOf(o.r).includes(n)).length)).join("")}</div>`}
+  // what can I make: multi-select pantry
+  const sl=[...xsel];
+  let res="";
+  if(sl.length){
+    const m=POOL.map(o=>{const ii=ingsOf(o.r);const got=ii.filter(n=>xsel.has(n));return {o,ii,got,miss:ii.filter(n=>!xsel.has(n))}}).filter(x=>x.got.length).sort((a,b)=>a.miss.length-b.miss.length||b.got.length-a.got.length||a.o.r[0].localeCompare(b.o.r[0]));
+    const item=x=>{const on=picks.includes(x.o.r[0]);return `<div class="xitem" data-fam="${esc(x.o.r[1])}"><div><strong>${esc(x.o.r[0])}</strong><small><b class="have">${x.got.length} of ${x.ii.length}</b> · ${x.miss.length?`<span class="need">need ${x.miss.map(esc).join(", ")}</span>`:"you have it all"}</small><small>${esc(x.o.r[1])} · ${x.o.k}${HEAT[x.o.r[0]]?" · "+PEP[HEAT[x.o.r[0]]]:""}</small></div><button class="pick" type="button" data-pick="${esc(x.o.r[0])}" aria-pressed="${on}" ${!on&&picks.length>=MAXP?"disabled":""}>${on?"✓ In":"+ Add"}</button></div>`};
+    const tiers=[["Ready to make",x=>!x.miss.length],["Need 1 more",x=>x.miss.length===1],["Need 2 more",x=>x.miss.length===2]];
+    const close=tiers.map(([t,f])=>{const xs=m.filter(f);return xs.length?`<p class="xtier"><b>${t}</b> · ${xs.length}</p><div class="xlist">${xs.map(item).join("")}</div>`:""}).join("");
+    const far=m.filter(x=>x.miss.length>2);
+    res=`<div id="xres"><p class="count">${m.length} panini${m.length===1?"":"s"} use what you picked${m.filter(x=>!x.miss.length).length?` · <strong>${m.filter(x=>!x.miss.length).length} ready to make</strong>`:""}</p>${close||`<p class="empty-note">Nothing is within 2 ingredients yet. Add a few more things you have.</p>`}${far.length?`<details class="xmore"><summary>${far.length} more that need 3 or more</summary><div class="xlist" style="margin-top:8px">${far.map(item).join("")}</div></details>`:""}</div>`;
+  }
+  const gotHave=ALLING.filter(n=>have.has(n)&&!xsel.has(n));
+  h+=`<section class="xref"><h3>What can I make?</h3><p class="sub">Tap everything you have on hand. The paninis you're closest to show up below, with what each one still needs. Bread, butter and mayo are assumed.</p>
+    <input class="search" id="xq" list="xopts" placeholder="Add an ingredient: caramelized onions, brie…" autocomplete="off">
+    <datalist id="xopts">${ALLING.filter(n=>!xsel.has(n)).map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
+    <div class="xbar">${sl.length?`${sl.map(n=>`<button class="ing" type="button" data-xun="${esc(n)}" aria-label="Remove ${esc(n)}">${esc(n)}</button>`).join("")}<span class="sp"></span><button type="button" class="mini" id="xjump">See matches ↓</button><button type="button" class="mini" id="xclear">Clear</button>`:`<span class="sub">Nothing picked yet.</span><span class="sp"></span>`}${gotHave.length?`<button type="button" class="mini" id="xgot">Add ${gotHave.length} from Got it</button>`:""}</div>
+    <div class="xgroups">${XG.map(([g,eb,lab,c])=>{const ns=ALLING.filter(n=>ING.find(i=>i[1]===n)[0]===g).sort((a,b)=>INGCNT[b]-INGCNT[a]||a.localeCompare(b));const on=ns.filter(n=>xsel.has(n));return `<details class="fgroup xg" data-xg="${g}" style="--gc:${c}"${xopen.has(g)?" open":""}><summary class="fl"><span class="eyebrow">${eb}</span><small>${lab}</small><span class="fsel${on.length?" on":""}">${on.length?esc(on.join(", ")):ns.length+" items"}</span></summary><div class="xpills">${ns.map(n=>ingBtn(n,INGCNT[n])).join("")}</div></details>`}).join("")}</div>
+    ${res}
   </section>`;
   const y=planBody.parentElement.scrollTop;planBody.innerHTML=h;planBody.parentElement.scrollTop=y;
   planBody.querySelectorAll(".pick[data-pick]").forEach(b=>{const on=picks.includes(b.dataset.pick);b.textContent=on?"✓ In":"+ Add"});
-  const xq=document.getElementById("xq");xq.addEventListener("change",()=>{const v=ALLING.find(n=>n.toLowerCase()===xq.value.trim().toLowerCase());xing=v||"";renderPlan();if(v)document.getElementById("xq").focus()});
+  const xq=document.getElementById("xq");xq.addEventListener("change",()=>{const v=ALLING.find(n=>n.toLowerCase()===xq.value.trim().toLowerCase());if(!v)return;xsel.add(v);const g=ING.find(i=>i[1]===v)[0];xopen.add(g);saveX();renderPlan();document.getElementById("xq").focus()});
+  planBody.querySelectorAll(".xg").forEach(d=>d.addEventListener("toggle",()=>{d.open?xopen.add(d.dataset.xg):xopen.delete(d.dataset.xg);saveX()}));
 }
 function openPlan(focusX){showTab("plan",true);try{history.replaceState(null,"","#cook-night")}catch(_){}renderPlan();if(focusX){const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start"})}}
 document.addEventListener("click",e=>{
@@ -994,7 +1021,11 @@ document.addEventListener("click",e=>{
   const pb=e.target.closest("[data-pick]");if(pb){togglePick(pb.dataset.pick);return}
   const up=e.target.closest("[data-unpick]");if(up){togglePick(up.dataset.unpick);return}
   if(e.target.closest("[data-plan]")){openPlan(false);return}
-  const ib=e.target.closest("[data-ing]");if(ib){xing=xing===ib.dataset.ing?"":ib.dataset.ing;renderPlan();const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start",behavior:"smooth"});return}
+  const xu=e.target.closest("[data-xun]");if(xu){xsel.delete(xu.dataset.xun);saveX();renderPlan();return}
+  if(e.target.closest("#xjump")){const r=document.getElementById("xres");r&&r.scrollIntoView({block:"start",behavior:"smooth"});return}
+  if(e.target.closest("#xclear")){xsel=new Set();saveX();renderPlan();return}
+  if(e.target.closest("#xgot")){ALLING.filter(n=>have.has(n)).forEach(n=>xsel.add(n));saveX();renderPlan();return}
+  const ib=e.target.closest("[data-ing]");if(ib){const n=ib.dataset.ing,inX=!!ib.closest(".xg");xsel.has(n)?xsel.delete(n):xsel.add(n);if(!inX&&xsel.has(n))xopen.add(ING.find(i=>i[1]===n)[0]);saveX();renderPlan();if(!inX){const x=planBody.querySelector(".xref");x&&x.scrollIntoView({block:"start",behavior:"smooth"})}return}
 });
 document.getElementById("trayClear").addEventListener("click",()=>{picks=[];savePicks();syncPicks()});
 window.__pp=true;syncPicks();

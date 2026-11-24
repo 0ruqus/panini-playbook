@@ -200,3 +200,10 @@
 - Kimchi card now actually has kimchi (Add) plus gochujang mayo. Grilled Chicken Pesto: pesto moved to Spread. S'mores: fluff is the spread.
 - Cheese-free desserts say what the glue is instead (Nutella, peanut butter, chocolate). Homemade Chicken Salad: croissant, lettuce and tomato.
 - Add left blank where nothing goes on after the press; it's optional by design.
+
+## 2026-11-24 — "What can I make?" multi-select
+- Cook Night's "Cross-reference an ingredient" is now **What can I make?**: tap any number of ingredients you have.
+- Results are tiered: Ready to make, Need 1 more, Need 2 more (each card shows what's missing), with the rest tucked under "N more that need 3 or more".
+- Pills are grouped like the filters and formula: 02 · Glue (Cheese), 03 · Main event (Proteins), 04 · Signature (Spreads & sauces), 06 · Add (Veg, fruit & toppings). Collapsible rows; each shows what you picked. Sorted by how many paninis use them.
+- Selected bar with remove ×, Clear, See matches, and "Add N from Got it" (pulls in what you marked Got it on the shopping list). Picks and open rows are remembered (pp-xsel, pp-xopen).
+- Ingredient pills in the Crossover table and shopping list now add to this selection.

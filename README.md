@@ -14,4 +14,4 @@ A shareable panini cookbook built from the Recipes › PANINI folder in Apple No
 **Public site (GitHub Pages):** https://0ruqus.github.io/panini-playbook/ · **Repo:** https://github.com/0ruqus/panini-playbook
 
 **To update the public site:** edit `panini-playbook.html`, run `./build-index.sh` to rebuild `index.html`, then commit and push. Pages redeploys in about a minute. The Claude page is updated separately by republishing the same file.
-- The page has a **Cook Night** tab: tap "+ Cook night" on 3–4 Recipe or Test Kitchen cards, then open the tab to get the crossover ingredients, one shopping list, prep-ahead steps and press order, plus a cross-reference that lists every panini using an ingredient.
+- The page has a **Cook Night** tab: tap "+ Cook night" on 3–4 Recipe or Test Kitchen cards, then open the tab to get the crossover ingredients, one shopping list, prep-ahead steps and press order, plus a **What can I make?** picker: tap the ingredients you have (grouped Cheese, Proteins, Spreads & sauces, Veg & toppings, like the filters) and it lists the paninis you can make or are 1–2 ingredients from.
