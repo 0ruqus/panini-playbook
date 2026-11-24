@@ -193,3 +193,10 @@
 ## 2026-11-23 · Cook Night tab + count by search
 - The recipe count now sits on the search label line: "Search ingredients or names | 86 of 86 recipes" (just "Search | …" on phones).
 - The "Cook night planner" button is gone. The planner is now its own **Cook Night** tab (4th tab, badge shows how many are picked, link #cook-night). "Plan it" on the picks tray opens the tab; the tray hides while you're on it. On phones the tabs read Playbook · Recipes · Kitchen · Cook Night so all four fit.
+
+## 2026-11-23 — Filled in missing layers
+- Found 51 cards (Recipes and Test Kitchen) with a blank Bread, Cheese, Fill or Spread line, like Pepperoni Club and Spinach Artichoke Turkey.
+- Filled every blank bread (mostly sourdough; ciabatta, Texas toast, croissant where they fit) and every blank spread (garlic mayo, chipotle mayo, Dijon, gochujang mayo, hot honey, refried beans, etc.).
+- Kimchi card now actually has kimchi (Add) plus gochujang mayo. Grilled Chicken Pesto: pesto moved to Spread. S'mores: fluff is the spread.
+- Cheese-free desserts say what the glue is instead (Nutella, peanut butter, chocolate). Homemade Chicken Salad: croissant, lettuce and tomato.
+- Add left blank where nothing goes on after the press; it's optional by design.
