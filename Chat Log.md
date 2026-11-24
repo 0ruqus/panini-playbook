@@ -207,3 +207,9 @@
 - Pills are grouped like the filters and formula: 02 · Glue (Cheese), 03 · Main event (Proteins), 04 · Signature (Spreads & sauces), 06 · Add (Veg, fruit & toppings). Collapsible rows; each shows what you picked. Sorted by how many paninis use them.
 - Selected bar with remove ×, Clear, See matches, and "Add N from Got it" (pulls in what you marked Got it on the shopping list). Picks and open rows are remembered (pp-xsel, pp-xopen).
 - Ingredient pills in the Crossover table and shopping list now add to this selection.
+
+## 2026-11-24 — What can I make?: match all
+- Selecting now narrows instead of ranking: Bacon shows all 19 bacon paninis; adding Chicken shows only the 6 with bacon and chicken.
+- Cards sorted by fewest other ingredients, each with "also needs …". No hidden tiers.
+- Pill counts update to how many of the current matches use each ingredient; pills with no matches grey out.
+- Dropped the "Add from Got it" button (match-all on a whole fridge would show nothing) and the repeated intro line when no picks.

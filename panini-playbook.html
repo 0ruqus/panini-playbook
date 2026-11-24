@@ -319,6 +319,7 @@ body.on-plan .tray{display:none}
 .xtier{margin:14px 0 6px;font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .xtier b{color:var(--fg)}
 .xitem .need{color:var(--fg)}
+.xg .ing:disabled{opacity:.35;cursor:default}
 .xmore>summary{cursor:pointer;color:var(--muted);font-size:.88rem;margin-top:10px}
 .xlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
 .xitem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--fc);border-radius:8px;background:var(--surface);min-width:0}
@@ -986,26 +987,24 @@ function renderPlan(){
     const adds=sel.filter(o=>o.r[6]),dips=sel.filter(o=>o.r[9]);
     h+=`<section><h3>At the press</h3><div class="ptable"><div><span class="k">Fry spread</span><span class="v">${Object.entries(fry).map(([f,w])=>`${esc(f)} <span class="who">${w.map(short).join(", ")}</span>`).join("<br>")}</span></div><div><span class="k">Press order</span><span class="v">${order.map((o,i)=>`${i+1}. ${esc(o.r[0])}`).join("<br>")}${sel.some(o=>o.r[1]==="Dessert")?`<br><span class="who">Desserts go last so sugar doesn't burn on the press.</span>`:""}</span></div>${adds.length?`<div><span class="k">After the press</span><span class="v">${adds.map(o=>`${esc(o.r[6])} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div>`:""}${dips.length?`<div><span class="k">Dips on the side</span><span class="v">${dips.map(o=>`${esc(o.r[9])} <span class="who">${esc(short(o.r[0]))}</span>`).join("<br>")}</span></div>`:""}</div></section>`;
     h+=`<section><h3>The builds</h3><div class="builds">${sel.map(o=>cardHTML(o.r,o.k==="Test Kitchen"?" idea":"")).join("")}</div></section>`;
-  }else{
-    h+=`<section><p class="sub" style="margin-top:12px">Tap <strong>+ Cook night</strong> on 3–4 cards in Recipes or Test Kitchen to see their crossover ingredients, one shopping list, prep and press order. Or skip the picks: tap what you have below to see which paninis you can already make.</p></section>`;
   }
   // what can I make: multi-select pantry
   const sl=[...xsel];
   let res="";
+  // every selected ingredient must be on the card; the rest of the card is what you'd still need
+  const hasAll=o=>sl.every(n=>ingsOf(o.r).includes(n));
+  const m=sl.length?POOL.filter(hasAll).map(o=>{const ii=ingsOf(o.r);return {o,ii,miss:ii.filter(n=>!xsel.has(n))}}).sort((a,b)=>a.miss.length-b.miss.length||a.o.r[0].localeCompare(b.o.r[0])):[];
+  const mcnt=n=>sl.length?m.filter(x=>x.ii.includes(n)).length:INGCNT[n];
   if(sl.length){
-    const m=POOL.map(o=>{const ii=ingsOf(o.r);const got=ii.filter(n=>xsel.has(n));return {o,ii,got,miss:ii.filter(n=>!xsel.has(n))}}).filter(x=>x.got.length).sort((a,b)=>a.miss.length-b.miss.length||b.got.length-a.got.length||a.o.r[0].localeCompare(b.o.r[0]));
-    const item=x=>{const on=picks.includes(x.o.r[0]);return `<div class="xitem" data-fam="${esc(x.o.r[1])}"><div><strong>${esc(x.o.r[0])}</strong><small><b class="have">${x.got.length} of ${x.ii.length}</b> · ${x.miss.length?`<span class="need">need ${x.miss.map(esc).join(", ")}</span>`:"you have it all"}</small><small>${esc(x.o.r[1])} · ${x.o.k}${HEAT[x.o.r[0]]?" · "+PEP[HEAT[x.o.r[0]]]:""}</small></div><button class="pick" type="button" data-pick="${esc(x.o.r[0])}" aria-pressed="${on}" ${!on&&picks.length>=MAXP?"disabled":""}>${on?"✓ In":"+ Add"}</button></div>`};
-    const tiers=[["Ready to make",x=>!x.miss.length],["Need 1 more",x=>x.miss.length===1],["Need 2 more",x=>x.miss.length===2]];
-    const close=tiers.map(([t,f])=>{const xs=m.filter(f);return xs.length?`<p class="xtier"><b>${t}</b> · ${xs.length}</p><div class="xlist">${xs.map(item).join("")}</div>`:""}).join("");
-    const far=m.filter(x=>x.miss.length>2);
-    res=`<div id="xres"><p class="count">${m.length} panini${m.length===1?"":"s"} use what you picked${m.filter(x=>!x.miss.length).length?` · <strong>${m.filter(x=>!x.miss.length).length} ready to make</strong>`:""}</p>${close||`<p class="empty-note">Nothing is within 2 ingredients yet. Add a few more things you have.</p>`}${far.length?`<details class="xmore"><summary>${far.length} more that need 3 or more</summary><div class="xlist" style="margin-top:8px">${far.map(item).join("")}</div></details>`:""}</div>`;
+    const item=x=>{const on=picks.includes(x.o.r[0]);return `<div class="xitem" data-fam="${esc(x.o.r[1])}"><div><strong>${esc(x.o.r[0])}</strong><small>${x.miss.length?`<span class="need">also needs ${x.miss.map(esc).join(", ")}</span>`:`<b class="have">you have it all</b>`}</small><small>${esc(x.o.r[1])} · ${x.o.k}${HEAT[x.o.r[0]]?" · "+PEP[HEAT[x.o.r[0]]]:""}</small></div><button class="pick" type="button" data-pick="${esc(x.o.r[0])}" aria-pressed="${on}" ${!on&&picks.length>=MAXP?"disabled":""}>${on?"✓ In":"+ Add"}</button></div>`};
+    res=`<div id="xres"><p class="count">${m.length} panini${m.length===1?"":"s"} with ${sl.map(esc).join(" + ")}</p>${m.length?`<div class="xlist">${m.map(item).join("")}</div>`:`<p class="empty-note">No panini has all of these. Remove one to widen it.</p>`}</div>`;
   }
-  const gotHave=ALLING.filter(n=>have.has(n)&&!xsel.has(n));
-  h+=`<section class="xref"><h3>What can I make?</h3><p class="sub">Tap everything you have on hand. The paninis you're closest to show up below, with what each one still needs. Bread, butter and mayo are assumed.</p>
+  const gotHave=[];
+  h+=`<section class="xref"><h3>What can I make?</h3><p class="sub">Tap an ingredient to see every panini with it. Tap more to narrow it to paninis with all of them. Each card lists what else it needs, fewest first. The numbers on the pills count what's left.</p>
     <input class="search" id="xq" list="xopts" placeholder="Add an ingredient: caramelized onions, brie…" autocomplete="off">
     <datalist id="xopts">${ALLING.filter(n=>!xsel.has(n)).map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
     <div class="xbar">${sl.length?`${sl.map(n=>`<button class="ing" type="button" data-xun="${esc(n)}" aria-label="Remove ${esc(n)}">${esc(n)}</button>`).join("")}<span class="sp"></span><button type="button" class="mini" id="xjump">See matches ↓</button><button type="button" class="mini" id="xclear">Clear</button>`:`<span class="sub">Nothing picked yet.</span><span class="sp"></span>`}${gotHave.length?`<button type="button" class="mini" id="xgot">Add ${gotHave.length} from Got it</button>`:""}</div>
-    <div class="xgroups">${XG.map(([g,eb,lab,c])=>{const ns=ALLING.filter(n=>ING.find(i=>i[1]===n)[0]===g).sort((a,b)=>INGCNT[b]-INGCNT[a]||a.localeCompare(b));const on=ns.filter(n=>xsel.has(n));return `<details class="fgroup xg" data-xg="${g}" style="--gc:${c}"${xopen.has(g)?" open":""}><summary class="fl"><span class="eyebrow">${eb}</span><small>${lab}</small><span class="fsel${on.length?" on":""}">${on.length?esc(on.join(", ")):ns.length+" items"}</span></summary><div class="xpills">${ns.map(n=>ingBtn(n,INGCNT[n])).join("")}</div></details>`}).join("")}</div>
+    <div class="xgroups">${XG.map(([g,eb,lab,c])=>{const ns=ALLING.filter(n=>ING.find(i=>i[1]===n)[0]===g).sort((a,b)=>INGCNT[b]-INGCNT[a]||a.localeCompare(b));const on=ns.filter(n=>xsel.has(n));return `<details class="fgroup xg" data-xg="${g}" style="--gc:${c}"${xopen.has(g)?" open":""}><summary class="fl"><span class="eyebrow">${eb}</span><small>${lab}</small><span class="fsel${on.length?" on":""}">${on.length?esc(on.join(", ")):ns.length+" items"}</span></summary><div class="xpills">${ns.map(n=>{const c=mcnt(n);return xsel.has(n)||c?ingBtn(n,c):ingBtn(n,0).replace("<button ","<button disabled ")}).join("")}</div></details>`}).join("")}</div>
     ${res}
   </section>`;
   const y=planBody.parentElement.scrollTop;planBody.innerHTML=h;planBody.parentElement.scrollTop=y;
